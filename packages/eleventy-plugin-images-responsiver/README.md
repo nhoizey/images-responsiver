@@ -1,1 +1,1 @@
-# eleveenty-plugin-responsive-images
+# eleventy-plugin-responsive-images
