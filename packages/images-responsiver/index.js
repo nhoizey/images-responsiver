@@ -93,7 +93,7 @@ const imageResponsiver = (html, options) => {
       // Add attributes from the preset
       if (Object.keys(imageSettings.attributes).length > 0) {
         for (const attribute in imageSettings.attributes) {
-          if (imageSettings.attributes[attribute] !== undefined) {
+          if (imageSettings.attributes[attribute] !== null) {
             image.setAttribute(attribute, imageSettings.attributes[attribute]);
           }
         }
