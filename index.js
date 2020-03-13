@@ -44,11 +44,11 @@ const imageResponsiver = (html, options) => {
       let imageSettings = globalSettings;
 
       imageSettings.attributes.width = image.getAttribute('width');
-      if (imageSettings.attributes.width === undefined) {
+      if (imageSettings.attributes.width === null) {
         console.warn('Images in the HTML should have a width attributes for accurate responsiveness');
       }
       imageSettings.attributes.height = image.getAttribute('height');
-      if (imageSettings.attributes.height === undefined) {
+      if (imageSettings.attributes.height === null) {
         console.warn('Images in the HTML should have a height attribute for rendering performance');
       }
 
@@ -73,8 +73,8 @@ const imageResponsiver = (html, options) => {
       // generate the srcset attribute
       let srcset = [];
       for (let i = 0; i < imageSettings.steps; i++) {
-        width = Math.ceil(imageSettings.minWidth + (imageSettings.maxWidth - imageSettings.minWidth) / (imageSettings.steps - 1) * i);
-        if (imageSettings.attributes.width === undefined || width < imageSettings.attributes.width) {
+        let width = Math.ceil(imageSettings.minWidth + (imageSettings.maxWidth - imageSettings.minWidth) / (imageSettings.steps - 1) * i);
+        if (imageSettings.attributes.width === null || width < imageSettings.attributes.width) {
           srcset.push(`${getResizedImageUrl(imageSrc, width)} ${width}w`);
         } else {
           // Largest image width in srcset should not be above the actual image's width
