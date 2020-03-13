@@ -46,7 +46,11 @@ const imageResponsiver = (html, options) => {
       imageSettings.attributes.width = image.getAttribute('width');
       if (imageSettings.attributes.width === null) {
         console.warn('Images in the HTML should have a width attributes for accurate responsiveness');
+      } else {
+        imageSettings.maxWidth = Math.min(imageSettings.maxWidth, imageSettings.attributes.width);
+        imageSettings.fallbackWidth = Math.min(imageSettings.fallbackWidth, imageSettings.attributes.width);
       }
+
       imageSettings.attributes.height = image.getAttribute('height');
       if (imageSettings.attributes.height === null) {
         console.warn('Images in the HTML should have a height attribute for rendering performance');
@@ -74,13 +78,7 @@ const imageResponsiver = (html, options) => {
       let srcset = [];
       for (let i = 0; i < imageSettings.steps; i++) {
         let width = Math.ceil(imageSettings.minWidth + (imageSettings.maxWidth - imageSettings.minWidth) / (imageSettings.steps - 1) * i);
-        if (imageSettings.attributes.width === null || width < imageSettings.attributes.width) {
-          srcset.push(`${getResizedImageUrl(imageSrc, width)} ${width}w`);
-        } else {
-          // Largest image width in srcset should not be above the actual image's width
-          srcset.push(`${getResizedImageUrl(imageSrc, imageSettings.attributes.width)} ${imageSettings.attributes.width}w`);
-          break;
-        }
+        srcset.push(`${getResizedImageUrl(imageSrc, width)} ${width}w`);
       }
       image.setAttribute('srcset', srcset.join(', '));
 
