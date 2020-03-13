@@ -99,7 +99,7 @@ const imageResponsiver = (html, options) => {
     }
   });
 
-  return "<!DOCTYPE html>\r\n" + document.documentElement.outerHTML;
+  return "<!DOCTYPE html>\n" + document.documentElement.outerHTML;
 };
 
 module.exports = imageResponsiver;
