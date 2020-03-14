@@ -41,6 +41,8 @@ const imageResponsiver = (html, options) => {
     // TODO: use the URL API?
     if (!imageSrc.match(/^https?:\/\//)) {
       message(`Image src attribute is not an absolute URL: ${imageSrc}`);
+    } else if (imageSrc.match(/\.svg$/)) {
+      message(`Nothing to do with SVG: ${imageSrc}`);
     } else {
       let imageSettings = globalSettings;
 
