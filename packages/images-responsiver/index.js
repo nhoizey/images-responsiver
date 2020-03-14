@@ -46,7 +46,7 @@ const imageResponsiver = (html, options) => {
 
       imageSettings.attributes.width = image.getAttribute('width');
       if (imageSettings.attributes.width === null) {
-        message('Images in the HTML should have a width attributes for accurate responsiveness');
+        message(`Images should have a width attribute: ${imageSrc}`);
       } else {
         imageSettings.maxWidth = Math.min(imageSettings.maxWidth, imageSettings.attributes.width);
         imageSettings.fallbackWidth = Math.min(imageSettings.fallbackWidth, imageSettings.attributes.width);
@@ -54,7 +54,7 @@ const imageResponsiver = (html, options) => {
 
       imageSettings.attributes.height = image.getAttribute('height');
       if (imageSettings.attributes.height === null) {
-        message('Images in the HTML should have a height attribute for rendering performance');
+        message(`Images should have a height attribute: ${imageSrc}`);
       }
 
       // Overhide settings with presets named in the image classes
