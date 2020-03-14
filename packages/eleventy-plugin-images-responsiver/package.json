@@ -12,8 +12,8 @@
   ],
   "scripts": {
     "lint": "eslint src --ext js --quiet --fix",
-    "publish": "npm publish && git push --tags",
-    "test": "jest"
+    "test": "jest",
+    "release": "np"
   },
   "keywords": [
     "static-site-generator",
@@ -43,10 +43,11 @@
     "eslint": "6.8.0",
     "eslint-config-prettier": "6.10.0",
     "eslint-plugin-prettier": "3.1.2",
-    "prettier": "1.19.1"
+    "prettier": "1.19.1",
+    "np": "6.2.0"
   },
   "dependencies": {
-    "images-responsiver": "^0.6.0"
+    "images-responsiver": "^0.9.0"
   },
   "bugs": {
     "url": "https://github.com/nhoizey/eleventy-plugin-images-responsiver/issues"
