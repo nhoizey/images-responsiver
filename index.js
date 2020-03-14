@@ -5,6 +5,10 @@ const { JSDOM } = jsdom;
 const deepmerge = require('deepmerge');
 const overwriteMerge = (destinationArray, sourceArray, options) => sourceArray;
 
+function message(msg) {
+  console.log(`[images-responsiver] ${msg}`);
+}
+
 const imageResponsiver = (html, options) => {
   // Default settings
   let globalSettings = {
@@ -36,13 +40,13 @@ const imageResponsiver = (html, options) => {
 
     // TODO: use the URL API?
     if (!imageSrc.match(/^https?:\/\//)) {
-      console.error('Image src attribute must be an absolute URL');
+      message(`Image src attribute is not an absolute URL: ${imageSrc}`);
     } else {
       let imageSettings = globalSettings;
 
       imageSettings.attributes.width = image.getAttribute('width');
       if (imageSettings.attributes.width === null) {
-        console.warn('Images in the HTML should have a width attributes for accurate responsiveness');
+        message('Images in the HTML should have a width attributes for accurate responsiveness');
       } else {
         imageSettings.maxWidth = Math.min(imageSettings.maxWidth, imageSettings.attributes.width);
         imageSettings.fallbackWidth = Math.min(imageSettings.fallbackWidth, imageSettings.attributes.width);
@@ -50,7 +54,7 @@ const imageResponsiver = (html, options) => {
 
       imageSettings.attributes.height = image.getAttribute('height');
       if (imageSettings.attributes.height === null) {
-        console.warn('Images in the HTML should have a height attribute for rendering performance');
+        message('Images in the HTML should have a height attribute for rendering performance');
       }
 
       // Overhide settings with presets named in the image classes
