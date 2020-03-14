@@ -5,14 +5,11 @@ const { JSDOM } = jsdom;
 const deepmerge = require('deepmerge');
 const overwriteMerge = (destinationArray, sourceArray, options) => sourceArray;
 
-function getResizedImageUrl(src, width) {
-  return `https://res.cloudinary.com/nho/image/fetch/q_auto,f_auto,w_${width}/${src}`;
-}
-
 const imageResponsiver = (html, options) => {
   // Default settings
   let globalSettings = {
     selector: 'img',
+    resizedImageUrl: (src, width) => src.replace(/^(.*)(\.[^\.]+)$/, "$1-" + width + "$2"),
     fallbackWidth: 640,
     minWidth: 320,
     maxWidth: 2560,
@@ -72,13 +69,13 @@ const imageResponsiver = (html, options) => {
       }
 
       // Change the image source
-      image.setAttribute('src', getResizedImageUrl(imageSrc, imageSettings.fallbackWidth));
+      image.setAttribute('src', imageSettings.resizedImageUrl(imageSrc, imageSettings.fallbackWidth));
 
       // generate the srcset attribute
       let srcset = [];
       for (let i = 0; i < imageSettings.steps; i++) {
         let width = Math.ceil(imageSettings.minWidth + (imageSettings.maxWidth - imageSettings.minWidth) / (imageSettings.steps - 1) * i);
-        srcset.push(`${getResizedImageUrl(imageSrc, width)} ${width}w`);
+        srcset.push(`${imageSettings.resizedImageUrl(imageSrc, width)} ${width}w`);
       }
       image.setAttribute('srcset', srcset.join(', '));
 

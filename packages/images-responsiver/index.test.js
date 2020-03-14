@@ -14,8 +14,8 @@ function mini(html) {
 describe('no image', () => {
   test('keeps intact HTML without image', () => {
     const content = `<!DOCTYPE html><html><head></head><body><p>Hello</p></body></html>`;
-    const expected = content;
     const transformed = imagesResponsiver(content, {});
+    const expected = content;
     expect(mini(transformed)).toEqual(mini(expected));
   });
 });
@@ -23,56 +23,56 @@ describe('no image', () => {
 describe('image without options', () => {
   test('simple image', () => {
     const content = `<!DOCTYPE html><html><head></head><body><img src="https://example.com/test.png"></body></html>`;
-    const expected = `<!DOCTYPE html><html><head></head><body>
-  <img
-    src="https://res.cloudinary.com/nho/image/fetch/q_auto,f_auto,w_640/https://example.com/test.png"
-    srcset="
-      https://res.cloudinary.com/nho/image/fetch/q_auto,f_auto,w_320/https://example.com/test.png 320w,
-      https://res.cloudinary.com/nho/image/fetch/q_auto,f_auto,w_880/https://example.com/test.png 880w,
-      https://res.cloudinary.com/nho/image/fetch/q_auto,f_auto,w_1440/https://example.com/test.png 1440w,
-      https://res.cloudinary.com/nho/image/fetch/q_auto,f_auto,w_2000/https://example.com/test.png 2000w,
-      https://res.cloudinary.com/nho/image/fetch/q_auto,f_auto,w_2560/https://example.com/test.png 2560w"
-      sizes="100vw"
-      data-pristine="https://example.com/test.png" /></body></html>`;
     const transformed = imagesResponsiver(content, {});
+    const expected = `<!DOCTYPE html><html><head></head><body>
+      <img
+        src="https://example.com/test-640.png"
+        srcset="
+          https://example.com/test-320.png 320w,
+          https://example.com/test-880.png 880w,
+          https://example.com/test-1440.png 1440w,
+          https://example.com/test-2000.png 2000w,
+          https://example.com/test-2560.png 2560w"
+          sizes="100vw"
+          data-pristine="https://example.com/test.png" /></body></html>`;
     expect(mini(transformed)).toEqual(mini(expected));
   });
 
   test('width attribute superior to the fallback', () => {
     const content = `<!DOCTYPE html><body>
-  <img src="https://example.com/test.png" width="789"></body>`;
-    const expected = `<!DOCTYPE html><html><head></head><body>
-  <img
-    src="https://res.cloudinary.com/nho/image/fetch/q_auto,f_auto,w_640/https://example.com/test.png"
-    width="789"
-    srcset="
-      https://res.cloudinary.com/nho/image/fetch/q_auto,f_auto,w_320/https://example.com/test.png 320w,
-      https://res.cloudinary.com/nho/image/fetch/q_auto,f_auto,w_438/https://example.com/test.png 438w,
-      https://res.cloudinary.com/nho/image/fetch/q_auto,f_auto,w_555/https://example.com/test.png 555w,
-      https://res.cloudinary.com/nho/image/fetch/q_auto,f_auto,w_672/https://example.com/test.png 672w,
-      https://res.cloudinary.com/nho/image/fetch/q_auto,f_auto,w_789/https://example.com/test.png 789w"
-      sizes="100vw"
-      data-pristine="https://example.com/test.png" /></body></html>`;
+      <img src="https://example.com/test.png" width="789"></body>`;
     const transformed = imagesResponsiver(content, {});
+    const expected = `<!DOCTYPE html><html><head></head><body>
+      <img
+        src="https://example.com/test-640.png"
+        width="789"
+        srcset="
+          https://example.com/test-320.png 320w,
+          https://example.com/test-438.png 438w,
+          https://example.com/test-555.png 555w,
+          https://example.com/test-672.png 672w,
+          https://example.com/test-789.png 789w"
+          sizes="100vw"
+          data-pristine="https://example.com/test.png" /></body></html>`;
     expect(mini(transformed)).toEqual(mini(expected));
   });
 
   test('width attribute inferior to the fallback', () => {
     const content = `<!DOCTYPE html><body>
-  <img src="https://example.com/test.png" width="543"></body>`;
-    const expected = `<!DOCTYPE html><html><head></head><body>
-  <img
-    src="https://res.cloudinary.com/nho/image/fetch/q_auto,f_auto,w_543/https://example.com/test.png"
-    width="543"
-    srcset="
-      https://res.cloudinary.com/nho/image/fetch/q_auto,f_auto,w_320/https://example.com/test.png 320w,
-      https://res.cloudinary.com/nho/image/fetch/q_auto,f_auto,w_376/https://example.com/test.png 376w,
-      https://res.cloudinary.com/nho/image/fetch/q_auto,f_auto,w_432/https://example.com/test.png 432w,
-      https://res.cloudinary.com/nho/image/fetch/q_auto,f_auto,w_488/https://example.com/test.png 488w,
-      https://res.cloudinary.com/nho/image/fetch/q_auto,f_auto,w_543/https://example.com/test.png 543w"
-      sizes="100vw"
-      data-pristine="https://example.com/test.png" /></body></html>`;
+      <img src="https://example.com/test.png" width="543"></body>`;
     const transformed = imagesResponsiver(content, {});
+    const expected = `<!DOCTYPE html><html><head></head><body>
+      <img
+        src="https://example.com/test-543.png"
+        width="543"
+        srcset="
+          https://example.com/test-320.png 320w,
+          https://example.com/test-376.png 376w,
+          https://example.com/test-432.png 432w,
+          https://example.com/test-488.png 488w,
+          https://example.com/test-543.png 543w"
+          sizes="100vw"
+          data-pristine="https://example.com/test.png" /></body></html>`;
     expect(mini(transformed)).toEqual(mini(expected));
   });
 });
@@ -80,15 +80,6 @@ describe('image without options', () => {
 describe('image with options', () => {
   test('simple image', () => {
     const content = `<!DOCTYPE html><html><head></head><body><img src="https://example.com/test.png"></body></html>`;
-    const expected = `<!DOCTYPE html><html><head></head><body>
-  <img
-    src="https://res.cloudinary.com/nho/image/fetch/q_auto,f_auto,w_640/https://example.com/test.png"
-    srcset="
-      https://res.cloudinary.com/nho/image/fetch/q_auto,f_auto,w_120/https://example.com/test.png 120w,
-      https://res.cloudinary.com/nho/image/fetch/q_auto,f_auto,w_220/https://example.com/test.png 220w,
-      https://res.cloudinary.com/nho/image/fetch/q_auto,f_auto,w_320/https://example.com/test.png 320w"
-      sizes="100vw"
-      data-pristine="https://example.com/test.png" /></body></html>`;
     const transformed = imagesResponsiver(content, {
       presets:
       {
@@ -99,6 +90,15 @@ describe('image with options', () => {
         }
       }
     });
+    const expected = `<!DOCTYPE html><html><head></head><body>
+      <img
+        src="https://example.com/test-640.png"
+        srcset="
+          https://example.com/test-120.png 120w,
+          https://example.com/test-220.png 220w,
+          https://example.com/test-320.png 320w"
+          sizes="100vw"
+          data-pristine="https://example.com/test.png" /></body></html>`;
     expect(mini(transformed)).toEqual(mini(expected));
   });
 });
