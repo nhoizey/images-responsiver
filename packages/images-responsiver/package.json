@@ -1,6 +1,6 @@
 {
   "name": "images-responsiver",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Global solution for responsive images, transforming simple image HTML syntax into better responsive images syntax.",
   "repository": {
     "type": "git",
@@ -12,7 +12,8 @@
   "scripts": {
     "lint": "eslint src --ext js --quiet --fix",
     "publish": "npm publish && git push --tags",
-    "test": "jest"
+    "test": "jest",
+    "release": "np"
   },
   "keywords": [
     "website",
@@ -34,7 +35,8 @@
     "eslint-plugin-prettier": "3.1.2",
     "prettier": "1.19.1",
     "jest": "25.1.0",
-    "html-minifier": "4.0.0"
+    "html-minifier": "4.0.0",
+    "np": "6.2.0"
   },
   "dependencies": {
     "deepmerge": "4.2.2",
