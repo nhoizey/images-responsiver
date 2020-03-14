@@ -20,6 +20,22 @@ describe('no image', () => {
   });
 });
 
+describe('image that can\'t be transformed', () => {
+  test('image with relative URL', () => {
+    const content = `<!DOCTYPE html><html><head></head><body><img src="example/test.png"></body></html>`;
+    const transformed = imagesResponsiver(content, {});
+    const expected = content;
+    expect(mini(transformed)).toEqual(mini(expected));
+  });
+
+  test('do nothing on SVG image', () => {
+    const content = `<!DOCTYPE html><html><head></head><body><img src="https://example.com/test.svg"></body></html>`;
+    const transformed = imagesResponsiver(content, {});
+    const expected = content;
+    expect(mini(transformed)).toEqual(mini(expected));
+  });
+});
+
 describe('image without options', () => {
   test('simple image', () => {
     const content = `<!DOCTYPE html><html><head></head><body><img src="https://example.com/test.png"></body></html>`;
