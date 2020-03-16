@@ -6,9 +6,6 @@
     "type": "git",
     "url": "git+https://github.com/nhoizey/images-responsiver.git"
   },
-  "files": [
-    "src"
-  ],
   "scripts": {
     "lint": "eslint src --ext js --quiet --fix",
     "test": "jest",
