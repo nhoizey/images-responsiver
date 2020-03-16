@@ -12,7 +12,7 @@ function message(msg) {
 const imageResponsiver = (html, options) => {
   // Default settings
   let globalSettings = {
-    selector: 'img:not[srcset]',
+    selector: 'img:not([srcset])',
     resizedImageUrl: (src, width) => src.replace(/^(.*)(\.[^\.]+)$/, "$1-" + width + "$2"),
     fallbackWidth: 640,
     minWidth: 320,
