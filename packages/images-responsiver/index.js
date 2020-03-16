@@ -9,7 +9,7 @@ function message(msg) {
   console.log(`[images-responsiver] ${msg}`);
 }
 
-const imageResponsiver = (html, options) => {
+const imagesResponsiver = (html, options) => {
   // Default settings
   let globalSettings = {
     selector: 'img:not([srcset])',
@@ -109,4 +109,4 @@ const imageResponsiver = (html, options) => {
   return "<!DOCTYPE html>\n" + document.documentElement.outerHTML;
 };
 
-module.exports = imageResponsiver;
+module.exports = imagesResponsiver;
