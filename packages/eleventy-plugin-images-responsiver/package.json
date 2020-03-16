@@ -46,7 +46,7 @@
     "np": "6.2.0"
   },
   "dependencies": {
-    "images-responsiver": "0.10.0"
+    "images-responsiver": "0.11.0"
   },
   "bugs": {
     "url": "https://github.com/nhoizey/eleventy-plugin-images-responsiver/issues"
