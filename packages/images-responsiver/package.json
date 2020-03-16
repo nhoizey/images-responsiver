@@ -2,6 +2,7 @@
   "name": "images-responsiver",
   "version": "0.11.0",
   "description": "Global solution for responsive images, transforming simple image HTML syntax into better responsive images syntax.",
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nhoizey/images-responsiver.git"
