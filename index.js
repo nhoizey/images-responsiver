@@ -1,7 +1,5 @@
 'use strict';
 
-const jsdom = require("@tbranyen/jsdom");
-const { JSDOM } = jsdom;
 const deepmerge = require('deepmerge');
 const overwriteMerge = (destinationArray, sourceArray, options) => sourceArray;
 
@@ -32,6 +30,8 @@ const imagesResponsiver = (html, options) => {
     );
   }
 
+  const jsdom = require("jsdom");
+  const { JSDOM } = jsdom;
   let DOM = new JSDOM(html);
   let document = DOM.window.document;
 
