@@ -113,7 +113,8 @@ const imagesResponsiver = (html, options) => {
     }
   });
 
-  return "<!DOCTYPE html>\n" + document.documentElement.outerHTML;
+  let modifiedHtml = DOM.serialize();
+  return modifiedHtml;
 };
 
 module.exports = imagesResponsiver;
