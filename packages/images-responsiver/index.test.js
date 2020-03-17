@@ -21,15 +21,8 @@ describe('no image', () => {
 });
 
 describe('image that can\'t be transformed', () => {
-  test('image with relative URL', () => {
-    const content = `<!DOCTYPE html><html><head></head><body><img src="example/test.png"></body></html>`;
-    const transformed = imagesResponsiver(content, {});
-    const expected = content;
-    expect(mini(transformed)).toEqual(mini(expected));
-  });
-
   test('do nothing on SVG image', () => {
-    const content = `<!DOCTYPE html><html><head></head><body><img src="https://example.com/test.svg"></body></html>`;
+    const content = `<!DOCTYPE html><html><head></head><body><img src="test.svg"></body></html>`;
     const transformed = imagesResponsiver(content, {});
     const expected = content;
     expect(mini(transformed)).toEqual(mini(expected));
@@ -38,64 +31,64 @@ describe('image that can\'t be transformed', () => {
 
 describe('image without options', () => {
   test('simple image', () => {
-    const content = `<!DOCTYPE html><html><head></head><body><img src="https://example.com/test.png"></body></html>`;
+    const content = `<!DOCTYPE html><html><head></head><body><img src="test.png"></body></html>`;
     const transformed = imagesResponsiver(content, {});
     const expected = `<!DOCTYPE html><html><head></head><body>
       <img
-        src="https://example.com/test-640.png"
+        src="test-640.png"
         srcset="
-          https://example.com/test-320.png 320w,
-          https://example.com/test-880.png 880w,
-          https://example.com/test-1440.png 1440w,
-          https://example.com/test-2000.png 2000w,
-          https://example.com/test-2560.png 2560w"
+          test-320.png 320w,
+          test-880.png 880w,
+          test-1440.png 1440w,
+          test-2000.png 2000w,
+          test-2560.png 2560w"
           sizes="100vw"
-          data-pristine="https://example.com/test.png" /></body></html>`;
+          data-pristine="test.png" /></body></html>`;
     expect(mini(transformed)).toEqual(mini(expected));
   });
 
   test('width attribute superior to the fallback', () => {
     const content = `<!DOCTYPE html><body>
-      <img src="https://example.com/test.png" width="789"></body>`;
+      <img src="test.png" width="789"></body>`;
     const transformed = imagesResponsiver(content, {});
     const expected = `<!DOCTYPE html><html><head></head><body>
       <img
-        src="https://example.com/test-640.png"
+        src="test-640.png"
         width="789"
         srcset="
-          https://example.com/test-320.png 320w,
-          https://example.com/test-438.png 438w,
-          https://example.com/test-555.png 555w,
-          https://example.com/test-672.png 672w,
-          https://example.com/test-789.png 789w"
+          test-320.png 320w,
+          test-438.png 438w,
+          test-555.png 555w,
+          test-672.png 672w,
+          test-789.png 789w"
           sizes="100vw"
-          data-pristine="https://example.com/test.png" /></body></html>`;
+          data-pristine="test.png" /></body></html>`;
     expect(mini(transformed)).toEqual(mini(expected));
   });
 
   test('width attribute inferior to the fallback', () => {
     const content = `<!DOCTYPE html><body>
-      <img src="https://example.com/test.png" width="543"></body>`;
+      <img src="test.png" width="543"></body>`;
     const transformed = imagesResponsiver(content, {});
     const expected = `<!DOCTYPE html><html><head></head><body>
       <img
-        src="https://example.com/test-543.png"
+        src="test-543.png"
         width="543"
         srcset="
-          https://example.com/test-320.png 320w,
-          https://example.com/test-376.png 376w,
-          https://example.com/test-432.png 432w,
-          https://example.com/test-488.png 488w,
-          https://example.com/test-543.png 543w"
+          test-320.png 320w,
+          test-376.png 376w,
+          test-432.png 432w,
+          test-488.png 488w,
+          test-543.png 543w"
           sizes="100vw"
-          data-pristine="https://example.com/test.png" /></body></html>`;
+          data-pristine="test.png" /></body></html>`;
     expect(mini(transformed)).toEqual(mini(expected));
   });
 });
 
 describe('image with options', () => {
   test('simple image', () => {
-    const content = `<!DOCTYPE html><html><head></head><body><img src="https://example.com/test.png"></body></html>`;
+    const content = `<!DOCTYPE html><html><head></head><body><img src="test.png"></body></html>`;
     const transformed = imagesResponsiver(content, {
       presets:
       {
@@ -108,13 +101,13 @@ describe('image with options', () => {
     });
     const expected = `<!DOCTYPE html><html><head></head><body>
       <img
-        src="https://example.com/test-640.png"
+        src="test-640.png"
         srcset="
-          https://example.com/test-120.png 120w,
-          https://example.com/test-220.png 220w,
-          https://example.com/test-320.png 320w"
+          test-120.png 120w,
+          test-220.png 220w,
+          test-320.png 320w"
           sizes="100vw"
-          data-pristine="https://example.com/test.png" /></body></html>`;
+          data-pristine="test.png" /></body></html>`;
     expect(mini(transformed)).toEqual(mini(expected));
   });
 });
