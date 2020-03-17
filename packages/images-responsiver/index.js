@@ -43,12 +43,6 @@ const imagesResponsiver = (html, options) => {
       return;
     }
 
-    if (!imageSrc.match(/^https?:\/\//)) {
-      // TODO: use the URL API?
-      message(`Image src attribute is not an absolute URL: ${imageSrc}`);
-      return;
-    }
-
     let imageSettings = globalSettings;
 
     imageSettings.attributes.width = image.getAttribute('width');
