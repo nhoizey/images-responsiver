@@ -10,8 +10,6 @@ function message(msg) {
 const imagesResponsiver = (html, options) => {
   // Default settings
   let globalSettings = {
-    selector: 'img:not([srcset])',
-    resizedImageUrl: (src, width) => src.replace(/^(.*)(\.[^\.]+)$/, "$1-" + width + "$2"),
     fallbackWidth: 640,
     minWidth: 320,
     maxWidth: 2560,
@@ -20,6 +18,11 @@ const imagesResponsiver = (html, options) => {
     classes: [],
     attributes: {}
   };
+
+  globalSettings.selector = options.selector || ':not(picture) img:not([srcset]):not([src$=".svg"])';
+
+  const defaultResizedImageUrl = (src, width) => src.replace(/^(.*)(\.[^\.]+)$/, "$1-" + width + "$2");
+  globalSettings.resizedImageUrl = options.resizedImageUrl || defaultResizedImageUrl;
 
   // Overhide default settings with a "default" preset
   if (options.presets !== undefined && options.presets.default !== undefined) {
