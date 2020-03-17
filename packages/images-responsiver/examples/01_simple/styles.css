@@ -1,0 +1,15 @@
+.container {
+  width: 90vw;
+  max-width: 40em;
+}
+
+.logo {
+  width: 20%;
+  float: right;
+  margin: 0 0 1em 1em;
+}
+
+.left {
+  float: left;
+  margin: 0 1em 1em 0;
+}
