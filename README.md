@@ -48,7 +48,7 @@ Let's say you have this `page.html` HTML file:
 
 <body>
   <div class="container">
-    <img src="my-logo.png" data-responsiver="logo left" />
+    <img src="my-logo.png" data-responsiver="logo" />
     <p>Here is a simple image:</p>
     <p><img src="my-photo.jpg" /></p>
   </div>
@@ -69,11 +69,6 @@ And this `style.css` CSS:
   width: 20%;
   float: right;
   margin: 0 0 1em 1em;
-}
-
-.left {
-  float: left;
-  margin: 0 1em 1em 0;
 }
 ```
 
@@ -108,9 +103,6 @@ const options = {
       steps: 3,
       sizes: '(max-width: 44em) 18vw, 8em',
       classes: ['logo']
-    },
-    left: {
-      classes: ['left']
     }
   }
 };
@@ -135,7 +127,7 @@ Here's the resulting `page-responsive.html` HTML page:
 
 <body>
   <div class="container">
-    <img src="my-logo.png?w=128" class="logo left"
+    <img src="my-logo.png?w=128" class="logo"
       srcset="my-logo.png?w=58 58w, my-logo.png?w=157 157w, my-logo.png?w=256 256w" sizes="(max-width: 44em) 18vw, 8em"
       data-pristine="my-logo.png" loading="lazy">
     <p>Here is a simple image:</p>
@@ -163,7 +155,7 @@ This image:
 ```html
 <img
   src="my-logo.png?w=128"
-  class="logo left"
+  class="logo"
   srcset="
     my-logo.png?w=58 58w,
     my-logo.png?w=157 157w,
@@ -173,7 +165,7 @@ This image:
   loading="lazy" />
 ```
 
-The `loading` attribute comes from the `default` preset, and the `sizes` attribute as well as settings for the `srcset` attributes come from the `logo` preset, which surcharges the `default` one. The `logo` class comes from the `logo` preset and the `left` class comes from the `left` preset.
+The `loading` attribute comes from the `default` preset, and the `sizes` attribute as well as settings for the `srcset` attributes come from the `logo` preset, which surcharges the `default` one. The `logo` class comes from the `logo` preset.
 
 #### The full width photography
 
