@@ -39,7 +39,7 @@ const imagesResponsiver = (html, options) => {
     const imageSrc = image.getAttribute('src');
 
     if (imageSrc.match(/\.svg$/)) {
-      message(`Nothing to do with SVG: ${imageSrc}`);
+      // Nothing to do with SVG images
       return;
     }
 
