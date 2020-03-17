@@ -65,15 +65,22 @@ const imagesResponsiver = (html, options) => {
     }
 
     // Overhide settings with presets named in the image classes
-    image.classList.forEach(className => {
-      if (options.presets[className] !== undefined) {
-        imageSettings = deepmerge(
-          imageSettings,
-          options.presets[className],
-          { arrayMerge: overwriteMerge }
-        );
-      }
-    });
+    if ('responsiver' in image.dataset) {
+      // TODO: Merging preset settings to previous settings should be easier
+      image.dataset.responsiver.split(' ').forEach(preset => {
+        if (options.presets[preset] !== undefined) {
+          let presetClasses = options.presets[preset].classes || [];
+          let existingClasses = imageSettings.classes;
+          imageSettings = deepmerge(
+            imageSettings,
+            options.presets[preset],
+            { arrayMerge: overwriteMerge }
+          );
+          imageSettings.classes = [...existingClasses, ...presetClasses];
+        }
+      });
+      delete image.dataset.responsiver;
+    }
 
     if (imageSettings.classes.length > 0) {
       image.classList.add(...imageSettings.classes);
