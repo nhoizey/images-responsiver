@@ -52,9 +52,7 @@ const imagesResponsiver = (html, options) => {
     let imageSettings = globalSettings;
 
     imageSettings.attributes.width = image.getAttribute('width');
-    if (imageSettings.attributes.width === null) {
-      message(`Images should have a width attribute: ${imageSrc}`);
-    } else {
+    if (imageSettings.attributes.width !== null) {
       imageSettings.maxWidth = Math.min(imageSettings.maxWidth, imageSettings.attributes.width);
       imageSettings.fallbackWidth = Math.min(imageSettings.fallbackWidth, imageSettings.attributes.width);
     }
