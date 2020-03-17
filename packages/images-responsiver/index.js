@@ -58,9 +58,6 @@ const imagesResponsiver = (html, options) => {
     }
 
     imageSettings.attributes.height = image.getAttribute('height');
-    if (imageSettings.attributes.height === null) {
-      message(`Images should have a height attribute: ${imageSrc}`);
-    }
 
     // Overhide settings with presets named in the image classes
     if ('responsiver' in image.dataset) {
