@@ -37,7 +37,7 @@
   },
   "dependencies": {
     "deepmerge": "4.2.2",
-    "@tbranyen/jsdom": "13.0.0"
+    "jsdom": "16.2.1"
   },
   "bugs": {
     "url": "https://github.com/nhoizey/images-responsiver/issues"
