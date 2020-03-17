@@ -101,7 +101,7 @@ const imagesResponsiver = (html, options) => {
     image.setAttribute('sizes', imageSettings.sizes);
 
     // add 'data-pristine' attribute with URL of the pristine image
-    image.setAttribute('data-pristine', imageSrc);
+    image.dataset.pristine = imageSrc;
 
     // Add attributes from the preset
     if (Object.keys(imageSettings.attributes).length > 0) {
