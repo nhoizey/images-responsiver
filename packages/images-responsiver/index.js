@@ -3,11 +3,8 @@
 const deepmerge = require('deepmerge');
 const overwriteMerge = (destinationArray, sourceArray, options) => sourceArray;
 
-function message(msg) {
-  console.log(`[images-responsiver] ${msg}`);
-}
-
 const imagesResponsiver = (html, options) => {
+
   // Default settings
   let globalSettings = {
     fallbackWidth: 640,
