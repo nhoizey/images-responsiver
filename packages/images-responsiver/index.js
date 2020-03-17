@@ -32,8 +32,8 @@ const imagesResponsiver = (html, options) => {
     );
   }
 
-  const DOM = new JSDOM(html);
-  const document = DOM.window.document;
+  let DOM = new JSDOM(html);
+  let document = DOM.window.document;
 
   [...document.querySelectorAll(globalSettings.selector)].forEach(image => {
     const imageSrc = image.getAttribute('src');
@@ -114,6 +114,9 @@ const imagesResponsiver = (html, options) => {
   });
 
   let modifiedHtml = DOM.serialize();
+  DOM.window.close();
+  DOM = null;
+
   return modifiedHtml;
 };
 
