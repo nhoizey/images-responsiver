@@ -193,10 +193,9 @@ This other image:
 
 There was no `data-responsiver` attribute, so the `default` preset is used.
 
-A `pristine` value has been added to the image's dataset with the original URL, in case you want to do anything else with it later, provide a zoom link for example.
-
 ## Detailed usage
 
+- A `pristine` value is added to the image's dataset with the original URL, in case you want to do anything else with it later, provide a zoom link for example.
 - Each image can use multiple presets in the `data-responsiver` attribute, each value separated by a space like for classes.
 - Settings from each preset surcharges the previous one(s), in the order they're declared.
 - If a `width` attribute is defined in the image, its value will be used as the maximum fallback or srcset width, if it is smaller than the values from the preset. Additionnaly, if `width` and `height` attributes are both defined in the image, [the page rendering will be faster](https://www.youtube.com/watch?v=4-d_SoCHeWE&feature=youtu.be).
