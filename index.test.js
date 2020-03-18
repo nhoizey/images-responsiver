@@ -13,7 +13,7 @@ function mini(html) {
 
 describe('no image', () => {
   test('keeps intact HTML without image', () => {
-    const content = `<!DOCTYPE html><html><head></head><body><p>Hello</p></body></html>`;
+    const content = `<!DOCTYPE html><html><body><p>Hello</p></body></html>`;
     const transformed = imagesResponsiver(content, {});
     const expected = content;
     expect(mini(transformed)).toEqual(mini(expected));
@@ -22,7 +22,7 @@ describe('no image', () => {
 
 describe('image that can\'t be transformed', () => {
   test('do nothing on SVG image', () => {
-    const content = `<!DOCTYPE html><html><head></head><body><img src="test.svg"></body></html>`;
+    const content = `<!DOCTYPE html><html><body><img src="test.svg"></body></html>`;
     const transformed = imagesResponsiver(content, {});
     const expected = content;
     expect(mini(transformed)).toEqual(mini(expected));
@@ -31,9 +31,9 @@ describe('image that can\'t be transformed', () => {
 
 describe('image without options', () => {
   test('simple image', () => {
-    const content = `<!DOCTYPE html><html><head></head><body><img src="test.png"></body></html>`;
+    const content = `<!DOCTYPE html><html><body><img src="test.png"></body></html>`;
     const transformed = imagesResponsiver(content, {});
-    const expected = `<!DOCTYPE html><html><head></head><body>
+    const expected = `<!DOCTYPE html><html><body>
       <img
         src="test-640.png"
         srcset="
@@ -51,7 +51,7 @@ describe('image without options', () => {
     const content = `<!DOCTYPE html><body>
       <img src="test.png" width="789"></body>`;
     const transformed = imagesResponsiver(content, {});
-    const expected = `<!DOCTYPE html><html><head></head><body>
+    const expected = `<!DOCTYPE html><html><body>
       <img
         src="test-640.png"
         width="789"
@@ -70,7 +70,7 @@ describe('image without options', () => {
     const content = `<!DOCTYPE html><body>
       <img src="test.png" width="543"></body>`;
     const transformed = imagesResponsiver(content, {});
-    const expected = `<!DOCTYPE html><html><head></head><body>
+    const expected = `<!DOCTYPE html><html><body>
       <img
         src="test-543.png"
         width="543"
@@ -88,7 +88,7 @@ describe('image without options', () => {
 
 describe('image with options', () => {
   test('simple image', () => {
-    const content = `<!DOCTYPE html><html><head></head><body><img src="test.png"></body></html>`;
+    const content = `<!DOCTYPE html><html><body><img src="test.png"></body></html>`;
     const transformed = imagesResponsiver(content, {
       presets:
       {
@@ -99,7 +99,7 @@ describe('image with options', () => {
         }
       }
     });
-    const expected = `<!DOCTYPE html><html><head></head><body>
+    const expected = `<!DOCTYPE html><html><body>
       <img
         src="test-640.png"
         srcset="
