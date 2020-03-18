@@ -1,3 +1,5 @@
+'use strict';
+
 const htmlmin = require('html-minifier');
 const imagesResponsiver = require('./index');
 
