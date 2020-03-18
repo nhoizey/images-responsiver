@@ -22,9 +22,6 @@ const options = {
       steps: 3,
       sizes: '(max-width: 44em) 18vw, 8em',
       classes: ['logo']
-    },
-    left: {
-      classes: ['left']
     }
   }
 };
