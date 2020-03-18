@@ -22,6 +22,12 @@ const imagesResponsiver = (html, options) => {
   const defaultResizedImageUrl = (src, width) => src.replace(/^(.*)(\.[^\.]+)$/, "$1-" + width + "$2");
   globalSettings.resizedImageUrl = options.resizedImageUrl || defaultResizedImageUrl;
 
+  const defaultRunBefore = (image) => image;
+  globalSettings.runBefore = options.runBefore || defaultRunBefore;
+
+  const defaultRunAfter = (image) => image;
+  globalSettings.runAfter = options.runAfter || defaultRunAfter;
+
   // Overhide default settings with a "default" preset
   if (options.presets !== undefined && options.presets.default !== undefined) {
     globalSettings = deepmerge(
@@ -46,6 +52,8 @@ const imagesResponsiver = (html, options) => {
   document.documentElement.innerHTML = html;
 
   [...document.querySelectorAll(globalSettings.selector)].forEach(image => {
+    globalSettings.runBefore(image);
+
     const imageSrc = image.getAttribute('src');
 
     if (imageSrc.match(/\.svg$/)) {
@@ -110,6 +118,8 @@ const imagesResponsiver = (html, options) => {
         }
       }
     }
+
+    globalSettings.runAfter(image);
   });
 
   return document.toString();
