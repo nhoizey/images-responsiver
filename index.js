@@ -1,5 +1,6 @@
 'use strict';
 
+const basicHTML = require('basichtml');
 const deepmerge = require('deepmerge');
 const overwriteMerge = (destinationArray, sourceArray, options) => sourceArray;
 
@@ -30,10 +31,19 @@ const imagesResponsiver = (html, options) => {
     );
   }
 
-  const jsdom = require("jsdom");
-  const { JSDOM } = jsdom;
-  let DOM = new JSDOM(html);
-  let document = DOM.window.document;
+  const { document } = basicHTML.init({
+    selector: {
+      // use the module sizzle, it will be required
+      // automatically
+      name: 'sizzle',
+      // how to retrieve results => querySelectorAll
+      $(Sizzle, element, css) {
+        return Sizzle(css, element);
+      }
+    }
+  });
+
+  document.documentElement.innerHTML = html;
 
   [...document.querySelectorAll(globalSettings.selector)].forEach(image => {
     const imageSrc = image.getAttribute('src');
@@ -102,11 +112,7 @@ const imagesResponsiver = (html, options) => {
     }
   });
 
-  let modifiedHtml = DOM.serialize();
-  DOM.window.close();
-  DOM = null;
-
-  return modifiedHtml;
+  return document.toString();
 };
 
 module.exports = imagesResponsiver;
