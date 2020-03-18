@@ -36,7 +36,7 @@
     "np": "6.2.0"
   },
   "dependencies": {
-    "basichtml": "^2.1.5",
+    "basichtml": "^2.2.0",
     "deepmerge": "4.2.2",
     "sizzle": "^2.3.5"
   },
