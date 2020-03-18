@@ -36,8 +36,9 @@
     "np": "6.2.0"
   },
   "dependencies": {
+    "basichtml": "^2.1.4",
     "deepmerge": "4.2.2",
-    "jsdom": "16.2.1"
+    "sizzle": "^2.3.5"
   },
   "bugs": {
     "url": "https://github.com/nhoizey/images-responsiver/issues"
