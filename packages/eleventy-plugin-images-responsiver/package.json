@@ -11,7 +11,7 @@
     "./"
   ],
   "scripts": {
-    "lint": "eslint src --ext js --quiet --fix",
+    "lint": "eslint . --ext js --quiet --fix",
     "release": "np"
   },
   "keywords": [
