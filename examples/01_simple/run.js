@@ -1,7 +1,9 @@
+'use strict';
+
 const fs = require('fs');
 const imagesResponsiver = require('../../index.js');
 
-const srcHtml = fs.readFileSync('page.html', { encoding: 'utf8' });
+const srcHtml = fs.readFileSync('./page.html', { encoding: 'utf8' });
 const options = {
   selector: 'img',
   resizedImageUrl: (src, width) => `${src}?w=${width}`,
