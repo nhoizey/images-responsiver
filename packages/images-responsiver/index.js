@@ -5,7 +5,6 @@ const deepmerge = require('deepmerge');
 const overwriteMerge = (destinationArray, sourceArray, options) => sourceArray;
 
 const imagesResponsiver = (html, options) => {
-
   // Default settings
   let globalSettings = {
     fallbackWidth: 640,
@@ -14,27 +13,28 @@ const imagesResponsiver = (html, options) => {
     steps: 5,
     sizes: '100vw',
     classes: [],
-    attributes: {}
+    attributes: {},
   };
 
-  globalSettings.selector = options.selector || ':not(picture) img:not([srcset]):not([src$=".svg"])';
+  globalSettings.selector =
+    options.selector || ':not(picture) img:not([srcset]):not([src$=".svg"])';
 
-  const defaultResizedImageUrl = (src, width) => src.replace(/^(.*)(\.[^\.]+)$/, "$1-" + width + "$2");
-  globalSettings.resizedImageUrl = options.resizedImageUrl || defaultResizedImageUrl;
+  const defaultResizedImageUrl = (src, width) =>
+    src.replace(/^(.*)(\.[^\.]+)$/, '$1-' + width + '$2');
+  globalSettings.resizedImageUrl =
+    options.resizedImageUrl || defaultResizedImageUrl;
 
-  const defaultRunBefore = (image) => image;
+  const defaultRunBefore = image => image;
   globalSettings.runBefore = options.runBefore || defaultRunBefore;
 
-  const defaultRunAfter = (image) => image;
+  const defaultRunAfter = image => image;
   globalSettings.runAfter = options.runAfter || defaultRunAfter;
 
   // Overhide default settings with a "default" preset
   if (options.presets !== undefined && options.presets.default !== undefined) {
-    globalSettings = deepmerge(
-      globalSettings,
-      options.presets.default,
-      { arrayMerge: overwriteMerge }
-    );
+    globalSettings = deepmerge(globalSettings, options.presets.default, {
+      arrayMerge: overwriteMerge,
+    });
   }
 
   const { document } = basicHTML.init({
@@ -45,12 +45,11 @@ const imagesResponsiver = (html, options) => {
       // how to retrieve results => querySelectorAll
       $(Sizzle, element, css) {
         return Sizzle(css, element);
-      }
-    }
+      },
+    },
   });
 
   document.documentElement.innerHTML = html;
-
   [...document.querySelectorAll(globalSettings.selector)].forEach(image => {
     globalSettings.runBefore(image);
 
@@ -65,8 +64,14 @@ const imagesResponsiver = (html, options) => {
 
     imageSettings.attributes.width = image.getAttribute('width');
     if (imageSettings.attributes.width !== null) {
-      imageSettings.maxWidth = Math.min(imageSettings.maxWidth, imageSettings.attributes.width);
-      imageSettings.fallbackWidth = Math.min(imageSettings.fallbackWidth, imageSettings.attributes.width);
+      imageSettings.maxWidth = Math.min(
+        imageSettings.maxWidth,
+        imageSettings.attributes.width
+      );
+      imageSettings.fallbackWidth = Math.min(
+        imageSettings.fallbackWidth,
+        imageSettings.attributes.width
+      );
     }
 
     imageSettings.attributes.height = image.getAttribute('height');
@@ -75,14 +80,15 @@ const imagesResponsiver = (html, options) => {
     if ('responsiver' in image.dataset) {
       // TODO: Merging preset settings to previous settings should be easier
       image.dataset.responsiver.split(' ').forEach(preset => {
-        if (options.presets !== undefined && options.presets[preset] !== undefined) {
+        if (
+          options.presets !== undefined &&
+          options.presets[preset] !== undefined
+        ) {
           let presetClasses = options.presets[preset].classes || [];
           let existingClasses = imageSettings.classes;
-          imageSettings = deepmerge(
-            imageSettings,
-            options.presets[preset],
-            { arrayMerge: overwriteMerge }
-          );
+          imageSettings = deepmerge(imageSettings, options.presets[preset], {
+            arrayMerge: overwriteMerge,
+          });
           imageSettings.classes = [...existingClasses, ...presetClasses];
         }
       });
@@ -94,13 +100,23 @@ const imagesResponsiver = (html, options) => {
     }
 
     // Change the image source
-    image.setAttribute('src', imageSettings.resizedImageUrl(imageSrc, imageSettings.fallbackWidth));
+    image.setAttribute(
+      'src',
+      imageSettings.resizedImageUrl(imageSrc, imageSettings.fallbackWidth)
+    );
 
     // generate the srcset attribute
     let srcset = [];
     for (let i = 0; i < imageSettings.steps; i++) {
-      let width = Math.ceil(imageSettings.minWidth + (imageSettings.maxWidth - imageSettings.minWidth) / (imageSettings.steps - 1) * i);
-      srcset.push(`${imageSettings.resizedImageUrl(imageSrc, width)} ${width}w`);
+      let width = Math.ceil(
+        imageSettings.minWidth +
+          ((imageSettings.maxWidth - imageSettings.minWidth) /
+            (imageSettings.steps - 1)) *
+            i
+      );
+      srcset.push(
+        `${imageSettings.resizedImageUrl(imageSrc, width)} ${width}w`
+      );
     }
     image.setAttribute('srcset', srcset.join(', '));
 

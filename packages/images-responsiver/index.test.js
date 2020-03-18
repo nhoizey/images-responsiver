@@ -9,7 +9,7 @@ function mini(html) {
     removeComments: true,
     collapseWhitespace: true,
     sortAttributes: true,
-    minifyCSS: true
+    minifyCSS: true,
   });
 }
 
@@ -22,7 +22,7 @@ describe('no image', () => {
   });
 });
 
-describe('image that can\'t be transformed', () => {
+describe("image that can't be transformed", () => {
   test('do nothing on SVG image', () => {
     const content = `<!DOCTYPE html><html><body><img src="test.svg"></body></html>`;
     const transformed = imagesResponsiver(content, {});
@@ -92,14 +92,13 @@ describe('image with options', () => {
   test('simple image', () => {
     const content = `<!DOCTYPE html><html><body><img src="test.png"></body></html>`;
     const transformed = imagesResponsiver(content, {
-      presets:
-      {
+      presets: {
         default: {
           minWidth: 120,
           maxWidth: 320,
-          steps: 3
-        }
-      }
+          steps: 3,
+        },
+      },
     });
     const expected = `<!DOCTYPE html><html><body>
       <img
