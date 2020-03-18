@@ -14,8 +14,8 @@ const options = {
       maxWidth: 1280,
       sizes: '(max-width: 44em) 90vw, 40em',
       attributes: {
-        loading: 'lazy'
-      }
+        loading: 'lazy',
+      },
     },
     logo: {
       fallbackWidth: 128,
@@ -23,9 +23,9 @@ const options = {
       maxWidth: 256,
       steps: 3,
       sizes: '(max-width: 44em) 18vw, 8em',
-      classes: ['logo']
-    }
-  }
+      classes: ['logo'],
+    },
+  },
 };
 const distHtml = imagesResponsiver(srcHtml, options);
 fs.writeFileSync('page-responsive.html', distHtml);

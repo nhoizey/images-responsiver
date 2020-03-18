@@ -8,7 +8,7 @@
     "url": "git+https://github.com/nhoizey/images-responsiver.git"
   },
   "scripts": {
-    "lint": "eslint src --ext js --quiet --fix",
+    "lint": "eslint . --ext js --quiet --fix",
     "test": "jest",
     "release": "np"
   },
