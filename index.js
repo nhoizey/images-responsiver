@@ -50,8 +50,9 @@ const imagesResponsiver = (html, options) => {
   });
 
   document.documentElement.innerHTML = html;
+
   [...document.querySelectorAll(globalSettings.selector)].forEach(image => {
-    globalSettings.runBefore(image);
+    globalSettings.runBefore(image, document);
 
     const imageSrc = image.getAttribute('src');
 
@@ -135,7 +136,7 @@ const imagesResponsiver = (html, options) => {
       }
     }
 
-    globalSettings.runAfter(image);
+    globalSettings.runAfter(image, document);
   });
 
   return document.toString();
