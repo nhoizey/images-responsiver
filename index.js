@@ -17,7 +17,8 @@ const imagesResponsiver = (html, options) => {
   };
 
   globalSettings.selector =
-    options.selector || ':not(picture) img:not([srcset]):not([src$=".svg"])';
+    options.selector ||
+    ':not(picture) img[src]:not([srcset]):not([src$=".svg"])';
 
   const defaultResizedImageUrl = (src, width) =>
     src.replace(/^(.*)(\.[^\.]+)$/, '$1-' + width + '$2');
@@ -51,10 +52,19 @@ const imagesResponsiver = (html, options) => {
 
   document.documentElement.innerHTML = html;
 
-  [...document.querySelectorAll(globalSettings.selector)].forEach(image => {
     globalSettings.runBefore(image, document);
 
     const imageSrc = image.getAttribute('src');
+  [...document.querySelectorAll(globalSettings.selector)]
+    .filter(image => {
+      // filter out images without a src, or not SVG, or with already a srcset
+      return (
+        image.getAttribute('src') !== null &&
+        !image.getAttribute('src').match(/\.svg$/) &&
+        image.getAttribute('srcset') === null
+      );
+    })
+    .forEach(image => {
 
     if (imageSrc.match(/\.svg$/)) {
       // Nothing to do with SVG images
