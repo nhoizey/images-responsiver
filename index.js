@@ -52,9 +52,6 @@ const imagesResponsiver = (html, options) => {
 
   document.documentElement.innerHTML = html;
 
-    globalSettings.runBefore(image, document);
-
-    const imageSrc = image.getAttribute('src');
   [...document.querySelectorAll(globalSettings.selector)]
     .filter(image => {
       // filter out images without a src, or not SVG, or with already a srcset
@@ -65,89 +62,87 @@ const imagesResponsiver = (html, options) => {
       );
     })
     .forEach(image => {
+      globalSettings.runBefore(image, document);
 
-    if (imageSrc.match(/\.svg$/)) {
-      // Nothing to do with SVG images
-      return;
-    }
+      const imageSrc = image.getAttribute('src');
 
-    let imageSettings = globalSettings;
+      let imageSettings = globalSettings;
 
-    imageSettings.attributes.width = image.getAttribute('width');
-    if (imageSettings.attributes.width !== null) {
-      imageSettings.maxWidth = Math.min(
-        imageSettings.maxWidth,
-        imageSettings.attributes.width
+      imageSettings.attributes.width = image.getAttribute('width');
+      if (imageSettings.attributes.width !== null) {
+        imageSettings.maxWidth = Math.min(
+          imageSettings.maxWidth,
+          imageSettings.attributes.width
+        );
+        imageSettings.fallbackWidth = Math.min(
+          imageSettings.fallbackWidth,
+          imageSettings.attributes.width
+        );
+      }
+
+      imageSettings.attributes.height = image.getAttribute('height');
+
+      // Overhide settings with presets named in the image classes
+      if ('responsiver' in image.dataset) {
+        // TODO: Merging preset settings to previous settings should be easier
+        image.dataset.responsiver.split(' ').forEach(preset => {
+          if (
+            options.presets !== undefined &&
+            options.presets[preset] !== undefined
+          ) {
+            let presetClasses = options.presets[preset].classes || [];
+            let existingClasses = imageSettings.classes;
+            imageSettings = deepmerge(imageSettings, options.presets[preset], {
+              arrayMerge: overwriteMerge,
+            });
+            imageSettings.classes = [...existingClasses, ...presetClasses];
+          }
+        });
+        delete image.dataset.responsiver;
+      }
+
+      if (imageSettings.classes.length > 0) {
+        image.classList.add(...imageSettings.classes);
+      }
+
+      // Change the image source
+      image.setAttribute(
+        'src',
+        imageSettings.resizedImageUrl(imageSrc, imageSettings.fallbackWidth)
       );
-      imageSettings.fallbackWidth = Math.min(
-        imageSettings.fallbackWidth,
-        imageSettings.attributes.width
-      );
-    }
 
-    imageSettings.attributes.height = image.getAttribute('height');
+      // generate the srcset attribute
+      let srcset = [];
+      for (let i = 0; i < imageSettings.steps; i++) {
+        let width = Math.ceil(
+          imageSettings.minWidth +
+            ((imageSettings.maxWidth - imageSettings.minWidth) /
+              (imageSettings.steps - 1)) *
+              i
+        );
+        srcset.push(
+          `${imageSettings.resizedImageUrl(imageSrc, width)} ${width}w`
+        );
+      }
+      image.setAttribute('srcset', srcset.join(', '));
 
-    // Overhide settings with presets named in the image classes
-    if ('responsiver' in image.dataset) {
-      // TODO: Merging preset settings to previous settings should be easier
-      image.dataset.responsiver.split(' ').forEach(preset => {
-        if (
-          options.presets !== undefined &&
-          options.presets[preset] !== undefined
-        ) {
-          let presetClasses = options.presets[preset].classes || [];
-          let existingClasses = imageSettings.classes;
-          imageSettings = deepmerge(imageSettings, options.presets[preset], {
-            arrayMerge: overwriteMerge,
-          });
-          imageSettings.classes = [...existingClasses, ...presetClasses];
-        }
-      });
-      delete image.dataset.responsiver;
-    }
+      // add sizes attribute
+      image.setAttribute('sizes', imageSettings.sizes);
 
-    if (imageSettings.classes.length > 0) {
-      image.classList.add(...imageSettings.classes);
-    }
+      // add 'data-pristine' attribute with URL of the pristine image
+      image.dataset.pristine = imageSrc;
 
-    // Change the image source
-    image.setAttribute(
-      'src',
-      imageSettings.resizedImageUrl(imageSrc, imageSettings.fallbackWidth)
-    );
-
-    // generate the srcset attribute
-    let srcset = [];
-    for (let i = 0; i < imageSettings.steps; i++) {
-      let width = Math.ceil(
-        imageSettings.minWidth +
-          ((imageSettings.maxWidth - imageSettings.minWidth) /
-            (imageSettings.steps - 1)) *
-            i
-      );
-      srcset.push(
-        `${imageSettings.resizedImageUrl(imageSrc, width)} ${width}w`
-      );
-    }
-    image.setAttribute('srcset', srcset.join(', '));
-
-    // add sizes attribute
-    image.setAttribute('sizes', imageSettings.sizes);
-
-    // add 'data-pristine' attribute with URL of the pristine image
-    image.dataset.pristine = imageSrc;
-
-    // Add attributes from the preset
-    if (Object.keys(imageSettings.attributes).length > 0) {
-      for (const attribute in imageSettings.attributes) {
-        if (imageSettings.attributes[attribute] !== null) {
-          image.setAttribute(attribute, imageSettings.attributes[attribute]);
+      // Add attributes from the preset
+      if (Object.keys(imageSettings.attributes).length > 0) {
+        for (const attribute in imageSettings.attributes) {
+          if (imageSettings.attributes[attribute] !== null) {
+            image.setAttribute(attribute, imageSettings.attributes[attribute]);
+          }
         }
       }
-    }
 
-    globalSettings.runAfter(image, document);
-  });
+      globalSettings.runAfter(image, document);
+    });
 
   return document.toString();
 };
