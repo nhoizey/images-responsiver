@@ -38,7 +38,6 @@
     "@11ty/eleventy": ">=0.10.0"
   },
   "devDependencies": {
-    "@11ty/eleventy": "0.10.0",
     "eslint": "6.8.0",
     "eslint-config-prettier": "6.10.0",
     "eslint-plugin-prettier": "3.1.2",
@@ -46,7 +45,7 @@
     "np": "6.2.0"
   },
   "dependencies": {
-    "images-responsiver": "0.15.0"
+    "images-responsiver": "1.0.0"
   },
   "bugs": {
     "url": "https://github.com/nhoizey/eleventy-plugin-images-responsiver/issues"
