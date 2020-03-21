@@ -1,6 +1,5 @@
 # eleventy-plugin-images-responsiver
 
-[![Build Status](https://travis-ci.org/nhoizey/eleventy-plugin-images-responsiver.svg?branch=master)](https://travis-ci.org/nhoizey/eleventy-plugin-images-responsiver)
 [![GitHub stars](https://img.shields.io/github/stars/nhoizey/eleventy-plugin-images-responsiver.svg?style=social)](https://github.com/nhoizey/eleventy-plugin-images-responsiver/stargazers)
 
 **`eleventy-plugin-images-responsiver` is a simple solution for most responsive images needs with [Eleventy](https://www.11ty.dev/)**.
@@ -15,9 +14,9 @@ Knowing that [`<picture>` is only required for rare advanced usages](https://clo
 
 ## Documentation
 
-- [Installation](./installation.html)
-- [Usage](./usage.html)
-- [Examples](./examples.html)
+- [Installation](https://nhoizey.github.io/eleventy-plugin-images-responsiver/installation.html)
+- [Usage](https://nhoizey.github.io/eleventy-plugin-images-responsiver/usage.html)
+- [Examples](https://nhoizey.github.io/eleventy-plugin-images-responsiver/examples.html)
 
 *To be continued…*
 
