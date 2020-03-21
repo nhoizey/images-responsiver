@@ -1,5 +1,5 @@
 ---
-title: How eleventy-plugin-images-responsiver is used on nicolas-hoizey.com
+title: nicolas-hoizey.com
 ---
 
 For my own site <https://nicolas-hoizey.com/>, each article has it’s own folder, with the Markdown file and image(s).
