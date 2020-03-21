@@ -1,6 +1,4 @@
----
-title: Usage on nicolas-hoizey.com
----
+# Usage on nicolas-hoizey.com
 
 For my own site <https://nicolas-hoizey.com/>, each article has it’s own folder, with the Markdown file and image(s).
 
