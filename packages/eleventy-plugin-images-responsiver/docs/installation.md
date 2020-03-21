@@ -1,3 +1,5 @@
+[< Back home](/eleventy-plugin-images-responsiver/)
+
 # Installation
 
 To install and use `eleventy-plugin-images-responsiver` with Eleventy:
