@@ -309,6 +309,7 @@ You have to define how these multiple width images are generated:
 - you can transform them yourself with an asynchronous batch script, but that might be difficult if you don't know the widths there will be in the HTML
 - you can use the `runAfter` hook to get the list of images to compute after the HTML is transformed
 - you can use dynamic image rendering, computing the required image when it is requested by the browser
+
  - either with your self hosted solution, with [a simple PHP script](https://css-tricks.com/snippets/php/server-side-image-resizer/) for example, or [thumbor](http://thumbor.org/), an "open-source smart on-demand image cropping, resizing and filters" solution
  - or with an image CDN like Cloudinary, Imgix, Akamai Image Manager, etc.
 
