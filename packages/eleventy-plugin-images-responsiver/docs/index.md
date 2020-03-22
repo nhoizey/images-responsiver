@@ -4,7 +4,7 @@
 
 **`eleventy-plugin-images-responsiver` is a simple solution for most responsive images needs with [Eleventy](https://www.11ty.dev/)**.
 
-It allows authors to use the simple and standard Markdown syntax for images (`![alt text](image.jpg "caption text")`) and yet get responsive images in the generated HTML, with `srcset` and `sizes` attributes.
+It allows authors to use the simple and standard Markdown syntax for images (`![alt text](image.jpg "title text")`) and yet get responsive images in the generated HTML, with `srcset` and `sizes` attributes.
 
 Responsive Images are difficult to implement, but they're **required to provide a good performance to Web users**.
 
@@ -15,7 +15,7 @@ Knowing that [`<picture>` is only required for rare advanced usages](https://clo
 ## Documentation
 
 - [Installation](https://nhoizey.github.io/eleventy-plugin-images-responsiver/installation.html)
-- [Usage](https://nhoizey.github.io/eleventy-plugin-images-responsiver/usage.html)
+- [Usage: step by step tutorial](https://nhoizey.github.io/eleventy-plugin-images-responsiver/usage.html)
 - [Examples](https://nhoizey.github.io/eleventy-plugin-images-responsiver/examples.html)
 
 *To be continued…*
