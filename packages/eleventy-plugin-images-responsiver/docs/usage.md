@@ -96,19 +96,9 @@ But each image is available in only one single dimension (large probably), even 
 
 Now add `eleventy-plugin-images-responsiver`, without any configuration, to enhance it.
 
-The HTML from above is then transformed to this one:
+The body of HTML from above is then transformed to this one:
 
 ```html
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My illustrated post</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-
 <body>
   <div class="container">
     <h1>My illustrated post</h1>
@@ -138,8 +128,6 @@ The HTML from above is then transformed to this one:
       </p>
   </div>
 </body>
-
-</html>
 ```
 
 The situation is already better, because users with small viewports (and reasonable screen densities) will download smaller images.
@@ -207,16 +195,6 @@ To:
 With this configuration and updated content, the result is much better:
 
 ```html
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My illustrated post</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-
 <body>
   <div class="container">
     <h1>My illustrated post</h1>
@@ -232,7 +210,7 @@ With this configuration and updated content, the result is much better:
     <p>Here is a simple image:</p>
     <p>
       <img
-        src="my-office.jpg?w=640"
+        src="my-office-640.jpg"
         srcset="
           my-office-320.jpg 320w,
           my-office-880.jpg 880w,
@@ -240,8 +218,7 @@ With this configuration and updated content, the result is much better:
           my-office-2000.jpg 2000w,
           my-office-2560.jpg 2560w"
         sizes="(max-width: 45em) 90vw, 40em"
-        data-pristine="my-office.jpg"
-        loading="lazy" />
+        data-pristine="my-office.jpg" />
       </p>
   </div>
 </body>
@@ -275,25 +252,16 @@ We can add this attribute multiple ways:
 - We can use the [`markdown-it-imsize` plugin](https://github.com/tatsy/markdown-it-imsize) with the `autofill` option, so that image width and height are added automatically (I didn't try yet)
 - Or we can use the `runBefore` hook in the plugin options to run a function that will add these width and height before any responsive transformation. That's [what I currently do for my site](./nicolashoizeycom.html).
 
-If the pristine image for the logo is `400px` wide, the result is now even better:
+If the pristine image for the logo is `400px` wide, and the other pristine image is `1600px` wide, the result is now even better:
 
 ```html
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My illustrated post</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-
 <body>
   <div class="container">
     <h1>My illustrated post</h1>
     <img
       src="my-logo-128.png"
       width="400"
+      height="400"
       class="logo"
       srcset="
         my-logo-58.png 58w,
@@ -304,7 +272,9 @@ If the pristine image for the logo is `400px` wide, the result is now even bette
     <p>Here is a simple image:</p>
     <p>
       <img
-        src="my-office.jpg?w=640"
+        src="my-office-640.jpg"
+        width="1600"
+        height="1200"
         srcset="
           my-office-320.jpg 320w,
           my-office-880.jpg 880w,
@@ -312,8 +282,7 @@ If the pristine image for the logo is `400px` wide, the result is now even bette
           my-office-2000.jpg 2000w,
           my-office-2560.jpg 2560w"
         sizes="(max-width: 45em) 90vw, 40em"
-        data-pristine="my-office.jpg"
-        loading="lazy" />
+        data-pristine="my-office.jpg" />
       </p>
   </div>
 </body>
@@ -334,3 +303,12 @@ We should also update the CSS so that we don't try to render the image larger th
 # Ok, but where and when are my-logo-58.png, my-logo-285.png, etc. generated?
 
 *To be continued…*
+
+# We can further enhance the image
+
+## Adding classes
+
+## Adding attributes
+
+## Running hooks before and after transformation
+
