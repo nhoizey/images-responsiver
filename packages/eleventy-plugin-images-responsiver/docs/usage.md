@@ -149,10 +149,10 @@ Let's define presets, and configuration options attached to them.
 
 First, we define a `default` preset that will be used for all images where the author doesn't tell anything special.
 
-```json
-{
-  "default": {
-    "sizes": "(max-width: 45em) 90vw, 40em"
+```javascript
+const options = {
+  default: {
+    sizes: '(max-width: 45em) 90vw, 40em'
   }
 }
 ```
@@ -161,17 +161,17 @@ We set the default `sizes` attribute value, considering we will never have any i
 
 We now need to add a specific preset for the logo, which has different needs:
 
-```json
-{
-  "default": {
-    "sizes": "(max-width: 45em) 90vw, 40em"
+```javascript
+const options = {
+  default: {
+    sizes: '(max-width: 45em) 90vw, 40em'
   },
-  "logo": {
-    "minWidth": 58,
-    "maxWidth": 512,
-    "steps": 3,
-    "fallbackWidth": 128,
-    "sizes": "(max-width: 45em) 18vw, 8em"
+  logo: {
+    minWidth: 58,
+    maxWidth: 512,
+    steps: 3,
+    fallbackWidth: 128,
+    sizes: '(max-width: 45em) 18vw, 8em'
   }
 }
 ```
@@ -302,9 +302,67 @@ We should also update the CSS so that we don't try to render the image larger th
 
 # Ok, but where and when are my-logo-58.png, my-logo-285.png, etc. generated?
 
-*To be continued…*
+`eleventy-plugin-images-responsiver` doesn't transform images files, it "only" transforms HTML.
+
+You have to define how these multiple width images are generated:
+
+- you can transform them yourself with an asynchronous batch script, but that might be difficult if you don't know the widths there will be in the HTML
+- you can use the `runAfter` hook to get the list of images to compute after the HTML is transformed
+- you can use dynamic image rendering, computing the required image when it is requested by the browser
+ - either with your self hosted solution, with [a simple PHP script](https://css-tricks.com/snippets/php/server-side-image-resizer/) for example, or [thumbor](http://thumbor.org/), an "open-source smart on-demand image cropping, resizing and filters" solution
+ - or with an image CDN like Cloudinary, Imgix, Akamai Image Manager, etc.
+
+These different solutions might require specific URL for the images to compute.
+
+## Defining your own URL format
+
+That's why you can use the `resizedImageUrl` function in the options of the plugin. This is the default function:
+
+```javascript
+const defaultResizedImageUrl = (src, width) =>
+    src.replace(/^(.*)(\.[^\.]+)$/, '$1-' + width + '$2');
+```
+
+You can define your own simple function if the width has to be a `w` query parameter:
+
+```javascript
+const options = {
+  resizedImageUrl: (src, width) => `${src}?w=${width}`,
+  default: {
+    sizes: '(max-width: 45em) 90vw, 40em'
+  },
+  logo: {
+    minWidth: 58,
+    maxWidth: 512,
+    steps: 3,
+    fallbackWidth: 128,
+    sizes: '(max-width: 45em) 18vw, 8em'
+  }
+}
+```
+
+## Using an image CDN
+
+For Cloudinary ([sign-up for free](https://nho.io/cloudinary-signup), it should be enough for most personal sites), like explained in [the exemple usage from nicolas-hoizey.com](./nicolashoizeycom.html), here is the `resizedImageUrl` function:
+
+```javascript
+(src, width) =>
+  `https://res.cloudinary.com/nho/image/fetch/q_auto,f_auto,w_${width}/${src}`,
+```
+
+Here, `nho` is the cloud name, linked to my own Cloudinary account.
+
+This URL will:
+
+- resize the pristine image (`${src}`) to the desired width (`w_${width}`),
+- chose the best compression level without sacrificing quality (`q_auto`),
+- and chose the best encoding format depending of the browser capacity (`f_auto`), for example `WebP`, even if the pristine image is a `JPEG`.
+
+Relying on a third party service might make some fear of losing control, but resizing and optimizing images as much and as good as such services is really hard, and it requires computing power and storage space. Here, it requires "just" an URL.
 
 # We can further enhance the image
+
+*To be continued…*
 
 ## Adding classes
 
