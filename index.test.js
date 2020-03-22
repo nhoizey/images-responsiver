@@ -125,4 +125,54 @@ describe('image with options', () => {
           data-pristine="test.png" /></body></html>`;
     expect(mini(transformed)).toEqual(mini(expected));
   });
+
+  test('width attribute superior to the fallback', () => {
+    const content = `<!DOCTYPE html><body>
+      <img src="test.png" width="789"></body>`;
+    const transformed = imagesResponsiver(content, {
+      presets: {
+        default: {
+          fallbackWidth: 480,
+        },
+      },
+    });
+    const expected = `<!DOCTYPE html><html><body>
+      <img
+        src="test-480.png"
+        width="789"
+        srcset="
+          test-320.png 320w,
+          test-438.png 438w,
+          test-555.png 555w,
+          test-672.png 672w,
+          test-789.png 789w"
+          sizes="100vw"
+          data-pristine="test.png" /></body></html>`;
+    expect(mini(transformed)).toEqual(mini(expected));
+  });
+
+  test('width attribute inferior to the fallback', () => {
+    const content = `<!DOCTYPE html><body>
+      <img src="test.png" width="420"></body>`;
+    const transformed = imagesResponsiver(content, {
+      presets: {
+        default: {
+          fallbackWidth: 480,
+        },
+      },
+    });
+    const expected = `<!DOCTYPE html><html><body>
+      <img
+        src="test-420.png"
+        width="420"
+        srcset="
+          test-320.png 320w,
+          test-345.png 345w,
+          test-370.png 370w,
+          test-395.png 395w,
+          test-420.png 420w"
+          sizes="100vw"
+          data-pristine="test.png" /></body></html>`;
+    expect(mini(transformed)).toEqual(mini(expected));
+  });
 });
