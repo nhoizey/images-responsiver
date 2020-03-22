@@ -163,8 +163,8 @@ First, we define a `default` preset that will be used for all images where the a
 
 ```json
 {
-  default: {
-    sizes: '(max-width: 45em) 90vw, 40em'
+  "default": {
+    "sizes": "(max-width: 45em) 90vw, 40em"
   }
 }
 ```
@@ -175,15 +175,15 @@ We now need to add a specific preset for the logo, which has different needs:
 
 ```json
 {
-  default: {
-    sizes: '(max-width: 45em) 90vw, 40em'
+  "default": {
+    "sizes": "(max-width: 45em) 90vw, 40em"
   },
-  logo: {
-    minWidth: 58,
-    maxWidth: 512,
-    steps: 3,
-    fallbackWidth: 128,
-    sizes: '(max-width: 45em) 18vw, 8em'
+  "logo": {
+    "minWidth": 58,
+    "maxWidth": 512,
+    "steps": 3,
+    "fallbackWidth": 128,
+    "sizes": "(max-width: 45em) 18vw, 8em"
   }
 }
 ```
