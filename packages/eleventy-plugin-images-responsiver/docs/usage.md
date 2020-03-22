@@ -23,6 +23,7 @@ Notice that it uses the `markdown-it-attrs` plugin to be able to add a `logo` cl
 
 Add this Eleventy layout (using Nunjucks, but it doesn't really matter either) to build an HTML page: `post.njk`
 
+<!-- {% raw %} -->
 ```nunjucks
 <!DOCTYPE html>
 <html lang="en">
@@ -43,6 +44,7 @@ Add this Eleventy layout (using Nunjucks, but it doesn't really matter either) t
 
 </html>
 ```
+<!-- {% endraw %} -->
 
 And this CSS file: `styles.css`
 
