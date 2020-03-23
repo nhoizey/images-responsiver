@@ -1,4 +1,4 @@
-[< Back home](/images-responsiver/)
+[< Back home](/images-responsiver/#documentation)
 
 # Usage: step by step tutorial
 
