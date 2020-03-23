@@ -16,7 +16,7 @@ layout: post.njk
 
 Here is a simple image:
 
-![A photo of my office](my-office.jpg "This is my beautiful office")
+![A photo of my office](my-office.jpg 'This is my beautiful office')
 ```
 
 Notice that it uses the `markdown-it-attrs` plugin to be able to add a `logo` class to the image, as suggested in the [installation](./installation.html).
@@ -24,6 +24,7 @@ Notice that it uses the `markdown-it-attrs` plugin to be able to add a `logo` cl
 Add this Eleventy layout (using Nunjucks, but it doesn't really matter either) to build an HTML page: `post.njk`
 
 <!-- {% raw %} -->
+
 ```nunjucks
 <!DOCTYPE html>
 <html lang="en">
@@ -44,6 +45,7 @@ Add this Eleventy layout (using Nunjucks, but it doesn't really matter either) t
 
 </html>
 ```
+
 <!-- {% endraw %} -->
 
 And this CSS file: `styles.css`
@@ -68,23 +70,27 @@ Without `eleventy-plugin-images-responsiver`, the HTML for the page would be:
 ```html
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My illustrated post</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My illustrated post</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-
-<body>
-  <div class="container">
-    <h1>My illustrated post</h1>
-    <img src="my-logo.png" alt="My logo" class="logo" />
-    <p>Here is a simple image:</p>
-    <p><img src="my-office.jpg" alt="A photo of my office" title="This is my beautiful office" /></p>
-  </div>
-</body>
-
+  <body>
+    <div class="container">
+      <h1>My illustrated post</h1>
+      <img src="my-logo.png" alt="My logo" class="logo" />
+      <p>Here is a simple image:</p>
+      <p>
+        <img
+          src="my-office.jpg"
+          alt="A photo of my office"
+          title="This is my beautiful office"
+        />
+      </p>
+    </div>
+  </body>
 </html>
 ```
 
@@ -106,26 +112,30 @@ The body of HTML from above is then transformed to this one:
       src="my-logo-640.png"
       class="logo"
       srcset="
-        my-logo-320.jpg 320w,
-        my-logo-880.jpg 880w,
+        my-logo-320.jpg   320w,
+        my-logo-880.jpg   880w,
         my-logo-1440.jpg 1440w,
         my-logo-2000.jpg 2000w,
-        my-logo-2560.jpg 2560w"
+        my-logo-2560.jpg 2560w
+      "
       sizes="100vw"
-      data-pristine="my-logo.png" />
+      data-pristine="my-logo.png"
+    />
     <p>Here is a simple image:</p>
     <p>
       <img
         src="my-office-640.jpg"
         srcset="
-          my-office-320.jpg 320w,
-          my-office-880.jpg 880w,
+          my-office-320.jpg   320w,
+          my-office-880.jpg   880w,
           my-office-1440.jpg 1440w,
           my-office-2000.jpg 2000w,
-          my-office-2560.jpg 2560w"
+          my-office-2560.jpg 2560w
+        "
         sizes="100vw"
-        data-pristine="my-office.jpg" />
-      </p>
+        data-pristine="my-office.jpg"
+      />
+    </p>
   </div>
 </body>
 ```
@@ -135,8 +145,8 @@ The situation is already better, because users with small viewports (and reasona
 But there are a few issues:
 
 - The `sizes` attributes with a `100vw` value tells the browser that the image will be rendered on the full width of the viewport, but that's not what we want:
- - We know the second image (`my-office.jpg`) should occupy only the width of the content, which per CSS rules is `90vw` with a maximum of `40em`. This `40em` width for the content is reached when the viewport reaches `40 / 0.9 = 45em` (rounded). So we should be able to set a `sizes` attribute with the value `(max-width: 45em) 90vw, 40em` (or `(min-width: 45em) 40em, 90vw` but the result is the same).
- - For the logo (the first image), we need one fifth of the content width, so the `sizes` attribute value is simple math from the previous one: `(max-width: 45em) 18vw, 8em`.
+  - We know the second image (`my-office.jpg`) should occupy only the width of the content, which per CSS rules is `90vw` with a maximum of `40em`. This `40em` width for the content is reached when the viewport reaches `40 / 0.9 = 45em` (rounded). So we should be able to set a `sizes` attribute with the value `(max-width: 45em) 90vw, 40em` (or `(min-width: 45em) 40em, 90vw` but the result is the same).
+  - For the logo (the first image), we need one fifth of the content width, so the `sizes` attribute value is simple math from the previous one: `(max-width: 45em) 18vw, 8em`.
 - If the maximum width for the logo is `8em`, on largest viewports, most users have a browser with a default root font size of `16px`, so these `8em` are computed to `128px`. Let's consider the user is on a high density display ("Retina" for Apple), so double it, and that [the user might need to increase the font size for readability](https://nicolas-hoizey.com/articles/2018/06/15/users-do-change-font-size/), so double it a second time. We need then an image with a maximum useful width of `512px`. We see the HTML tells the browser that the maximum width for the image is `2560px` (the `w` descriptor is the "`w`idth in pixels"). Far beyond what we need! We should be able to set a maximum (and sometimes a minimum) for the sequence of image widths in the `srcset` attribute.
 
 These issues exist because there is no default configuration that would be correct for all use cases. You have to tell the plugin what to do with the images:
@@ -152,9 +162,9 @@ First, we define a `default` preset that will be used for all images where the a
 ```javascript
 const options = {
   default: {
-    sizes: '(max-width: 45em) 90vw, 40em'
-  }
-}
+    sizes: '(max-width: 45em) 90vw, 40em',
+  },
+};
 ```
 
 We set the default `sizes` attribute value, considering we will never have any image larger than the content. It overrides the plugin's default value of `100vw`.
@@ -164,16 +174,16 @@ We now need to add a specific preset for the logo, which has different needs:
 ```javascript
 const options = {
   default: {
-    sizes: '(max-width: 45em) 90vw, 40em'
+    sizes: '(max-width: 45em) 90vw, 40em',
   },
   logo: {
     minWidth: 58,
     maxWidth: 512,
     steps: 3,
     fallbackWidth: 128,
-    sizes: '(max-width: 45em) 18vw, 8em'
-  }
-}
+    sizes: '(max-width: 45em) 18vw, 8em',
+  },
+};
 ```
 
 The logo takes one fifth of the content width, so on small `320px` viewports with normal screen density it needs `320px * 90% * 1/5 = 58px` (rounded), and on largest viewports on Retina screens, it needs `512px` as we showed earlier. We also tel the plugin that 3 different image widths should be enough, instead of the default 5. Finally, `fallbackWidth` is the width of the image we put in the `src` attribute for compatibility with really old browsers.
@@ -236,19 +246,20 @@ Even if we set a maximum width lower than `2560px` (like `512px` for the logo), 
 
 We should be able to tell the plugin about the actual width of the pristine image. Why invent a new parameter, we already have the `width` attribute in HTML, let's use it, the plugin can read it.
 
-*NB: it's anyway always a good idea to have the `width` and `height` attributes defined in images, as [it will help the page rendering performance](https://www.youtube.com/watch?v=4-d_SoCHeWE).*
+_NB: it's anyway always a good idea to have the `width` and `height` attributes defined in images, as [it will help the page rendering performance](https://www.youtube.com/watch?v=4-d_SoCHeWE)._
 
 We can add this attribute multiple ways:
 
 - We can add it manually in our Markdown with `{width=400}` for example:
 
   `![My logo](my-logo.png){.logo}{data-responsiver=logo}`
-  
+
   becomes
 
   `![My logo](my-logo.png){.logo}{data-responsiver=logo}{width=400}`
-  
+
   Pretty cumbersome for authors.
+
 - We can use the [`markdown-it-imsize` plugin](https://github.com/tatsy/markdown-it-imsize) with the `autofill` option, so that image width and height are added automatically (I didn't try yet)
 - Or we can use the `runBefore` hook in the plugin options to run a function that will add these width and height before any responsive transformation. That's [what I currently do for my site](./nicolashoizeycom.html).
 
@@ -320,7 +331,7 @@ That's why you can use the `resizedImageUrl` function in the options of the plug
 
 ```javascript
 const defaultResizedImageUrl = (src, width) =>
-    src.replace(/^(.*)(\.[^\.]+)$/, '$1-' + width + '$2');
+  src.replace(/^(.*)(\.[^\.]+)$/, '$1-' + width + '$2');
 ```
 
 You can define your own simple function if the width has to be a `w` query parameter:
@@ -329,19 +340,23 @@ You can define your own simple function if the width has to be a `w` query param
 const options = {
   resizedImageUrl: (src, width) => `${src}?w=${width}`,
   default: {
-    sizes: '(max-width: 45em) 90vw, 40em'
+    sizes: '(max-width: 45em) 90vw, 40em',
   },
   logo: {
     minWidth: 58,
     maxWidth: 512,
     steps: 3,
     fallbackWidth: 128,
-    sizes: '(max-width: 45em) 18vw, 8em'
-  }
-}
+    sizes: '(max-width: 45em) 18vw, 8em',
+  },
+};
 ```
 
 ## Using an image CDN
+
+Relying on a third party service might make some fear of losing control, but resizing and optimizing images as much and as good as such services is really hard, and it requires computing power and storage space. Here, it requires "just" an URL.
+
+### Using Cloudinary
 
 For Cloudinary ([sign-up for free](https://nho.io/cloudinary-signup), it should be enough for most personal sites), like explained in [the exemple usage from nicolas-hoizey.com](./nicolashoizeycom.html), here is the `resizedImageUrl` function:
 
@@ -358,15 +373,18 @@ This URL will:
 - chose the best compression level without sacrificing quality (`q_auto`),
 - and chose the best encoding format depending of the browser capacity (`f_auto`), for example `WebP`, even if the pristine image is a `JPEG`.
 
-Relying on a third party service might make some fear of losing control, but resizing and optimizing images as much and as good as such services is really hard, and it requires computing power and storage space. Here, it requires "just" an URL.
+### Using other image CDNs
+
+Feel free to submit a [Pull Request](https://github.com/nhoizey/images-responsiver/pulls) to enhance documentation with other Image CDN examples.
 
 # We can further enhance the image
 
-*To be continued…*
+_To be continued…_
 
 ## Adding classes
 
 ## Adding attributes
 
-## Running hooks before and after transformation
+https://web.dev/native-lazy-loading/
 
+## Running hooks before and after transformation
