@@ -4,7 +4,7 @@ const basicHTML = require('basichtml');
 const deepmerge = require('deepmerge');
 const overwriteMerge = (destinationArray, sourceArray, options) => sourceArray;
 
-const imagesResponsiver = (html, options) => {
+const imagesResponsiver = (html, options = {}) => {
   // Default settings
   let globalSettings = {
     fallbackWidth: 640,
