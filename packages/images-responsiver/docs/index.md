@@ -11,7 +11,7 @@ Responsive Images are difficult to implement, but they're **required to provide 
 
 Knowing that [`<picture>` is only required for rare advanced usages](https://cloudfour.com/thinks/dont-use-picture-most-of-the-time/), **`images-responsiver` should be enough for most use cases**.
 
-`images-responsiver` is also available as a plugin for [Eleventy](https://www.11ty.dev/), a great Static Site Generator: [eleventy-plugin-images-responsiver](https://github.com/nhoizey/eleventy-plugin-images-responsiver). It allows authors to use the simple and standard Markdown syntax for images (`![alt text](image.jpg "title text")`) and yet get responsive images in the generated HTML, with `srcset` and `sizes` attributes.
+`images-responsiver` is also available as a plugin for [Eleventy](https://www.11ty.dev/), a great Static Site Generator: [eleventy-plugin-images-responsiver](https://github.com/nhoizey/eleventy-plugin-images-responsiver). It allows authors to use the simple and standard Markdown syntax for images (`![alt text](image.jpg)`) and yet get responsive images in the generated HTML, with `srcset` and `sizes` attributes.
 
 ## Documentation
 
