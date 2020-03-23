@@ -16,7 +16,7 @@ function mini(html) {
 describe('no image', () => {
   test('keeps intact HTML without image', () => {
     const content = `<!DOCTYPE html><html><body><p>Hello</p></body></html>`;
-    const transformed = imagesResponsiver(content, {});
+    const transformed = imagesResponsiver(content);
     const expected = content;
     expect(mini(transformed)).toEqual(mini(expected));
   });
@@ -25,21 +25,21 @@ describe('no image', () => {
 describe("image that can't be transformed", () => {
   test('do nothing on SVG image', () => {
     const content = `<!DOCTYPE html><html><body><img src="test.svg"></body></html>`;
-    const transformed = imagesResponsiver(content, {});
+    const transformed = imagesResponsiver(content);
     const expected = content;
     expect(mini(transformed)).toEqual(mini(expected));
   });
 
   test('do nothing on image without a src', () => {
     const content = `<!DOCTYPE html><html><body><img alt="not really an image"></body></html>`;
-    const transformed = imagesResponsiver(content, {});
+    const transformed = imagesResponsiver(content);
     const expected = content;
     expect(mini(transformed)).toEqual(mini(expected));
   });
 
   test('do nothing on image with already a srcset', () => {
     const content = `<!DOCTYPE html><html><body><img src="test.png" srcset="test.png 320w"></body></html>`;
-    const transformed = imagesResponsiver(content, {});
+    const transformed = imagesResponsiver(content);
     const expected = content;
     expect(mini(transformed)).toEqual(mini(expected));
   });
@@ -48,7 +48,7 @@ describe("image that can't be transformed", () => {
 describe('image without options', () => {
   test('simple image', () => {
     const content = `<!DOCTYPE html><html><body><img src="test.png"></body></html>`;
-    const transformed = imagesResponsiver(content, {});
+    const transformed = imagesResponsiver(content);
     const expected = `<!DOCTYPE html><html><body>
       <img
         src="test-640.png"
@@ -66,7 +66,7 @@ describe('image without options', () => {
   test('width attribute superior to the fallback', () => {
     const content = `<!DOCTYPE html><body>
       <img src="test.png" width="789"></body>`;
-    const transformed = imagesResponsiver(content, {});
+    const transformed = imagesResponsiver(content);
     const expected = `<!DOCTYPE html><html><body>
       <img
         src="test-640.png"
@@ -85,7 +85,7 @@ describe('image without options', () => {
   test('width attribute inferior to the fallback', () => {
     const content = `<!DOCTYPE html><body>
       <img src="test.png" width="543"></body>`;
-    const transformed = imagesResponsiver(content, {});
+    const transformed = imagesResponsiver(content);
     const expected = `<!DOCTYPE html><html><body>
       <img
         src="test-543.png"
