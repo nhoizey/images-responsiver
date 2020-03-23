@@ -130,7 +130,7 @@ If the pristine image for the logo is `400px` wide, and the other pristine image
 
 <script src="https://gist-it.appspot.com/github/nhoizey/images-responsiver/raw/master/examples/03_dimensions/page.html"></script>
 
-If we run the exact same Node.js script on it (a copy, to be honest):
+If we run the exact same Node.js script on it:
 
 <script src="https://gist-it.appspot.com/github/nhoizey/images-responsiver/raw/master/examples/03_dimensions/run.js"></script>
 
@@ -144,17 +144,17 @@ We should also update the CSS so that we don't try to render the image larger th
 
 # Ok, but where and when are my-logo-58.png, my-logo-285.png, etc. generated?
 
-`eleventy-plugin-images-responsiver` doesn't transform images files, it "only" transforms HTML.
+`images-responsiver` doesn't transform images files, it "only" transforms HTML. That's already a lot, as you should have noticed.
 
 You have to define how these multiple width images are generated:
 
 - you can transform them yourself with an asynchronous batch script, but that might be difficult if you don't know the widths there will be in the HTML
-- you can use the `runAfter` hook to get the list of images to compute after the HTML is transformed
-- you can use dynamic image rendering, computing the required image when it is requested by the browser
+- you can parse the enhanced HTML to list the images you need, either outside `images-responsiver` or thanks to the `runAfter` parameter, which is a hook function that runs at the end of the transformation
+- you can use dynamic image rendering, computing the required image on the server when it is requested by the browser
   - either with your self hosted solution, with [a simple PHP script](https://css-tricks.com/snippets/php/server-side-image-resizer/) for example, or [thumbor](http://thumbor.org/), an "open-source smart on-demand image cropping, resizing and filters" solution
   - or with an image CDN like Cloudinary, Imgix, Akamai Image Manager, etc.
 
-These different solutions might require specific URL for the images to compute.
+Some of these solutions might require specific URL for the images to compute, they might not be compatible with image names like `my-logo-58.png`.
 
 ## Defining your own URL format
 
@@ -165,23 +165,21 @@ const defaultResizedImageUrl = (src, width) =>
   src.replace(/^(.*)(\.[^\.]+)$/, '$1-' + width + '$2');
 ```
 
-You can define your own simple function if the width has to be a `w` query parameter:
+It transforms `(my-logo.png, 58)` into `my-logo-58.png`.
+
+You can define your own simple function to replace the default one.
+
+For example, if the width has to be a `w` query parameter:
 
 ```javascript
 const options = {
+  …,
   resizedImageUrl: (src, width) => `${src}?w=${width}`,
-  default: {
-    sizes: '(max-width: 45em) 90vw, 40em',
-  },
-  logo: {
-    minWidth: 58,
-    maxWidth: 512,
-    steps: 3,
-    fallbackWidth: 128,
-    sizes: '(max-width: 45em) 18vw, 8em',
-  },
+  …,
 };
 ```
+
+It will transform `(my-logo.png, 58)` into `my-logo.png?w=58`.
 
 ## Using an image CDN
 
