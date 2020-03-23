@@ -4,53 +4,13 @@
 
 ## Default behavior without the plugin
 
-Let's say you have this HTML file: `page.html`
+Let's say you have [this HTML file: `page.html`](https://github.com/nhoizey/images-responsiver/blob/master/examples/01_default/page.html):
 
 <script src="https://gist-it.appspot.com/github/nhoizey/images-responsiver/raw/master/examples/01_default/page.html"></script>
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My illustrated page</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-
-  <body>
-    <div class="container">
-      <h1>My illustrated page</h1>
-      <img src="my-logo.png" alt="My logo" class="logo" />
-      <p>Here is a simple image:</p>
-      <p>
-        <img
-          src="my-office.jpg"
-          alt="A photo of my office"
-          title="This is my beautiful office"
-        />
-      </p>
-    </div>
-  </body>
-</html>
-```
-
-And this CSS file: `styles.css`
+And [this CSS file: `styles.css`](https://github.com/nhoizey/images-responsiver/blob/master/examples/01_default/styles.css):
 
 <script src="https://gist-it.appspot.com/github/nhoizey/images-responsiver/raw/master/examples/01_default/styles.css"></script>
-
-```css
-.container {
-  width: 90vw;
-  max-width: 40em;
-}
-
-.logo {
-  width: 20%;
-  float: right;
-  margin: 0 0 1em 1em;
-}
-```
 
 We want the content to occupy 90% of the available space (but no more than `40em`, better for readability of multi-lines text), and the logo to use 50% of this content width, floated on the right.
 
@@ -60,9 +20,9 @@ But each image is available in only one single dimension (large probably), even 
 
 ## Enhanced behavior with `images-responsiver` and default configuration
 
-Now run `images-responsiver` on the HTML to enhance it.
+Now let's try to run `images-responsiver` on the HTML to enhance it.
 
-You can use this Node.js script for example: `run.js`
+You can use [this Node.js script: `run.js`](https://github.com/nhoizey/images-responsiver/blob/master/examples/01_default/run.js)
 
 <script src="https://gist-it.appspot.com/github/nhoizey/images-responsiver/raw/master/examples/01_default/run.js"></script>
 
@@ -72,45 +32,9 @@ Run it from the command line:
 node run.js
 ```
 
-You'll get the enhanced page in a new HTML file: `page-enhanced.html`
+You'll get the enhanced page in [this new HTML file: `page-enhanced.html`](https://github.com/nhoizey/images-responsiver/blob/master/examples/01_default/page-enhanced.html)
 
-The body of HTML from above is then transformed to this one:
-
-```html
-<body>
-  <div class="container">
-    <h1>My illustrated post</h1>
-    <img
-      src="my-logo-640.png"
-      class="logo"
-      srcset="
-        my-logo-320.jpg   320w,
-        my-logo-880.jpg   880w,
-        my-logo-1440.jpg 1440w,
-        my-logo-2000.jpg 2000w,
-        my-logo-2560.jpg 2560w
-      "
-      sizes="100vw"
-      data-pristine="my-logo.png"
-    />
-    <p>Here is a simple image:</p>
-    <p>
-      <img
-        src="my-office-640.jpg"
-        srcset="
-          my-office-320.jpg   320w,
-          my-office-880.jpg   880w,
-          my-office-1440.jpg 1440w,
-          my-office-2000.jpg 2000w,
-          my-office-2560.jpg 2560w
-        "
-        sizes="100vw"
-        data-pristine="my-office.jpg"
-      />
-    </p>
-  </div>
-</body>
-```
+<script src="https://gist-it.appspot.com/github/nhoizey/images-responsiver/raw/master/examples/01_default/page-enhanced.html"></script>
 
 The situation is already better, because users with small viewports (and reasonable screen densities) will download smaller images.
 
