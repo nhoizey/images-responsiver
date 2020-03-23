@@ -1,14 +1,14 @@
 [< Back home](/images-responsiver/#documentation)
 
-# Usage: step by step tutorial
+# Tutorial
 
 ## Default behavior without the plugin
 
-Let's say you have [this HTML file: `page.html`](https://github.com/nhoizey/images-responsiver/blob/master/examples/01_default/page.html):
+Let's say you have [this HTML file: `page.html`](https://github.com/nhoizey/images-responsiver/blob/master/examples/01_default/page.html)
 
 <script src="https://gist-it.appspot.com/github/nhoizey/images-responsiver/raw/master/examples/01_default/page.html"></script>
 
-And [this CSS file: `styles.css`](https://github.com/nhoizey/images-responsiver/blob/master/examples/01_default/styles.css):
+And [this CSS file: `styles.css`](https://github.com/nhoizey/images-responsiver/blob/master/examples/01_default/styles.css)
 
 <script src="https://gist-it.appspot.com/github/nhoizey/images-responsiver/raw/master/examples/01_default/styles.css"></script>
 
@@ -36,24 +36,26 @@ You'll get the enhanced page in [this new HTML file: `page-enhanced.html`](https
 
 <script src="https://gist-it.appspot.com/github/nhoizey/images-responsiver/raw/master/examples/01_default/page-enhanced.html"></script>
 
-The situation is already better, because users with small viewports (and reasonable screen densities) will download smaller images.
+*Note: a `pristine` value is added to the image's dataset with the original URL, in case you want to do anything else with it later (provide a "zoom" link for example).*
+
+The situation is better, because users with small viewports (and reasonable screen densities) will download smaller images.
 
 But there are a few issues:
 
 - The `sizes` attributes with a `100vw` value tells the browser that the image will be rendered on the full width of the viewport, but that's not what we want:
-  - We know the second image (`my-office.jpg`) should occupy only the width of the content, which per CSS rules is `90vw` with a maximum of `40em`. This `40em` width for the content is reached when the viewport reaches `40 / 0.9 = 45em` (rounded). So we should be able to set a `sizes` attribute with the value `(max-width: 45em) 90vw, 40em` (or `(min-width: 45em) 40em, 90vw` but the result is the same).
+  - We know the second image (`my-photo.jpg`) should occupy only the width of the content, which per CSS rules is `90vw` with a maximum of `40em`. This `40em` width for the content is reached when the viewport reaches `40 / 0.9 = 45em` (rounded). So we should be able to set a `sizes` attribute with the value `(max-width: 45em) 90vw, 40em` (or `(min-width: 45em) 40em, 90vw` but the result is the same).
   - For the logo (the first image), we need one fifth of the content width, so the `sizes` attribute value is simple math from the previous one: `(max-width: 45em) 18vw, 8em`.
-- If the maximum width for the logo is `8em`, on largest viewports, most users have a browser with a default root font size of `16px`, so these `8em` are computed to `128px`. Let's consider the user is on a high density display ("Retina" for Apple), so double it, and that [the user might need to increase the font size for readability](https://nicolas-hoizey.com/articles/2018/06/15/users-do-change-font-size/), so double it a second time. We need then an image with a maximum useful width of `512px`. We see the HTML tells the browser that the maximum width for the image is `2560px` (the `w` descriptor is the "`w`idth in pixels"). Far beyond what we need! We should be able to set a maximum (and sometimes a minimum) for the sequence of image widths in the `srcset` attribute.
+- If the maximum width for the logo is `8em` on largest viewports, and most users have a browser with a default root font size of `16px`, these `8em` are computed to `128px`. Let's consider the user is on a high density display ("Retina" in Apple language), so double it, and that [the user might need to increase the font size for readability](https://nicolas-hoizey.com/articles/2018/06/15/users-do-change-font-size/), so double it a second time. We then need an image with a maximum useful width of `512px`. We see the HTML tells the browser that the maximum width for the image is `2560px` (the `w` descriptor is the "`w`idth in pixels"). Far beyond what we need! We should be able to set a maximum (and sometimes a minimum) for the sequence of image widths in the `srcset` attribute.
 
 These issues exist because there is no default configuration that would be correct for all use cases. You have to tell the plugin what to do with the images:
 
 ## Enhanced behavior with some configuration
 
-We need different `sizes` attribute values for different images, but we don't want to repeat them for each images, and give content authors (even if that's us) as little to do as possible so that they focus on content.
+We need different `sizes` attribute values for different image use cases, but we don't want to repeat them for each images, and we want to provide content authors (even if that's us) with something as simple as possible so that they can focus on content.
 
-Let's define presets, and configuration options attached to them.
+Let's define **presets**, and configuration options attached to them.
 
-First, we define a `default` preset that will be used for all images where the author doesn't tell anything special.
+First, we define a `default` preset that will be used for all images where the author doesn't set anything special.
 
 ```javascript
 const options = {
@@ -82,55 +84,29 @@ const options = {
 };
 ```
 
-The logo takes one fifth of the content width, so on small `320px` viewports with normal screen density it needs `320px * 90% * 1/5 = 58px` (rounded), and on largest viewports on Retina screens, it needs `512px` as we showed earlier. We also tel the plugin that 3 different image widths should be enough, instead of the default 5. Finally, `fallbackWidth` is the width of the image we put in the `src` attribute for compatibility with really old browsers.
+The logo takes one fifth of the content width, so on small `320px` viewports with normal screen density it needs `320px * 90% * 1/5 = 58px` (rounded), and on largest viewports on Retina screens, it needs `512px` as we showed earlier.
 
-We also need to let content authors specify that an image should use one of the presets, if the default one is not good. We use a data attribute named `data-responsiver`, with the name of the preset as the value.
+We also tel the plugin with `steps` that 3 different image widths should be enough, instead of the default 5.
 
-So for example, we change the Markdown for the logo from:
+Finally, `fallbackWidth` is the width of the image we put in the `src` attribute for compatibility with really old browsers. Most of these browsers are desktop ones, so don't a value too small.
 
-```markdown
-![My logo](my-logo.png){.logo}
+We also need a way for content authors to specify what preset an image should use, if the default one is not enough. We will use a `data-responsiver` data attribute, with the name of the preset as the value.
+
+So for example, we change the HTML for the logo from:
+
+```html
+<img src="my-logo.png" alt="My logo" class="logo" />
 ```
 
 To:
 
-```markdown
-![My logo](my-logo.png){.logo}{data-responsiver=logo}
-```
-
-With this configuration and updated content, the result is much better:
-
 ```html
-<body>
-  <div class="container">
-    <h1>My illustrated post</h1>
-    <img
-      src="my-logo-128.png"
-      class="logo"
-      srcset="
-        my-logo-58.png 58w,
-        my-logo-285.png 285w,
-        my-logo-512.png 512w"
-      sizes="(max-width: 45em) 18vw, 8em"
-      data-pristine="my-logo.png" />
-    <p>Here is a simple image:</p>
-    <p>
-      <img
-        src="my-office-640.jpg"
-        srcset="
-          my-office-320.jpg 320w,
-          my-office-880.jpg 880w,
-          my-office-1440.jpg 1440w,
-          my-office-2000.jpg 2000w,
-          my-office-2560.jpg 2560w"
-        sizes="(max-width: 45em) 90vw, 40em"
-        data-pristine="my-office.jpg" />
-      </p>
-  </div>
-</body>
-
-</html>
+<img src="my-logo.png" alt="My logo" class="logo" data-responsiver="logo" />
 ```
+
+We can now run [this updated Node.js script: `run.js`](https://github.com/nhoizey/images-responsiver/blob/master/examples/02_simple/run.js)
+
+<script src="https://gist-it.appspot.com/github/nhoizey/images-responsiver/raw/master/examples/02_simple/page-enhanced.html"></script>
 
 This is really much better, the browser will download images with much smaller dimensions (and weight), yet large enough for a great rendering.
 
@@ -284,3 +260,13 @@ _To be continued…_
 https://web.dev/native-lazy-loading/
 
 ## Running hooks before and after transformation
+
+
+## Additional informations
+
+- Each image can use multiple presets in the `data-responsiver` attribute, each value separated by a space like for classes.
+- Settings from each preset surcharges the previous one(s), in the order they're declared.
+- If a `width` attribute is defined in the image, its value will be used as the maximum fallback or srcset width, if it is smaller than the values from the preset. Additionnaly, if `width` and `height` attributes are both defined in the image, [the page rendering will be faster](https://www.youtube.com/watch?v=4-d_SoCHeWE&feature=youtu.be).
+
+
+- `images-responsiver` don't do anything to SVG images.

@@ -16,10 +16,8 @@ Knowing that [`<picture>` is only required for rare advanced usages](https://clo
 ## Documentation
 
 - [Installation](https://nhoizey.github.io/images-responsiver/installation.html)
-- [Usage: step by step tutorial](https://nhoizey.github.io/images-responsiver/usage.html)
+- [Tutorial](https://nhoizey.github.io/images-responsiver/tutorial.html)
 - [Examples](https://nhoizey.github.io/images-responsiver/examples.html)
-
-*To be continued…*
 
 ## Authors
 
