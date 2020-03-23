@@ -173,9 +173,7 @@ For example, if the width has to be a `w` query parameter:
 
 ```javascript
 const options = {
-  …,
   resizedImageUrl: (src, width) => `${src}?w=${width}`,
-  …,
 };
 ```
 
@@ -212,18 +210,23 @@ _To be continued…_
 
 ## Adding classes
 
+_To be continued…_
+
 ## Adding attributes
 
-https://web.dev/native-lazy-loading/
+_To be continued…_
+
+<!-- https://web.dev/native-lazy-loading/ -->
 
 ## Running hooks before and after transformation
 
+_To be continued…_
 
-## Additional informations
+# Additional informations
 
 - Each image can use multiple presets in the `data-responsiver` attribute, each value separated by a space like for classes.
 - Settings from each preset surcharges the previous one(s), in the order they're declared.
-- If a `width` attribute is defined in the image, its value will be used as the maximum fallback or srcset width, if it is smaller than the values from the preset. Additionnaly, if `width` and `height` attributes are both defined in the image, [the page rendering will be faster](https://www.youtube.com/watch?v=4-d_SoCHeWE&feature=youtu.be).
-
-
-- `images-responsiver` don't do anything to SVG images.
+- `images-responsiver` don't do anything to:
+  - SVG images
+  - bitmap images that don't have any `src` attribute
+  - bitmap images that already have a `srcset` attribute
