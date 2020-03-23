@@ -6,6 +6,8 @@
 
 Let's say you have this HTML file: `page.html`
 
+<script src="https://gist-it.appspot.com/github/nhoizey/images-responsiver/raw/master/examples/01_default/page.html"></script>
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -35,6 +37,8 @@ Let's say you have this HTML file: `page.html`
 
 And this CSS file: `styles.css`
 
+<script src="https://gist-it.appspot.com/github/nhoizey/images-responsiver/raw/master/examples/01_default/styles.css"></script>
+
 ```css
 .container {
   width: 90vw;
@@ -59,17 +63,6 @@ But each image is available in only one single dimension (large probably), even 
 Now run `images-responsiver` on the HTML to enhance it.
 
 You can use this Node.js script for example: `run.js`
-
-```javascript
-'use strict';
-
-const fs = require('fs');
-const imagesResponsiver = require('images-responsiver');
-
-const src = fs.readFileSync('./page.html', { encoding: 'utf8' });
-const dist = imagesResponsiver(src);
-fs.writeFileSync('page-enhanced.html', dist);
-```
 
 <script src="https://gist-it.appspot.com/github/nhoizey/images-responsiver/raw/master/examples/01_default/run.js"></script>
 
