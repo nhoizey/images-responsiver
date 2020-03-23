@@ -84,9 +84,9 @@ const options = {
 };
 ```
 
-The logo takes one fifth of the content width, so on small `320px` viewports with normal screen density it needs `320px * 90% * 1/5 = 58px` (rounded), and on largest viewports on Retina screens, it needs `512px` as we showed earlier.
+The logo takes one fifth of the content width, so on small `320px` viewports with normal screen density it needs `320px * 90% * 1/5 = 58px` (rounded), and on largest viewports on Retina screens, it needs `512px` as we computed earlier.
 
-We also tel the plugin with `steps` that 3 different image widths should be enough, instead of the default 5.
+We also tell the plugin with `steps` that 3 different image widths should be enough, instead of the default 5.
 
 Finally, `fallbackWidth` is the width of the image we put in the `src` attribute for compatibility with really old browsers. Most of these browsers are desktop ones, so don't a value too small.
 
@@ -120,72 +120,27 @@ But we might still have an issue:
 
 Even if we set a maximum width lower than `2560px` (like `512px` for the logo), we should not be able to define a width that is larger than the actual width of the pristine image, the largest we have before any computing. If we do that, we lie to the browser, and it might render the image at the width we told him, instead of the actual one, resulting in bad rendered quality.
 
-We should be able to tell the plugin about the actual width of the pristine image. Why invent a new parameter, we already have the `width` attribute in HTML, let's use it, the plugin can read it.
+So we should be able to tell the plugin about the actual width of the pristine image.
 
-_NB: it's anyway always a good idea to have the `width` and `height` attributes defined in images, as [it will help the page rendering performance](https://www.youtube.com/watch?v=4-d_SoCHeWE)._
+Why invent a new parameter? We already have the `width` attribute in HTML, let's use it, `images-responsiver` can read it.
 
-We can add this attribute multiple ways:
+*Note: it's anyway always a good idea to have the `width` and `height` attributes defined in images, as [it will enhance the page rendering performance](https://www.youtube.com/watch?v=4-d_SoCHeWE).*
 
-- We can add it manually in our Markdown with `{width=400}` for example:
+If the pristine image for the logo is `400px` wide, and the other pristine image is `1600px` wide, here's our new source HTML:
 
-  `![My logo](my-logo.png){.logo}{data-responsiver=logo}`
+<script src="https://gist-it.appspot.com/github/nhoizey/images-responsiver/raw/master/examples/03_dimensions/page.html"></script>
 
-  becomes
+If we run the exact same Node.js script on it (a copy, to be honest):
 
-  `![My logo](my-logo.png){.logo}{data-responsiver=logo}{width=400}`
+<script src="https://gist-it.appspot.com/github/nhoizey/images-responsiver/raw/master/examples/03_dimensions/run.js"></script>
 
-  Pretty cumbersome for authors.
+The result is further improved:
 
-- We can use the [`markdown-it-imsize` plugin](https://github.com/tatsy/markdown-it-imsize) with the `autofill` option, so that image width and height are added automatically (I didn't try yet)
-- Or we can use the `runBefore` hook in the plugin options to run a function that will add these width and height before any responsive transformation. That's [what I currently do for my site](./nicolashoizeycom.html).
-
-If the pristine image for the logo is `400px` wide, and the other pristine image is `1600px` wide, the result is now even better:
-
-```html
-<body>
-  <div class="container">
-    <h1>My illustrated post</h1>
-    <img
-      src="my-logo-128.png"
-      width="400"
-      height="400"
-      class="logo"
-      srcset="
-        my-logo-58.png 58w,
-        my-logo-285.png 285w,
-        my-logo-400.png 400w"
-      sizes="(max-width: 45em) 18vw, 8em"
-      data-pristine="my-logo.png" />
-    <p>Here is a simple image:</p>
-    <p>
-      <img
-        src="my-office-640.jpg"
-        width="1600"
-        height="1200"
-        srcset="
-          my-office-320.jpg 320w,
-          my-office-880.jpg 880w,
-          my-office-1440.jpg 1440w,
-          my-office-2000.jpg 2000w,
-          my-office-2560.jpg 2560w"
-        sizes="(max-width: 45em) 90vw, 40em"
-        data-pristine="my-office.jpg" />
-      </p>
-  </div>
-</body>
-
-</html>
-```
+<script src="https://gist-it.appspot.com/github/nhoizey/images-responsiver/raw/master/examples/03_dimensions/page-enhanced.html"></script>
 
 We should also update the CSS so that we don't try to render the image larger than it is. `width` can be replaced with `max-width`:
 
-```css
-.logo {
-  max-width: 20%;
-  float: right;
-  margin: 0 0 1em 1em;
-}
-```
+<script src="https://gist-it.appspot.com/github/nhoizey/images-responsiver/raw/master/examples/03_dimensions/styles.css"></script>
 
 # Ok, but where and when are my-logo-58.png, my-logo-285.png, etc. generated?
 
