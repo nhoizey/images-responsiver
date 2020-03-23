@@ -71,7 +71,7 @@ const dist = imagesResponsiver(src);
 fs.writeFileSync('page-enhanced.html', dist);
 ```
 
-<script src="http://gist-it.appspot.com/github/nhoizey/images-responsiver/raw/master/examples/01_default/run.js"></script>
+<script src="https://gist-it.appspot.com/github/nhoizey/images-responsiver/raw/master/examples/01_default/run.js"></script>
 
 Run it from the command line:
 
