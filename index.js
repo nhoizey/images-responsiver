@@ -25,10 +25,10 @@ const imagesResponsiver = (html, options = {}) => {
   globalSettings.resizedImageUrl =
     options.resizedImageUrl || defaultResizedImageUrl;
 
-  const defaultRunBefore = image => image;
+  const defaultRunBefore = (image) => image;
   globalSettings.runBefore = options.runBefore || defaultRunBefore;
 
-  const defaultRunAfter = image => image;
+  const defaultRunAfter = (image) => image;
   globalSettings.runAfter = options.runAfter || defaultRunAfter;
 
   // Overhide default settings with a "default" preset
@@ -53,7 +53,7 @@ const imagesResponsiver = (html, options = {}) => {
   document.documentElement.innerHTML = html;
 
   [...document.querySelectorAll(globalSettings.selector)]
-    .filter(image => {
+    .filter((image) => {
       // filter out images without a src, or not SVG, or with already a srcset
       return (
         image.getAttribute('src') !== null &&
@@ -61,7 +61,7 @@ const imagesResponsiver = (html, options = {}) => {
         image.getAttribute('srcset') === null
       );
     })
-    .forEach(image => {
+    .forEach((image) => {
       globalSettings.runBefore(image, document);
 
       const imageSrc = image.getAttribute('src');
@@ -85,7 +85,7 @@ const imagesResponsiver = (html, options = {}) => {
       // Overhide settings with presets named in the image classes
       if ('responsiver' in image.dataset) {
         // TODO: Merging preset settings to previous settings should be easier
-        image.dataset.responsiver.split(' ').forEach(preset => {
+        image.dataset.responsiver.split(' ').forEach((preset) => {
           if (
             options.presets !== undefined &&
             options.presets[preset] !== undefined
