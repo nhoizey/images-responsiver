@@ -4,11 +4,11 @@
 
 ## Default behavior without the plugin
 
-Let's say you have [this HTML file: `page.html`](https://github.com/nhoizey/images-responsiver/blob/master/examples/01_default/page.html)
+Let's say you have this HTML file:
 
 <script src="https://gist-it.appspot.com/github/nhoizey/images-responsiver/raw/master/examples/01_default/page.html"></script>
 
-And [this CSS file: `styles.css`](https://github.com/nhoizey/images-responsiver/blob/master/examples/01_default/styles.css)
+And this CSS file:
 
 <script src="https://gist-it.appspot.com/github/nhoizey/images-responsiver/raw/master/examples/01_default/styles.css"></script>
 
@@ -22,7 +22,7 @@ But each image is available in only one single dimension (large probably), even 
 
 Now let's try to run `images-responsiver` on the HTML to enhance it.
 
-You can use [this Node.js script: `run.js`](https://github.com/nhoizey/images-responsiver/blob/master/examples/01_default/run.js)
+You can use this Node.js script:
 
 <script src="https://gist-it.appspot.com/github/nhoizey/images-responsiver/raw/master/examples/01_default/run.js"></script>
 
@@ -32,7 +32,7 @@ Run it from the command line:
 node run.js
 ```
 
-You'll get the enhanced page in [this new HTML file: `page-enhanced.html`](https://github.com/nhoizey/images-responsiver/blob/master/examples/01_default/page-enhanced.html)
+You'll get the enhanced page in this new HTML file:
 
 <script src="https://gist-it.appspot.com/github/nhoizey/images-responsiver/raw/master/examples/01_default/page-enhanced.html"></script>
 
@@ -104,7 +104,11 @@ To:
 <img src="my-logo.png" alt="My logo" class="logo" data-responsiver="logo" />
 ```
 
-We can now run [this updated Node.js script: `run.js`](https://github.com/nhoizey/images-responsiver/blob/master/examples/02_simple/run.js)
+We can now run this updated Node.js script:
+
+<script src="https://gist-it.appspot.com/github/nhoizey/images-responsiver/raw/master/examples/02_simple/run.js"></script>
+
+Here's the new enhanced HTML that we get:
 
 <script src="https://gist-it.appspot.com/github/nhoizey/images-responsiver/raw/master/examples/02_simple/page-enhanced.html"></script>
 
