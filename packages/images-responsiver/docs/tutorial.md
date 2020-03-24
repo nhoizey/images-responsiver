@@ -1,6 +1,7 @@
-[<< Back home](/images-responsiver/#documentation)
+**[<< Back home](/images-responsiver/#documentation)**
+| **[< Installation](/images-responsiver/installation.html)**
 
-[< Installation](/images-responsiver/installation.html)
+----
 
 # Tutorial
 
@@ -237,4 +238,6 @@ _To be continued…_
   - bitmap images that don't have any `src` attribute
   - bitmap images that already have a `srcset` attribute
 
-[Examples >](/images-responsiver/examples.html)
+----
+
+**[Examples >](/images-responsiver/examples.html)**
