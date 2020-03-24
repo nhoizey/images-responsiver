@@ -1,4 +1,4 @@
-| **[<< Back home](/images-responsiver/#documentation)** | **[< Tutorial](/images-responsiver/tutorial.html)** |
+| **[<< Back home](/images-responsiver/#documentation)** | **[< Tutorial step 6](/images-responsiver/tutorial-06-even-better-responsive-images.html)** |
 
 # Examples
 
