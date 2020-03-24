@@ -23,11 +23,11 @@ And this CSS file:
 
 We want the content to occupy 90% of the available space (but no more than `40em`, better for readability of multi-lines text), and the logo to use 50% of this content width, floated on the right.
 
-The page probably looks exactly how you want, thanks to the clean HTML structure and the CSS rules.
-
 You can [open it here](https://nhoizey.github.io/images-responsiver/examples/01-without-images-responsiver/page.html):
 
 
+
+The page probably looks exactly how you want, thanks to the clean HTML structure and the CSS rules.
 
 But each image is available in only one single dimension (large probably), even if people with many different devices/browsers, with different viewport widths, would rather download only what's necessary.
 
