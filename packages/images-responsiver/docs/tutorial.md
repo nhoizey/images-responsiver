@@ -1,4 +1,4 @@
-| **[^ Back home](/images-responsiver/#documentation)** | [< Installation](/images-responsiver/installation.html) |
+| **[ ^ Back home](/images-responsiver/#documentation)** | [< Installation](/images-responsiver/installation.html) |
 
 # Tutorial
 
