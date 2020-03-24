@@ -1,8 +1,17 @@
 | **[<< Back home](/images-responsiver/#documentation)** | **[< Tutorial step 4](/images-responsiver/tutorial-04-images-dimensions.html)** |
 
-# Tutorial
+# Tutorial step 5: Dealing with images filenames and URLs
 
-## Step 5: Dealing with images filenames and URLs
+----
+
+- [Step 1: Default behavior without `images-responsiver`](https://nhoizey.github.io/images-responsiver/tutorial-01-without-images-responsiver.html)
+- [Step 2: Better behavior with `images-responsiver` and default configuration](https://nhoizey.github.io/images-responsiver/tutorial-02-images-responsiver-default.html)
+- [Step 3: Enhanced behavior with some configuration](https://nhoizey.github.io/images-responsiver/tutorial-03-images-responsiver-simple.html)
+- [Step 4: Making it more robust with image dimensions](https://nhoizey.github.io/images-responsiver/tutorial-04-images-dimensions.html)
+- **Step 5: Dealing with images filenames and URLs**
+- [Step 6: Even better responsive images](https://nhoizey.github.io/images-responsiver/tutorial-06-even-better-responsive-images.html)
+
+----
 
 `images-responsiver` doesn't transform images files, it "only" transforms HTML. That's already a lot, as you should have noticed.
 
@@ -16,7 +25,7 @@ You have to define how these multiple width images are generated:
 
 Some of these solutions might require specific URL for the images to compute, they might not be compatible with image names like `my-logo-58.png`.
 
-### Defining your own URL format
+## Defining your own URL format
 
 That's why you can use the `resizedImageUrl` function in `images-responsiver` options. This is the default function:
 
@@ -39,11 +48,11 @@ const options = {
 
 It will transform `(my-logo.png, 58)` into `my-logo.png?w=58`.
 
-### Using an image CDN
+## Using an image CDN
 
 Relying on a third party service might make some fear of losing control, but resizing and optimizing images as much and as good as such services is really hard, and it requires computing power and storage space. Here, it requires "just" an URL.
 
-#### Using Cloudinary
+### Using Cloudinary
 
 For Cloudinary ([sign-up for free](https://nho.io/cloudinary-signup), it should be enough for most personal sites), like explained in [the exemple usage from nicolas-hoizey.com](./nicolashoizeycom.html), here is the `resizedImageUrl` function:
 
@@ -60,7 +69,7 @@ This URL will:
 - chose the best compression level without sacrificing quality (`q_auto`),
 - and chose the best encoding format depending of the browser capacity (`f_auto`), for example `WebP`, even if the pristine image is a `JPEG`.
 
-#### Using other image CDNs
+### Using other image CDNs
 
 Feel free to submit a [Pull Request](https://github.com/nhoizey/images-responsiver/pulls) to enhance documentation with other Image CDN examples.
 

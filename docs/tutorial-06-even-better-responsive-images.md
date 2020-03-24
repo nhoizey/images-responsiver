@@ -1,36 +1,36 @@
 | **[<< Back home](/images-responsiver/#documentation)** | **[< Tutorial step 5](/images-responsiver/tutorial-05-images-urls.html)** |
 
-# Tutorial
+# Tutorial step 6: Even better responsive images
 
-## Step 6: Even better responsive images
+----
+
+- [Step 1: Default behavior without `images-responsiver`](https://nhoizey.github.io/images-responsiver/tutorial-01-without-images-responsiver.html)
+- [Step 2: Better behavior with `images-responsiver` and default configuration](https://nhoizey.github.io/images-responsiver/tutorial-02-images-responsiver-default.html)
+- [Step 3: Enhanced behavior with some configuration](https://nhoizey.github.io/images-responsiver/tutorial-03-images-responsiver-simple.html)
+- [Step 4: Making it more robust with image dimensions](https://nhoizey.github.io/images-responsiver/tutorial-04-images-dimensions.html)
+- [Step 5: Dealing with images filenames and URLs](https://nhoizey.github.io/images-responsiver/tutorial-05-images-urls.html)
+- **Step 6: Even better responsive images**
+
+----
 
 _To be continued…_
 
-### Adding classes
+## Adding classes
 
 _To be continued…_
 
-### Adding attributes
+## Adding attributes
 
 _To be continued…_
 
 <!-- https://web.dev/native-lazy-loading/ -->
 
-### Running hooks before and after transformation
+## Running hooks before and after transformation
 
 _To be continued…_
 
-### Targeting images to transform
+## Targeting images to transform
 
 `selector`
-
-# Additional informations
-
-- Each image can use multiple presets in the `data-responsiver` attribute, each value separated by a space like for classes.
-- Settings from each preset surcharges the previous one(s), in the order they're declared.
-- `images-responsiver` don't do anything to:
-  - SVG images
-  - bitmap images that don't have any `src` attribute
-  - bitmap images that already have a `srcset` attribute
 
 | **[Examples >](/images-responsiver/examples.html)** | **[Back home >>](/images-responsiver/#documentation)** |

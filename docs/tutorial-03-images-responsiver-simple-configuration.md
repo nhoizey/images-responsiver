@@ -1,8 +1,17 @@
 | **[<< Back home](/images-responsiver/#documentation)** | **[< Tutorial step 2](/images-responsiver/tutorial-02-images-responsiver-default.html)** |
 
-# Tutorial
+# Tutorial step 3: Enhanced behavior with some configuration
 
-## Step 3: Enhanced behavior with some configuration
+----
+
+- [Step 1: Default behavior without `images-responsiver`](https://nhoizey.github.io/images-responsiver/tutorial-01-without-images-responsiver.html)
+- [Step 2: Better behavior with `images-responsiver` and default configuration](https://nhoizey.github.io/images-responsiver/tutorial-02-images-responsiver-default.html)
+- **Step 3: Enhanced behavior with some configuration**
+- [Step 4: Making it more robust with image dimensions](https://nhoizey.github.io/images-responsiver/tutorial-04-images-dimensions.html)
+- [Step 5: Dealing with images filenames and URLs](https://nhoizey.github.io/images-responsiver/tutorial-05-images-urls.html)
+- [Step 6: Even better responsive images](https://nhoizey.github.io/images-responsiver/tutorial-06-even-better-responsive-images.html)
+
+----
 
 We need different `sizes` attribute values for different image use cases, but we don't want to repeat them for each images, and we want to provide content authors (even if that's us) with something as simple as possible so that they can focus on content.
 
@@ -56,6 +65,8 @@ To:
 ```html
 <img src="my-logo.png" alt="My logo" class="logo" data-responsiver="logo" />
 ```
+
+_Note: Each image can use multiple presets in the `data-responsiver` attribute, each value separated by a space (like classes). Settings from each preset surcharges the previous one(s), in the order they're declared._
 
 We can now run this updated Node.js script:
 
