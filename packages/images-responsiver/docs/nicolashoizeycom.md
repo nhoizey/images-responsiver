@@ -1,4 +1,4 @@
-| **[ ^ Back home](/images-responsiver/#documentation)** | **[^ Examples](/images-responsiver/examples.html)** |
+| **[ ^ Back home](/images-responsiver/#documentation)** | **[ ^ Examples](/images-responsiver/examples.html)** |
 
 # Usage on nicolas-hoizey.com
 
