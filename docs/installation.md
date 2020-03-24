@@ -1,4 +1,6 @@
-[< Back home](/images-responsiver/#documentation)
+**[< Back home](/images-responsiver/#documentation)**
+
+----
 
 # Installation
 
@@ -10,4 +12,6 @@ From your command line, install `images-responsiver` as a dev dependency:
 npm install images-responsiver --save-dev
 ```
 
-[Tutorial >](/images-responsiver/tutorial.html)
+----
+
+**[Tutorial >](/images-responsiver/tutorial.html)**
