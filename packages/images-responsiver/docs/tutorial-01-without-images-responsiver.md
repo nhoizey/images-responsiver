@@ -1,6 +1,6 @@
 | **[<< Back home](/images-responsiver/#documentation)** | **[< Installation](/images-responsiver/installation.html)** |
 
-# Tutorial step 1: Default behavior without `images-responsiver`
+# Tutorial step 1: Default behavior without images-responsiver
 
 ----
 
