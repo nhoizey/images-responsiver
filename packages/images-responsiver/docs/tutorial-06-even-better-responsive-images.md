@@ -31,6 +31,6 @@ _To be continued…_
 
 ## Targeting images to transform
 
-`selector`
+<!-- `selector` -->
 
 | **[Examples >](/images-responsiver/examples.html)** | **[Back home >>](/images-responsiver/#documentation)** |
