@@ -9,3 +9,5 @@ From your command line, install `images-responsiver` as a dev dependency:
 ```
 npm install images-responsiver --save-dev
 ```
+
+[Tutorial >](/images-responsiver/tutorial.html)
