@@ -1,24 +1,17 @@
 'use strict';
 
-const htmlmin = require('html-minifier');
-const imagesResponsiver = require('./index');
+const prettier = require('prettier');
+const imagesResponsiver = require('../index');
 
-function mini(html) {
-  return htmlmin.minify(html, {
-    useShortDoctype: true,
-    removeComments: true,
-    collapseWhitespace: true,
-    sortAttributes: true,
-    minifyCSS: true,
-  });
+function cleanHtml(html) {
+  return prettier.format(html, { parser: 'html' });
 }
 
 describe('no image', () => {
   test('keeps intact HTML without image', () => {
     const content = `<!DOCTYPE html><html><body><p>Hello</p></body></html>`;
     const transformed = imagesResponsiver(content);
-    const expected = content;
-    expect(mini(transformed)).toEqual(mini(expected));
+    expect(cleanHtml(transformed)).toMatchSnapshot();
   });
 });
 
@@ -26,22 +19,21 @@ describe("image that can't be transformed", () => {
   test('do nothing on SVG image', () => {
     const content = `<!DOCTYPE html><html><body><img src="test.svg"></body></html>`;
     const transformed = imagesResponsiver(content);
-    const expected = content;
-    expect(mini(transformed)).toEqual(mini(expected));
+    expect(cleanHtml(transformed)).toMatchSnapshot();
   });
 
   test('do nothing on image without a src', () => {
     const content = `<!DOCTYPE html><html><body><img alt="not really an image"></body></html>`;
     const transformed = imagesResponsiver(content);
     const expected = content;
-    expect(mini(transformed)).toEqual(mini(expected));
+    expect(cleanHtml(transformed)).toMatchSnapshot();
   });
 
   test('do nothing on image with already a srcset', () => {
     const content = `<!DOCTYPE html><html><body><img src="test.png" srcset="test.png 320w"></body></html>`;
     const transformed = imagesResponsiver(content);
     const expected = content;
-    expect(mini(transformed)).toEqual(mini(expected));
+    expect(cleanHtml(transformed)).toMatchSnapshot();
   });
 });
 
@@ -60,7 +52,7 @@ describe('image without options', () => {
           test-2560.png 2560w"
           sizes="100vw"
           data-pristine="test.png" /></body></html>`;
-    expect(mini(transformed)).toEqual(mini(expected));
+    expect(cleanHtml(transformed)).toMatchSnapshot();
   });
 
   test('width attribute superior to the fallback', () => {
@@ -79,7 +71,7 @@ describe('image without options', () => {
           test-789.png 789w"
           sizes="100vw"
           data-pristine="test.png" /></body></html>`;
-    expect(mini(transformed)).toEqual(mini(expected));
+    expect(cleanHtml(transformed)).toMatchSnapshot();
   });
 
   test('width attribute inferior to the fallback', () => {
@@ -98,7 +90,7 @@ describe('image without options', () => {
           test-543.png 543w"
           sizes="100vw"
           data-pristine="test.png" /></body></html>`;
-    expect(mini(transformed)).toEqual(mini(expected));
+    expect(cleanHtml(transformed)).toMatchSnapshot();
   });
 });
 
@@ -123,7 +115,7 @@ describe('image with options', () => {
           test-320.png 320w"
           sizes="100vw"
           data-pristine="test.png" /></body></html>`;
-    expect(mini(transformed)).toEqual(mini(expected));
+    expect(cleanHtml(transformed)).toMatchSnapshot();
   });
 
   test('width attribute superior to the fallback', () => {
@@ -148,7 +140,7 @@ describe('image with options', () => {
           test-789.png 789w"
           sizes="100vw"
           data-pristine="test.png" /></body></html>`;
-    expect(mini(transformed)).toEqual(mini(expected));
+    expect(cleanHtml(transformed)).toMatchSnapshot();
   });
 
   test('width attribute inferior to the fallback', () => {
@@ -173,6 +165,6 @@ describe('image with options', () => {
           test-420.png 420w"
           sizes="100vw"
           data-pristine="test.png" /></body></html>`;
-    expect(mini(transformed)).toEqual(mini(expected));
+    expect(cleanHtml(transformed)).toMatchSnapshot();
   });
 });
