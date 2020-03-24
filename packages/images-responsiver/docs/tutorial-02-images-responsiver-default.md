@@ -2,7 +2,7 @@
 
 # Tutorial
 
-## Step 2: Enhanced behavior with `images-responsiver` and default configuration
+## Step 2: Better behavior with `images-responsiver` and default configuration
 
 You can use this Node.js script:
 

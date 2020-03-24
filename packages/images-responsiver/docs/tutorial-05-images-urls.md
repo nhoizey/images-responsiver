@@ -2,7 +2,7 @@
 
 # Tutorial
 
-## Step 5: dealing with images filenames and URLs
+## Step 5: Dealing with images filenames and URLs
 
 `images-responsiver` doesn't transform images files, it "only" transforms HTML. That's already a lot, as you should have noticed.
 
