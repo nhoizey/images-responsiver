@@ -1,4 +1,5 @@
-| **[ ^ Back home](/images-responsiver/#documentation)** | **[ ^ Examples](/images-responsiver/examples.html)** |
+| **[ ^ Back home](/images-responsiver/#documentation)** |
+| [ ^ Examples](/images-responsiver/examples.html) |
 
 # Usage on nicolas-hoizey.com
 
@@ -25,4 +26,5 @@ https://github.com/nhoizey/nicolas-hoizey.com/blob/a25262c221ff8f19e129352fd67df
 
 Here, I’m using Cloudinary ([sign-up for free](https://nho.io/cloudinary-signup), at least to try) to resize (and optimize) images, so I don’t have to compute any image on my local build.
 
-| **[ ^ Examples](/images-responsiver/examples.html)** | **[ ^ Back home](/images-responsiver/#documentation)** |
+| [ v Examples](/images-responsiver/examples.html) |
+| **[ V Back home](/images-responsiver/#documentation)** |
