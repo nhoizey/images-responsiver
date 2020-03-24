@@ -70,11 +70,11 @@ _Note: Each image can use multiple presets in the `data-responsiver` attribute, 
 
 We can now run this updated Node.js script:
 
-<script src="https://gist-it.appspot.com/github/nhoizey/images-responsiver/raw/master/docs/examples/03-images-responsiver-simple-configuration/run.js"></script>
+<script src="https://gist-it.appspot.com/github/nhoizey/images-responsiver/raw/master/docs/examples/03-images-responsiver-simple-configuration/run.js?footer=minimal"></script>
 
 Here's the new enhanced HTML that we get:
 
-<script src="https://gist-it.appspot.com/github/nhoizey/images-responsiver/raw/master/docs/examples/03-images-responsiver-simple-configuration/page-enhanced.html"></script>
+<script src="https://gist-it.appspot.com/github/nhoizey/images-responsiver/raw/master/docs/examples/03-images-responsiver-simple-configuration/page-enhanced.html?footer=minimal"></script>
 
 This is really much better, the browser will download images with much smaller dimensions (and weight), yet large enough for a great rendering.
 
