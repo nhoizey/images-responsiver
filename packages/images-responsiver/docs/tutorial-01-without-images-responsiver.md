@@ -15,11 +15,11 @@
 
 Let's say you have this HTML file:
 
-<script src="https://gist-it.appspot.com/github/nhoizey/images-responsiver/raw/master/examples/01_default/page.html"></script>
+<script src="https://gist-it.appspot.com/github/nhoizey/images-responsiver/raw/master/docs/examples/01_default/page.html"></script>
 
 And this CSS file:
 
-<script src="https://gist-it.appspot.com/github/nhoizey/images-responsiver/raw/master/examples/01_default/styles.css"></script>
+<script src="https://gist-it.appspot.com/github/nhoizey/images-responsiver/raw/master/docs/examples/01_default/styles.css"></script>
 
 We want the content to occupy 90% of the available space (but no more than `40em`, better for readability of multi-lines text), and the logo to use 50% of this content width, floated on the right.
 

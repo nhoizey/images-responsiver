@@ -15,7 +15,7 @@
 
 You can use this Node.js script:
 
-<script src="https://gist-it.appspot.com/github/nhoizey/images-responsiver/raw/master/examples/01_default/run.js"></script>
+<script src="https://gist-it.appspot.com/github/nhoizey/images-responsiver/raw/master/docs/examples/02-images-responsiver-default/run.js"></script>
 
 Run it from the command line:
 
@@ -25,7 +25,7 @@ node run.js
 
 You'll get the enhanced page in this new HTML file:
 
-<script src="https://gist-it.appspot.com/github/nhoizey/images-responsiver/raw/master/examples/01_default/page-enhanced.html"></script>
+<script src="https://gist-it.appspot.com/github/nhoizey/images-responsiver/raw/master/docs/examples/02-images-responsiver-default/page-enhanced.html"></script>
 
 _Note: a `pristine` value is added to the image's dataset with the original URL, in case you want to do anything else with it later (provide a "zoom" link for example)._
 

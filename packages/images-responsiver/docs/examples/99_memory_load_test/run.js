@@ -1,9 +1,9 @@
 'use strict';
 
 const fs = require('fs');
-const imagesResponsiver = require('../../index.js');
+const imagesResponsiver = require('../../../index.js');
 
-const toMB = bytes => Math.floor(bytes / 1024 / 1024);
+const toMB = (bytes) => Math.floor(bytes / 1024 / 1024);
 
 const srcHtml = fs.readFileSync('./page.html', { encoding: 'utf8' });
 let distHtml;
