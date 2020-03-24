@@ -23,19 +23,19 @@ _Note: it's anyway always a good idea to have the `width` and `height` attribute
 
 If the pristine image for the logo is `400px` wide, and the other pristine image is `1600px` wide, here's our new source HTML:
 
-<script src="https://gist-it.appspot.com/github/nhoizey/images-responsiver/raw/master/docs/examples/04-images-dimensions/page.html"></script>
+<script src="https://gist-it.appspot.com/github/nhoizey/images-responsiver/raw/master/docs/examples/04-images-dimensions/page.html?footer=minimal"></script>
 
 If we run the exact same Node.js script on it:
 
-<script src="https://gist-it.appspot.com/github/nhoizey/images-responsiver/raw/master/docs/examples/04-images-dimensions/run.js"></script>
+<script src="https://gist-it.appspot.com/github/nhoizey/images-responsiver/raw/master/docs/examples/04-images-dimensions/run.js?footer=minimal"></script>
 
 The result is further improved:
 
-<script src="https://gist-it.appspot.com/github/nhoizey/images-responsiver/raw/master/docs/examples/04-images-dimensions/page-enhanced.html"></script>
+<script src="https://gist-it.appspot.com/github/nhoizey/images-responsiver/raw/master/docs/examples/04-images-dimensions/page-enhanced.html?footer=minimal"></script>
 
 We should also update the CSS so that we don't try to render the image larger than it is. `width` can be replaced with `max-width`:
 
-<script src="https://gist-it.appspot.com/github/nhoizey/images-responsiver/raw/master/docs/examples/04-images-dimensions/styles.css"></script>
+<script src="https://gist-it.appspot.com/github/nhoizey/images-responsiver/raw/master/docs/examples/04-images-dimensions/styles.css?footer=minimal"></script>
 
 Ok, but where and when are my-logo-58.png, my-logo-285.png, etc. generated?
 
