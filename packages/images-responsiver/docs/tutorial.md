@@ -36,7 +36,7 @@ You'll get the enhanced page in this new HTML file:
 
 <script src="https://gist-it.appspot.com/github/nhoizey/images-responsiver/raw/master/examples/01_default/page-enhanced.html"></script>
 
-*Note: a `pristine` value is added to the image's dataset with the original URL, in case you want to do anything else with it later (provide a "zoom" link for example).*
+_Note: a `pristine` value is added to the image's dataset with the original URL, in case you want to do anything else with it later (provide a "zoom" link for example)._
 
 The situation is better, because users with small viewports (and reasonable screen densities) will download smaller images.
 
@@ -124,7 +124,7 @@ So we should be able to tell the plugin about the actual width of the pristine i
 
 Why invent a new parameter? We already have the `width` attribute in HTML, let's use it, `images-responsiver` can read it.
 
-*Note: it's anyway always a good idea to have the `width` and `height` attributes defined in images, as [it will enhance the page rendering performance](https://www.youtube.com/watch?v=4-d_SoCHeWE).*
+_Note: it's anyway always a good idea to have the `width` and `height` attributes defined in images, as [it will enhance the page rendering performance](https://www.youtube.com/watch?v=4-d_SoCHeWE)._
 
 If the pristine image for the logo is `400px` wide, and the other pristine image is `1600px` wide, here's our new source HTML:
 
@@ -221,6 +221,10 @@ _To be continued…_
 ## Running hooks before and after transformation
 
 _To be continued…_
+
+## Targeting images to transform
+
+`selector`
 
 # Additional informations
 
