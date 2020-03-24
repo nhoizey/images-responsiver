@@ -1,4 +1,4 @@
-**[< Back home](/images-responsiver/#documentation)**
+**[<< Back home](/images-responsiver/#documentation)**
 
 ----
 
