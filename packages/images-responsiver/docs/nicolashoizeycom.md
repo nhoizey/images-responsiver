@@ -1,6 +1,4 @@
-[<< Back home](/images-responsiver/#documentation)
-
-[< Examples](/images-responsiver/examples.html)
+| **[^ Back home](/images-responsiver/#documentation)** | [^ Examples](/images-responsiver/examples.html) |
 
 # Usage on nicolas-hoizey.com
 
@@ -26,3 +24,5 @@ The plugin then transforms the URL as I told it, with resizing parameters:
 https://github.com/nhoizey/nicolas-hoizey.com/blob/a25262c221ff8f19e129352fd67df89092514a1d/src/_data/images-responsiver-config.js#L6-L42
 
 Here, I’m using Cloudinary ([sign-up for free](https://nho.io/cloudinary-signup), at least to try) to resize (and optimize) images, so I don’t have to compute any image on my local build.
+
+| [^ Examples](/images-responsiver/examples.html) | **[^ Back home](/images-responsiver/#documentation)** |
