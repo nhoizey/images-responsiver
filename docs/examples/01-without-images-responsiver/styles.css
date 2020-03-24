@@ -6,6 +6,7 @@ img {
 .container {
   width: 90vw;
   max-width: 40em;
+  margin: 0 auto;
 }
 
 .logo {
