@@ -27,11 +27,10 @@ Some of these solutions might require specific URL for the images to compute, th
 
 ## Defining your own URL format
 
-That's why you can use the `resizedImageUrl` function in `images-responsiver` options. This is the default function:
+That's why you can use the `resizedImageUrl` function in `images-responsiver` default preset. This is the default function:
 
 ```javascript
-const defaultResizedImageUrl = (src, width) =>
-  src.replace(/^(.*)(\.[^\.]+)$/, '$1-' + width + '$2');
+(src, width) => src.replace(/^(.*)(\.[^\.]+)$/, '$1-' + width + '$2');
 ```
 
 It transforms `(my-logo.png, 58)` into `my-logo-58.png`.
@@ -42,7 +41,9 @@ For example, if the width has to be a `w` query parameter:
 
 ```javascript
 const options = {
-  resizedImageUrl: (src, width) => `${src}?w=${width}`,
+  default: {
+    resizedImageUrl: (src, width) => `${src}?w=${width}`,
+  }
 };
 ```
 

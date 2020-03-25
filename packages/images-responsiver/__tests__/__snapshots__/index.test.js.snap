@@ -22,6 +22,49 @@ exports[`advanced options resizedImageUrl 1`] = `
 "
 `;
 
+exports[`advanced options runAfter 1`] = `
+"<!DOCTYPE html>
+<html>
+  <body>
+    <img
+      src=\\"test-640.png\\"
+      srcset=\\"
+        test-320.png   320w,
+        test-880.png   880w,
+        test-1440.png 1440w,
+        test-2000.png 2000w,
+        test-2560.png 2560w
+      \\"
+      sizes=\\"100vw\\"
+      data-pristine=\\"test.png\\"
+      data-after=\\"hello!\\"
+    />
+  </body>
+</html>
+"
+`;
+
+exports[`advanced options runBefore 1`] = `
+"<!DOCTYPE html>
+<html>
+  <body>
+    <img
+      src=\\"another-test-640.png\\"
+      srcset=\\"
+        another-test-320.png   320w,
+        another-test-880.png   880w,
+        another-test-1440.png 1440w,
+        another-test-2000.png 2000w,
+        another-test-2560.png 2560w
+      \\"
+      sizes=\\"100vw\\"
+      data-pristine=\\"another-test.png\\"
+    />
+  </body>
+</html>
+"
+`;
+
 exports[`advanced options selector 1`] = `
 "<!DOCTYPE html>
 <html>

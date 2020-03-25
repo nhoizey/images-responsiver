@@ -78,12 +78,10 @@ describe('image with options', () => {
   test('simple image', () => {
     const content = `<!DOCTYPE html><html><body><img src="test.png"></body></html>`;
     const transformed = imagesResponsiver(content, {
-      presets: {
-        default: {
-          minWidth: 120,
-          maxWidth: 320,
-          steps: 3,
-        },
+      default: {
+        minWidth: 120,
+        maxWidth: 320,
+        steps: 3,
       },
     });
     expect(cleanHtml(transformed)).toMatchSnapshot();
@@ -93,10 +91,8 @@ describe('image with options', () => {
     const content = `<!DOCTYPE html><body>
       <img src="test.png" width="789"></body>`;
     const transformed = imagesResponsiver(content, {
-      presets: {
-        default: {
-          fallbackWidth: 480,
-        },
+      default: {
+        fallbackWidth: 480,
       },
     });
     expect(cleanHtml(transformed)).toMatchSnapshot();
@@ -106,10 +102,8 @@ describe('image with options', () => {
     const content = `<!DOCTYPE html><body>
       <img src="test.png" width="420"></body>`;
     const transformed = imagesResponsiver(content, {
-      presets: {
-        default: {
-          fallbackWidth: 480,
-        },
+      default: {
+        fallbackWidth: 480,
       },
     });
     expect(cleanHtml(transformed)).toMatchSnapshot();
@@ -121,11 +115,9 @@ describe('advanced options', () => {
     const content = `<!DOCTYPE html><body>
       <img src="test1.png" /><img src="test2.png" class="notransform" /></body>`;
     const transformed = imagesResponsiver(content, {
-      presets: {
-        default: {
-          selector: 'img:not(.notransform)',
-          fallbackWidth: 480,
-        },
+      default: {
+        selector: 'img:not(.notransform)',
+        fallbackWidth: 480,
       },
     });
 
@@ -136,10 +128,36 @@ describe('advanced options', () => {
     const content = `<!DOCTYPE html><body>
       <img src="test.png" width="420"></body>`;
     const transformed = imagesResponsiver(content, {
-      presets: {
-        default: {
-          resizedImageUrl: (src, width) => `${src}?w=${width}`,
-          fallbackWidth: 480,
+      default: {
+        resizedImageUrl: (src, width) => `${src}?w=${width}`,
+        fallbackWidth: 480,
+      },
+    });
+
+    expect(cleanHtml(transformed)).toMatchSnapshot();
+  });
+
+  test('runBefore', () => {
+    const content = `<!DOCTYPE html><body>
+      <img src="test.png"></body>`;
+    const transformed = imagesResponsiver(content, {
+      default: {
+        runBefore: (image, document) => {
+          image.setAttribute('src', 'another-test.png');
+        },
+      },
+    });
+
+    expect(cleanHtml(transformed)).toMatchSnapshot();
+  });
+
+  test('runAfter', () => {
+    const content = `<!DOCTYPE html><body>
+      <img src="test.png"></body>`;
+    const transformed = imagesResponsiver(content, {
+      default: {
+        runAfter: (image, document) => {
+          image.dataset.after = 'hello!';
         },
       },
     });
