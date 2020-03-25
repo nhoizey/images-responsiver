@@ -133,7 +133,9 @@ Now add the plugin in your `.eleventy.js` configuration file, without any config
 
 ```javascript
 const imagesResponsiver = require('eleventy-plugin-images-responsiver');
-eleventyConfig.addPlugin(imagesResponsiver);
+module.exports = function (eleventyConfig) {
+  eleventyConfig.addPlugin(imagesResponsiver);
+};
 ```
 
 _Note: Be careful, this plugin defines a transform, and Eleventy transforms are run in their declaration order._
