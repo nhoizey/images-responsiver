@@ -2,34 +2,27 @@
 
 const basicHTML = require('basichtml');
 const deepmerge = require('deepmerge');
+const clonedeep = require('lodash.clonedeep');
 const overwriteMerge = (destinationArray, sourceArray, options) => sourceArray;
+
+const defaultSettings = {
+  selector: ':not(picture) img[src]:not([srcset]):not([src$=".svg"])',
+  resizedImageUrl: (src, width) =>
+    src.replace(/^(.*)(\.[^\.]+)$/, '$1-' + width + '$2'),
+  runBefore: (image) => image,
+  runAfter: (image) => image,
+  fallbackWidth: 640,
+  minWidth: 320,
+  maxWidth: 2560,
+  steps: 5,
+  sizes: '100vw',
+  classes: [],
+  attributes: {},
+};
 
 const imagesResponsiver = (html, options = {}) => {
   // Default settings
-  let globalSettings = {
-    fallbackWidth: 640,
-    minWidth: 320,
-    maxWidth: 2560,
-    steps: 5,
-    sizes: '100vw',
-    classes: [],
-    attributes: {},
-  };
-
-  globalSettings.selector =
-    options.selector ||
-    ':not(picture) img[src]:not([srcset]):not([src$=".svg"])';
-
-  const defaultResizedImageUrl = (src, width) =>
-    src.replace(/^(.*)(\.[^\.]+)$/, '$1-' + width + '$2');
-  globalSettings.resizedImageUrl =
-    options.resizedImageUrl || defaultResizedImageUrl;
-
-  const defaultRunBefore = (image) => image;
-  globalSettings.runBefore = options.runBefore || defaultRunBefore;
-
-  const defaultRunAfter = (image) => image;
-  globalSettings.runAfter = options.runAfter || defaultRunAfter;
+  let globalSettings = defaultSettings;
 
   // Overhide default settings with a "default" preset
   if (options.presets !== undefined && options.presets.default !== undefined) {
@@ -66,7 +59,7 @@ const imagesResponsiver = (html, options = {}) => {
 
       const imageSrc = image.getAttribute('src');
 
-      let imageSettings = globalSettings;
+      let imageSettings = clonedeep(globalSettings);
 
       imageSettings.attributes.width = image.getAttribute('width');
       if (imageSettings.attributes.width !== null) {

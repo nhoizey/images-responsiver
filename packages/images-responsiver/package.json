@@ -10,6 +10,7 @@
   "scripts": {
     "lint": "eslint . --ext js --quiet --fix",
     "test": "jest",
+    "test-update": "jest --updateSnapshot",
     "release": "np"
   },
   "keywords": [
@@ -37,7 +38,8 @@
   "dependencies": {
     "basichtml": "^2.2.1",
     "deepmerge": "4.2.2",
-    "sizzle": "^2.3.5"
+    "sizzle": "^2.3.5",
+    "lodash.clonedeep": "^4.5.0"
   },
   "bugs": {
     "url": "https://github.com/nhoizey/images-responsiver/issues"

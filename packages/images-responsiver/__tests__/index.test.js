@@ -92,6 +92,14 @@ describe('image without options', () => {
           data-pristine="test.png" /></body></html>`;
     expect(cleanHtml(transformed)).toMatchSnapshot();
   });
+
+  test('2 images', () => {
+    const content = `<!DOCTYPE html><body>
+      <img src="test1.png" width="350" /><img src="test2.png" width="400" /></body>`;
+    const transformed = imagesResponsiver(content);
+
+    expect(cleanHtml(transformed)).toMatchSnapshot();
+  });
 });
 
 describe('image with options', () => {
