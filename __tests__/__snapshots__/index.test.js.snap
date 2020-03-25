@@ -89,6 +89,40 @@ exports[`image with options width attribute superior to the fallback 1`] = `
 "
 `;
 
+exports[`image without options 2 images 1`] = `
+"<!DOCTYPE html>
+<html>
+  <body>
+    <img
+      src=\\"test1-350.png\\"
+      width=\\"350\\"
+      srcset=\\"
+        test1-320.png 320w,
+        test1-328.png 328w,
+        test1-335.png 335w,
+        test1-343.png 343w,
+        test1-350.png 350w
+      \\"
+      sizes=\\"100vw\\"
+      data-pristine=\\"test1.png\\"
+    /><img
+      src=\\"test2-400.png\\"
+      width=\\"400\\"
+      srcset=\\"
+        test2-320.png 320w,
+        test2-340.png 340w,
+        test2-360.png 360w,
+        test2-380.png 380w,
+        test2-400.png 400w
+      \\"
+      sizes=\\"100vw\\"
+      data-pristine=\\"test2.png\\"
+    />
+  </body>
+</html>
+"
+`;
+
 exports[`image without options simple image 1`] = `
 "<!DOCTYPE html>
 <html>
