@@ -2,6 +2,7 @@
 
 // get dependencies
 const fs = require('fs');
+const prettier = require('prettier');
 const imagesResponsiver = require('../../../index.js');
 
 // get the HTML content of the source file
@@ -27,4 +28,7 @@ const options = {
 const dist = imagesResponsiver(src, options);
 
 // write the result into a new file
-fs.writeFileSync('page-enhanced.html', dist);
+fs.writeFileSync(
+  'page-enhanced.html',
+  prettier.format(dist, { parser: 'html' })
+);
