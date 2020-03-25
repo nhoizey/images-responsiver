@@ -133,12 +133,12 @@ Now add the plugin in your `.eleventy.js` configuration file, without any config
 
 ```javascript
 const imagesResponsiver = require('eleventy-plugin-images-responsiver');
-module.exports = function (eleventyConfig) {
+module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(imagesResponsiver);
 };
 ```
 
-_Note: Be careful, this plugin defines a transform, and Eleventy transforms are run in their declaration order._
+_Note: Be careful, this plugin defines a transform, and [Eleventy transforms](https://www.11ty.dev/docs/config/#transforms) are run in their declaration order._
 
 The body of the HTML from above is then transformed to this one:
 
@@ -210,6 +210,7 @@ Additionnaly, you migth need to add a `width` attribute to the images for the pl
   `![My logo](my-logo.png){.logo}{data-responsiver=logo}{width=400}`
 
   Pretty cumbersome.
+
 - use the [`markdown-it-imsize` plugin](https://github.com/tatsy/markdown-it-imsize) with the `autofill` option, so that image width and height are added automatically (not tested yet)
 - or use the `runBefore` hook in the plugin options to run a function that will add these width and height before any responsive transformation. That's [what I currently do for my site](https://nhoizey.github.io/images-responsiver/nicolashoizeycom.html).
 
