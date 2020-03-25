@@ -1,5 +1,48 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`advanced options resizedImageUrl 1`] = `
+"<!DOCTYPE html>
+<html>
+  <body>
+    <img
+      src=\\"test.png?w=420\\"
+      width=\\"420\\"
+      srcset=\\"
+        test.png?w=320 320w,
+        test.png?w=345 345w,
+        test.png?w=370 370w,
+        test.png?w=395 395w,
+        test.png?w=420 420w
+      \\"
+      sizes=\\"100vw\\"
+      data-pristine=\\"test.png\\"
+    />
+  </body>
+</html>
+"
+`;
+
+exports[`advanced options selector 1`] = `
+"<!DOCTYPE html>
+<html>
+  <body>
+    <img
+      src=\\"test1-480.png\\"
+      srcset=\\"
+        test1-320.png   320w,
+        test1-880.png   880w,
+        test1-1440.png 1440w,
+        test1-2000.png 2000w,
+        test1-2560.png 2560w
+      \\"
+      sizes=\\"100vw\\"
+      data-pristine=\\"test1.png\\"
+    /><img src=\\"test2.png\\" class=\\"notransform\\" />
+  </body>
+</html>
+"
+`;
+
 exports[`image that can't be transformed do nothing on SVG image 1`] = `
 "<!DOCTYPE html>
 <html>
@@ -157,6 +200,28 @@ exports[`image without options width attribute inferior to the fallback 1`] = `
         test-432.png 432w,
         test-488.png 488w,
         test-543.png 543w
+      \\"
+      sizes=\\"100vw\\"
+      data-pristine=\\"test.png\\"
+    />
+  </body>
+</html>
+"
+`;
+
+exports[`image without options width attribute inferior to the minWidth 1`] = `
+"<!DOCTYPE html>
+<html>
+  <body>
+    <img
+      src=\\"test-200.png\\"
+      width=\\"200\\"
+      srcset=\\"
+        test-320.png 320w,
+        test-290.png 290w,
+        test-260.png 260w,
+        test-230.png 230w,
+        test-200.png 200w
       \\"
       sizes=\\"100vw\\"
       data-pristine=\\"test.png\\"
