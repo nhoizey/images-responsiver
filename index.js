@@ -25,8 +25,8 @@ const imagesResponsiver = (html, options = {}) => {
   let globalSettings = defaultSettings;
 
   // Overhide default settings with a "default" preset
-  if (options.presets !== undefined && options.presets.default !== undefined) {
-    globalSettings = deepmerge(globalSettings, options.presets.default, {
+  if (options.default !== undefined) {
+    globalSettings = deepmerge(globalSettings, options.default, {
       arrayMerge: overwriteMerge,
     });
   }
@@ -63,13 +63,10 @@ const imagesResponsiver = (html, options = {}) => {
       if ('responsiver' in image.dataset) {
         // TODO: Merging preset settings to previous settings should be easier
         image.dataset.responsiver.split(' ').forEach((preset) => {
-          if (
-            options.presets !== undefined &&
-            options.presets[preset] !== undefined
-          ) {
-            let presetClasses = options.presets[preset].classes || [];
+          if (options[preset] !== undefined) {
+            let presetClasses = options[preset].classes || [];
             let existingClasses = imageSettings.classes;
-            imageSettings = deepmerge(imageSettings, options.presets[preset], {
+            imageSettings = deepmerge(imageSettings, options[preset], {
               arrayMerge: overwriteMerge,
             });
             imageSettings.classes = [...existingClasses, ...presetClasses];
