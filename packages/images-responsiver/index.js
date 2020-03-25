@@ -55,25 +55,9 @@ const imagesResponsiver = (html, options = {}) => {
       );
     })
     .forEach((image) => {
-      globalSettings.runBefore(image, document);
-
-      const imageSrc = image.getAttribute('src');
-
       let imageSettings = clonedeep(globalSettings);
 
-      imageSettings.attributes.width = image.getAttribute('width');
-      if (imageSettings.attributes.width !== null) {
-        imageSettings.maxWidth = Math.min(
-          imageSettings.maxWidth,
-          imageSettings.attributes.width
-        );
-        imageSettings.fallbackWidth = Math.min(
-          imageSettings.fallbackWidth,
-          imageSettings.attributes.width
-        );
-      }
-
-      imageSettings.attributes.height = image.getAttribute('height');
+      imageSettings.runBefore(image, document);
 
       // Overhide settings with presets named in the image classes
       if ('responsiver' in image.dataset) {
@@ -92,6 +76,18 @@ const imagesResponsiver = (html, options = {}) => {
           }
         });
         delete image.dataset.responsiver;
+      }
+
+      const imageSrc = image.getAttribute('src');
+
+      let imageWidth = image.getAttribute('width');
+      if (imageWidth !== null) {
+        imageSettings.minWidth = Math.min(imageSettings.minWidth, imageWidth);
+        imageSettings.maxWidth = Math.min(imageSettings.maxWidth, imageWidth);
+        imageSettings.fallbackWidth = Math.min(
+          imageSettings.fallbackWidth,
+          imageWidth
+        );
       }
 
       if (imageSettings.classes.length > 0) {
@@ -134,7 +130,7 @@ const imagesResponsiver = (html, options = {}) => {
         }
       }
 
-      globalSettings.runAfter(image, document);
+      imageSettings.runAfter(image, document);
     });
 
   return document.toString();
