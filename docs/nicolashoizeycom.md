@@ -2,7 +2,9 @@
 
 # Usage on nicolas-hoizey.com
 
-For my own site <https://nicolas-hoizey.com/>, each article has it’s own folder, with the Markdown file and image(s).
+I use [Eleventy](https://www.11ty.dev/) to build my own site <https://nicolas-hoizey.com/>, and `eleventy-plugin-images-responsiver` to provide access to `images-responsiver`.
+
+Each article has it’s own folder, with the Markdown file and image(s).
 
 For example, [here](https://github.com/nhoizey/nicolas-hoizey.com/tree/master/src/articles/2020/01/10/can-we-monitor-user-happiness-on-the-web-with-performance-tools):
 
