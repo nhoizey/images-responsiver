@@ -10,7 +10,15 @@ Responsive Images are difficult to implement, but they're **required to provide 
 
 Knowing that [`<picture>` is only required for rare advanced usages](https://cloudfour.com/thinks/dont-use-picture-most-of-the-time/), **`eleventy-plugin-images-responsiver` should be enough for most use cases**.
 
+# `eleventy-plugin-images-responsiver` is the glue between Eleventy and `images-responsiver`
+
 `eleventy-plugin-images-responsiver` is "just" a thin layer between Eleventy plugin and transformations system and [`images-responsiver`](https://github.com/nhoizey/images-responsiver), a generic HTML transformation Node.js module for simple responsive images.
+
+Eleventy uses Markdown-it to transform Markdown content into HTML, and then runs the transform added by `eleventy-plugin-images-responsiver`, which calls `images-responsiver` to actually transform the HTML.
+
+Neither `eleventy-plugin-images-responsiver` nor `images-responsiver` transform (resize) the image files, there are [multiple ways to do so](https://nhoizey.github.io/images-responsiver/tutorial-05-images-urls.html).
+
+**Be aware that [documentation for `images-responsiver`](https://nhoizey.github.io/images-responsiver/) contains a lot more information than this one, but is fully applicable to using `eleventy-plugin-images-responsiver` with Eleventy.**
 
 # Installation
 
@@ -133,7 +141,7 @@ Now add the plugin in your `.eleventy.js` configuration file, without any config
 
 ```javascript
 const imagesResponsiver = require('eleventy-plugin-images-responsiver');
-module.exports = function(eleventyConfig) {
+module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(imagesResponsiver);
 };
 ```
