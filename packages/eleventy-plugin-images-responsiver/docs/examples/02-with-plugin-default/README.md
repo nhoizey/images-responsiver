@@ -1,6 +1,6 @@
-# First example: default behaviour without the plugin
+# Second example: default behaviour with the plugin
 
-Install then build:
+In the folder of the example, run install then build:
 
 ```bash
 npm install
@@ -17,3 +17,5 @@ eleventyConfig.addPlugin(imagesResponsiver);
 ```
 
 If you open `dist/index.html` in a browser, no image should be visible (fortunately, there are `alt` attributes…).
+
+_To be continued…_
