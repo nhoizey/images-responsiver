@@ -3,7 +3,7 @@
 Install then build:
 
 ```bash
-npm i
+npm install
 npm run build
 ```
 
