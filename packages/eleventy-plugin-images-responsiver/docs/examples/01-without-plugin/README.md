@@ -1,9 +1,9 @@
 # First example: default behaviour without the plugin
 
-In the folder of the example, run install then build:
+In the folder of the example, run a clean install then build:
 
 ```bash
-npm install
+npm ci
 npm run build
 ```
 
