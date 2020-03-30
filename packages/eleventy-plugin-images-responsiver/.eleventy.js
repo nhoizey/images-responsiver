@@ -11,7 +11,6 @@ const imagesResponsiverTransform = (content, outputPath) => {
 };
 
 module.exports = {
-  initArguments: {},
   configFunction: (eleventyConfig, options = {}) => {
     imagesResponsiverOptions = options;
     eleventyConfig.addTransform(
