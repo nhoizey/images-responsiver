@@ -80,6 +80,14 @@ const imagesResponsiver = (html, options = {}) => {
         imageSettings.steps = 2;
       }
 
+      // Make sure maxWidth > minWidth
+      // (even if there would be no issue in `srcset` order)
+      if (imageSettings.minWidth > imageSettings.maxWidth) {
+        let tempMin = imageSettings.minWidth;
+        imageSettings.minWidth = imageSettings.maxWidth;
+        imageSettings.maxWidth = tempMin;
+      }
+
       const imageSrc = image.getAttribute('src');
 
       let imageWidth = image.getAttribute('width');
