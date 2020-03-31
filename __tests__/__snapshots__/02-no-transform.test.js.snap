@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`image that can't be transformed do nothing on SVG image 1`] = `
+"<!DOCTYPE html>
+<html>
+  <body>
+    <img src=\\"test.svg\\" />
+  </body>
+</html>
+"
+`;
+
+exports[`image that can't be transformed do nothing on image with already a srcset 1`] = `
+"<!DOCTYPE html>
+<html>
+  <body>
+    <img src=\\"test.png\\" srcset=\\"test.png 320w\\" />
+  </body>
+</html>
+"
+`;
+
+exports[`image that can't be transformed do nothing on image without a src 1`] = `
+"<!DOCTYPE html>
+<html>
+  <body>
+    <img alt=\\"not really an image\\" />
+  </body>
+</html>
+"
+`;
