@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`images with advanced options resizedImageUrl 1`] = `
+"<!DOCTYPE html>
+<html>
+  <body>
+    <img
+      src=\\"test.png?w=420\\"
+      width=\\"420\\"
+      srcset=\\"
+        test.png?w=320 320w,
+        test.png?w=345 345w,
+        test.png?w=370 370w,
+        test.png?w=395 395w,
+        test.png?w=420 420w
+      \\"
+      sizes=\\"100vw\\"
+      data-pristine=\\"test.png\\"
+    />
+  </body>
+</html>
+"
+`;
+
+exports[`images with advanced options runAfter 1`] = `
+"<!DOCTYPE html>
+<html>
+  <body>
+    <img
+      src=\\"test-640.png\\"
+      srcset=\\"
+        test-320.png   320w,
+        test-880.png   880w,
+        test-1440.png 1440w,
+        test-2000.png 2000w,
+        test-2560.png 2560w
+      \\"
+      sizes=\\"100vw\\"
+      data-pristine=\\"test.png\\"
+      data-after=\\"hello!\\"
+    />
+  </body>
+</html>
+"
+`;
+
+exports[`images with advanced options runBefore 1`] = `
+"<!DOCTYPE html>
+<html>
+  <body>
+    <img
+      src=\\"another-test-640.png\\"
+      srcset=\\"
+        another-test-320.png   320w,
+        another-test-880.png   880w,
+        another-test-1440.png 1440w,
+        another-test-2000.png 2000w,
+        another-test-2560.png 2560w
+      \\"
+      sizes=\\"100vw\\"
+      data-pristine=\\"another-test.png\\"
+    />
+  </body>
+</html>
+"
+`;
+
+exports[`images with advanced options selector 1`] = `
+"<!DOCTYPE html>
+<html>
+  <body>
+    <img
+      src=\\"test1-480.png\\"
+      srcset=\\"
+        test1-320.png   320w,
+        test1-880.png   880w,
+        test1-1440.png 1440w,
+        test1-2000.png 2000w,
+        test1-2560.png 2560w
+      \\"
+      sizes=\\"100vw\\"
+      data-pristine=\\"test1.png\\"
+    /><img src=\\"test2.png\\" class=\\"notransform\\" />
+  </body>
+</html>
+"
+`;
