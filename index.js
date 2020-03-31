@@ -75,6 +75,11 @@ const imagesResponsiver = (html, options = {}) => {
         delete image.dataset.responsiver;
       }
 
+      // Make sure there are at least 2 steps for minWidth and maxWidth
+      if (imageSettings.steps < 2) {
+        imageSettings.steps = 2;
+      }
+
       const imageSrc = image.getAttribute('src');
 
       let imageWidth = image.getAttribute('width');
