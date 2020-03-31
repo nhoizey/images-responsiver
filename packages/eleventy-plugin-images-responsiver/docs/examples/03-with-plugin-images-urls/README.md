@@ -13,11 +13,15 @@ Sources are in `src/` and build is in `dist/`.
 
 ## Check the result
 
-If you open `dist/index.html` in a browser, images should be back.
+If you open `dist/index.html` in a browser, images should be back. 🥳
+
+(please [open an issue](https://github.com/nhoizey/eleventy-plugin-images-responsiver/issues/new) if they're not)
 
 ## How does it work?
 
 I chose to use Cloudinary to resize images, because I know it, and it is easier for this documentation, but you can use other solutions as explained in [`images-responsiver` documentation](https://nhoizey.github.io/images-responsiver/tutorial-05-images-urls.html#using-an-image-cdn).
+
+_Note: If you want to use Cloudinary for images on your domain, you have to [register for a **free account**](https://nho.io/cloudinary-signup), which should be enough for most personal use cases._
 
 Here's what has been changed in `.eleventy.js` to use Cloudinary to resize images:
 
