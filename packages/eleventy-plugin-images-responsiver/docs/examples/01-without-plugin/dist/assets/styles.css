@@ -1,0 +1,16 @@
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  width: 90vw;
+  max-width: 40em;
+  margin: 0 auto;
+}
+
+.logo {
+  max-width: 20%;
+  float: right;
+  margin: 0 0 1em 1em;
+}
