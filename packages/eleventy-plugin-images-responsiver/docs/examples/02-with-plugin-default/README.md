@@ -28,4 +28,4 @@ eleventyConfig.addPlugin(imagesResponsiver);
 
 Images are not visible because the transformed HTML tells the browsers about images with names like `colorful-netherlands-880.jpg` while we actualy only have `colorful-netherlands.jpg`.
 
-Let's see how to get these resized images in [step 3](../03-with-plugin-images-urls/).
+Let's see how to get these resized images in [step 3](../03-with-plugin-images-urls/#readme).

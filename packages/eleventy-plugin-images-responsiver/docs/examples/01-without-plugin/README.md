@@ -17,4 +17,4 @@ If you open `dist/index.html` in a browser, both images should be visible.
 
 I you open it in different browsers, on different devices, with different viewport widths and screen densities, the very same image files are downloaded. Not cool for people on small devices with low resolution, and potentially bad connexions.
 
-Let's try to enhance it with [step 2](../02-with-plugin-default/).
+Let's try to enhance it with [step 2](../02-with-plugin-default/#readme).
