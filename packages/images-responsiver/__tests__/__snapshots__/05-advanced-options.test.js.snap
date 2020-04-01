@@ -7,13 +7,7 @@ exports[`images with advanced options resizedImageUrl 1`] = `
     <img
       src=\\"test.png?w=420\\"
       width=\\"420\\"
-      srcset=\\"
-        test.png?w=320 320w,
-        test.png?w=345 345w,
-        test.png?w=370 370w,
-        test.png?w=395 395w,
-        test.png?w=420 420w
-      \\"
+      srcset=\\"test.png?w=320 320w, test.png?w=420 420w\\"
       sizes=\\"100vw\\"
       data-pristine=\\"test.png\\"
     />
@@ -30,10 +24,10 @@ exports[`images with advanced options runAfter 1`] = `
       src=\\"test-640.png\\"
       srcset=\\"
         test-320.png   320w,
-        test-880.png   880w,
-        test-1440.png 1440w,
-        test-2000.png 2000w,
-        test-2560.png 2560w
+        test-560.png   560w,
+        test-800.png   800w,
+        test-1040.png 1040w,
+        test-1280.png 1280w
       \\"
       sizes=\\"100vw\\"
       data-pristine=\\"test.png\\"
@@ -52,10 +46,10 @@ exports[`images with advanced options runBefore 1`] = `
       src=\\"another-test-640.png\\"
       srcset=\\"
         another-test-320.png   320w,
-        another-test-880.png   880w,
-        another-test-1440.png 1440w,
-        another-test-2000.png 2000w,
-        another-test-2560.png 2560w
+        another-test-560.png   560w,
+        another-test-800.png   800w,
+        another-test-1040.png 1040w,
+        another-test-1280.png 1280w
       \\"
       sizes=\\"100vw\\"
       data-pristine=\\"another-test.png\\"
@@ -73,10 +67,10 @@ exports[`images with advanced options selector 1`] = `
       src=\\"test1-480.png\\"
       srcset=\\"
         test1-320.png   320w,
-        test1-880.png   880w,
-        test1-1440.png 1440w,
-        test1-2000.png 2000w,
-        test1-2560.png 2560w
+        test1-560.png   560w,
+        test1-800.png   800w,
+        test1-1040.png 1040w,
+        test1-1280.png 1280w
       \\"
       sizes=\\"100vw\\"
       data-pristine=\\"test1.png\\"
