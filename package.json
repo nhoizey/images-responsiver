@@ -31,15 +31,17 @@
     "eslint": "6.8.0",
     "eslint-config-prettier": "6.10.1",
     "eslint-plugin-prettier": "3.1.2",
-    "prettier": "2.0.2",
     "jest": "25.2.4",
-    "np": "6.2.0"
+    "np": "6.2.0",
+    "prettier": "2.0.2"
   },
   "dependencies": {
     "basichtml": "^2.2.2",
+    "debug": "^4.1.1",
     "deepmerge": "4.2.2",
+    "lodash.clonedeep": "^4.5.0",
     "sizzle": "^2.3.5",
-    "lodash.clonedeep": "^4.5.0"
+    "supports-color": "^7.1.0"
   },
   "bugs": {
     "url": "https://github.com/nhoizey/images-responsiver/issues"

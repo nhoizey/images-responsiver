@@ -4,6 +4,11 @@ const basicHTML = require('basichtml');
 const deepmerge = require('deepmerge');
 const clonedeep = require('lodash.clonedeep');
 const overwriteMerge = (destinationArray, sourceArray, options) => sourceArray;
+const debug = require('debug');
+
+const error = debug('images-responsiver:error');
+const warning = debug('images-responsiver:warning');
+const info = debug('images-responsiver:info');
 
 const defaultSettings = {
   selector: ':not(picture) img[src]:not([srcset]):not([src$=".svg"])',
@@ -75,23 +80,30 @@ const imagesResponsiver = (html, options = {}) => {
         delete image.dataset.responsiver;
       }
 
+      const imageSrc = image.getAttribute('src');
+      info(`Transforming ${imageSrc}`);
+
       // Make sure there are at least 2 steps for minWidth and maxWidth
       if (imageSettings.steps < 2) {
+        warning(
+          `Steps should be >= 2: ${imageSettings.steps} step for ${imageSrc}`
+        );
         imageSettings.steps = 2;
       }
 
       // Make sure maxWidth > minWidth
       // (even if there would be no issue in `srcset` order)
       if (imageSettings.minWidth > imageSettings.maxWidth) {
+        warning(`Combined options have minWidth > maxWidth for ${imageSrc}`);
         let tempMin = imageSettings.minWidth;
         imageSettings.minWidth = imageSettings.maxWidth;
         imageSettings.maxWidth = tempMin;
       }
 
-      const imageSrc = image.getAttribute('src');
-
       let imageWidth = image.getAttribute('width');
-      if (imageWidth !== null) {
+      if (imageWidth === null) {
+        warning(`The image should have a width attribute: ${imageSrc}`);
+      } else {
         imageSettings.minWidth = Math.min(imageSettings.minWidth, imageWidth);
         imageSettings.maxWidth = Math.min(imageSettings.maxWidth, imageWidth);
         imageSettings.fallbackWidth = Math.min(
