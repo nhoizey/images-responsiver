@@ -1,4 +1,4 @@
-| **[<< Back home](/images-responsiver/#documentation)** | **[< Tutorial step 3](/images-responsiver/tutorial-03-images-responsiver-simple-configuration.html)** |
+| **[<< Back home](/images-responsiver/#documentation)** | **[< Examples](/images-responsiver/examples.html)** |
 
 # Tutorial step 4: Making it more robust with image dimensions
 
@@ -20,6 +20,15 @@ So we should be able to tell `images-responsiver` about the actual width of the 
 Why invent a new parameter? We already have the `width` attribute in HTML, let's use it, `images-responsiver` can read it.
 
 _Note: it's anyway always a good idea to have the `width` and `height` attributes defined in images, as [it will enhance the page rendering performance](https://www.youtube.com/watch?v=4-d_SoCHeWE)._
+
+Actually, if you run `images-responsiver` in debug mode (learn [more about debugging here](/images-responsiver/debugging.html)), you'll get warnings about missing `width` attributes. Instead of just `node run.js`, run `DEBUG=* node run.js`, and you'll get this in the console:
+
+```bash
+images-responsiver:info Transforming my-logo.png +0ms
+images-responsiver:warning The image should have a width attribute: my-logo.png +0ms
+images-responsiver:info Transforming colorful-netherlands.jpg +2ms
+images-responsiver:warning The image should have a width attribute: colorful-netherlands.jpg +1ms
+```
 
 If the pristine image for the logo is `400px` wide, and the other pristine image is `1600px` wide, here's our new source HTML:
 
