@@ -18,7 +18,7 @@ const defaultSettings = {
   runAfter: (image) => image,
   fallbackWidth: 640,
   minWidth: 320,
-  maxWidth: 2560,
+  maxWidth: 1280,
   steps: 5,
   sizes: '100vw',
   classes: [],
