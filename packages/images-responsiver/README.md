@@ -24,6 +24,7 @@ Knowing that [`<picture>` is only required for rare advanced usages](https://clo
   - [Step 5: Dealing with images filenames and URLs](https://nhoizey.github.io/images-responsiver/tutorial-05-images-urls.html)
   - [Step 6: Even better responsive images](https://nhoizey.github.io/images-responsiver/tutorial-06-even-better-responsive-images.html)
 - [Examples](https://nhoizey.github.io/images-responsiver/examples.html)
+- [Debugging](https://nhoizey.github.io/images-responsiver/debugging.html)
 
 ## Authors
 
