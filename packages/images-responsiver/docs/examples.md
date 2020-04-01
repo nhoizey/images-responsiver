@@ -6,4 +6,4 @@
 
 - [nicolas-hoizey.com](/images-responsiver/nicolashoizeycom.html)
 
-| **[Back home >>](/images-responsiver/#documentation)** |
+| **[Debugging >](/images-responsiver/debugging.html)** | **[Back home >>](/images-responsiver/#documentation)** |
