@@ -17,10 +17,11 @@ images-responsiver:warning The image should have a width attribute: colorful-net
 
 You can use different values for `DEBUG=`:
 
-| \* | get all messages, even from other packages |
-| images-responsiver:\* | get all messages, only from `images-responsiver` |
-| images-responsiver:info | get only information messages from `images-responsiver` |
-| images-responsiver:warning | get only warning messages from `images-responsiver` |
-| images-responsiver:error | get only error messages from `images-responsiver` |
+| `DEBUG=*` | get all messages, even from other packages |
+| `DEBUG=images-responsiver:*` | get all messages, only from `images-responsiver` |
+| `DEBUG=images-responsiver:info` | get only information messages from `images-responsiver` |
+| `DEBUG=images-responsiver:warning` | get only warning messages from `images-responsiver` |
+| `DEBUG=images-responsiver:error` | get only error messages from `images-responsiver` |
+| `DEBUG=images-responsiver:error,images-responsiver:warning` or `DEBUG=images-responsiver:*,-images-responsiver:info` | get only warning and error messages from `images-responsiver` |
 
 | **[Back home >>](/images-responsiver/#documentation)** |
