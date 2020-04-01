@@ -131,7 +131,7 @@ const imagesResponsiver = (html, options = {}) => {
       // generate the srcset attribute
       let srcset = [];
       for (let i = 0; i < imageSettings.steps; i++) {
-        let width = Math.ceil(
+        let stepWidth = Math.ceil(
           imageSettings.minWidth +
             ((imageSettings.maxWidth - imageSettings.minWidth) /
               (imageSettings.steps - 1)) *
@@ -141,9 +141,16 @@ const imagesResponsiver = (html, options = {}) => {
           warning(
             `The image is smaller than maxWidth: ${imageWidth} < ${imageSettings.maxWidth}`
           );
+          srcset.push(
+            `${imageSettings.resizedImageUrl(
+              imageSrc,
+              imageWidth
+            )} ${imageWidth}w`
+          );
+          break;
         }
         srcset.push(
-          `${imageSettings.resizedImageUrl(imageSrc, width)} ${width}w`
+          `${imageSettings.resizedImageUrl(imageSrc, stepWidth)} ${stepWidth}w`
         );
       }
       image.setAttribute('srcset', srcset.join(', '));
