@@ -104,12 +104,18 @@ const imagesResponsiver = (html, options = {}) => {
       if (imageWidth === null) {
         warning(`The image should have a width attribute: ${imageSrc}`);
       } else {
-        imageSettings.minWidth = Math.min(imageSettings.minWidth, imageWidth);
-        imageSettings.maxWidth = Math.min(imageSettings.maxWidth, imageWidth);
-        imageSettings.fallbackWidth = Math.min(
-          imageSettings.fallbackWidth,
-          imageWidth
-        );
+        if (imageWidth < imageSettings.minWidth) {
+          warning(
+            `The image is smaller than minWidth: ${imageWidth} < ${imageSettings.minWidth}`
+          );
+          imageSettings.minWidth = imageWidth;
+        }
+        if (imageWidth < imageSettings.fallbackWidth) {
+          warning(
+            `The image is smaller than fallbackWidth: ${imageWidth} < ${imageSettings.fallbackWidth}`
+          );
+          imageSettings.fallbackWidth = imageWidth;
+        }
       }
 
       if (imageSettings.classes.length > 0) {
@@ -131,6 +137,11 @@ const imagesResponsiver = (html, options = {}) => {
               (imageSettings.steps - 1)) *
               i
         );
+        if (imageWidth !== null && stepWidth >= imageWidth) {
+          warning(
+            `The image is smaller than maxWidth: ${imageWidth} < ${imageSettings.maxWidth}`
+          );
+        }
         srcset.push(
           `${imageSettings.resizedImageUrl(imageSrc, width)} ${width}w`
         );
