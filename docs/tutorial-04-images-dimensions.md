@@ -2,7 +2,7 @@
 
 # Tutorial step 4: Making it more robust with image dimensions
 
-----
+---
 
 - [Step 1: Default behavior without `images-responsiver`](https://nhoizey.github.io/images-responsiver/tutorial-01-without-images-responsiver.html)
 - [Step 2: Better behavior with `images-responsiver` and default configuration](https://nhoizey.github.io/images-responsiver/tutorial-02-images-responsiver-default.html)
@@ -11,9 +11,9 @@
 - [Step 5: Dealing with images filenames and URLs](https://nhoizey.github.io/images-responsiver/tutorial-05-images-urls.html)
 - [Step 6: Even better responsive images](https://nhoizey.github.io/images-responsiver/tutorial-06-even-better-responsive-images.html)
 
-----
+---
 
-We might still have an issue: even if we set a maximum width lower than `2560px` (like `512px` for the logo), we should not be able to define a width that is larger than the actual width of the pristine image, the largest we have before any computing. If we do that, we lie to the browser, and it might render the image at the width we told him, instead of the actual one, resulting in bad rendered quality.
+We might still have an issue: even if we set a maximum width lower than `1280px` (like `512px` for the logo), we should not be able to define a width that is larger than the actual width of the pristine image, the largest we have before any computing. If we do that, we lie to the browser, and it might render the image at the width we told him, instead of the actual one, resulting in bad rendered quality.
 
 So we should be able to tell `images-responsiver` about the actual width of the pristine image.
 
