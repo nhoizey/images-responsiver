@@ -1,10 +1,10 @@
-| **[<< back to home](../../)** | **[< back to step 0](../../step-0.html)** |
+| **[<< back to home](../../)** | **[< back to step 0](../00-preparation/#readme)** |
 
 # Step 1: Default behaviour without the plugin
 
 ## Run it
 
-In the folder of the example, run a clean install then build in developer mode:
+In the folder of the tutorial step, run a clean install then build in developer mode:
 
 ```bash
 npm ci
@@ -27,7 +27,7 @@ And here on simulated mobile:
 
 We used this CSS file:
 
-<script src="https://gist-it.appspot.com/github/nhoizey/eleventy-plugin-images-responsiver/raw/master/docs/examples/01-without-plugin/src/assets/styles.css?footer=minimal"></script>
+<script src="https://gist-it.appspot.com/github/nhoizey/eleventy-plugin-images-responsiver/raw/master/docs/tutorial/01-without-plugin/src/assets/styles.css?footer=minimal"></script>
 
 We want the content to take 90 % of the available space, but never more than `40em` (better for readability of multi-lines texts), and the logo to use 20 % of this content width, floated on the right.
 

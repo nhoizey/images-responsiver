@@ -4,7 +4,7 @@
 
 ## Run it
 
-In the folder of the example, run a clean install then build in developer mode:
+In the folder of the tutorial step, run a clean install then build in developer mode:
 
 ```bash
 npm ci

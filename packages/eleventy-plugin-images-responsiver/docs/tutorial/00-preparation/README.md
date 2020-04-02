@@ -11,7 +11,7 @@ Get the sources from the repository. You can either:
 Then go into the first example folder with your terminal:
 
 ```bash
-cd my-local-folder/docs/examples/01-without-plugin
+cd my-local-folder/docs/tutorial/01-without-plugin
 ```
 
-Then, let's go for **[step 1](https://nhoizey.github.io/eleventy-plugin-images-responsiver/examples/01-without-plugin/)**!
+And let's go for **[step 1](../01-without-plugin/#readme)**!

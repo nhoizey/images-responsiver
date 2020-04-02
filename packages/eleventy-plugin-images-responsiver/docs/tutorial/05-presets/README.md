@@ -4,7 +4,7 @@
 
 ## Run it
 
-In the folder of the example, run a clean install then build in developer mode:
+In the folder of the tutorial step, run a clean install then build in developer mode:
 
 ```bash
 npm ci
@@ -88,7 +88,7 @@ This syntax is becoming really verbose, but **don't abandon now**, it's really w
 
 Check the HTML resulting of the transformation to see how the images now have different `sizes` attribute values:
 
-<script src="https://gist-it.appspot.com/github/nhoizey/eleventy-plugin-images-responsiver/raw/master/docs/examples/05-preesets/dist/index.html?footer=minimal"></script>
+<script src="https://gist-it.appspot.com/github/nhoizey/eleventy-plugin-images-responsiver/raw/master/docs/tutorial/05-preesets/dist/index.html?footer=minimal"></script>
 
 _Note: Each image can use multiple presets in the `data-responsiver` attribute, each value separated by a space (like classes). Settings from each preset surcharges the previous one(s), in the order they're declared._
 
