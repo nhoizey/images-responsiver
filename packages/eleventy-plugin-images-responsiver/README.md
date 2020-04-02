@@ -2,6 +2,7 @@
 
 [![GitHub stars](https://img.shields.io/github/stars/nhoizey/eleventy-plugin-images-responsiver.svg?style=social)](https://github.com/nhoizey/eleventy-plugin-images-responsiver/stargazers)
 
+<img src="https://github.com/nhoizey/eleventy-plugin-images-responsiver/raw/master/images-responsiver-logo.png" width="320" height="320" style="max-width: 20%; float: right; margin: 0 0 1em 1em;">
 **`eleventy-plugin-images-responsiver` is a simple solution for most responsive images needs with [Eleventy](https://www.11ty.dev/)**.
 
 It allows authors to use the simple and standard Markdown syntax for images (`![alt text](image.jpg "title text")`) and yet get responsive images in the generated HTML, with `srcset` and `sizes` attributes.
