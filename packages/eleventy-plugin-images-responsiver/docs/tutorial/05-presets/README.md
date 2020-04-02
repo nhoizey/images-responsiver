@@ -29,7 +29,7 @@ But we don't want to repeat them for each images, and we want to provide content
 
 Let's define **presets**, and configuration options attached to them.
 
-First, we define a `default` preset that will be used for all images where the author doesn't set any preset.
+First, we define a `default` preset that will be used for all images:
 
 ```javascript
 const presets = {
@@ -43,7 +43,7 @@ We set the default `sizes` attribute value, considering we will never have any i
 
 `(max-width: 45em) 90vw, 40em` now overrides the plugin's default value of `100vw`.
 
-We now need to add a specific preset for the logo, which needs a different `sizes` value, because it takes only 20 % of the content area:
+We now need to add a specific overriding preset for the logo, which needs a different `sizes` value, because it takes only 20 % of the content area:
 
 ```javascript
 const presets = {
@@ -55,6 +55,8 @@ const presets = {
   },
 };
 ```
+
+The `logo` preset will inherit the `default` preset and override its common properties.
 
 We then use these `presets` as options for the plugin:
 
@@ -88,4 +90,6 @@ You can also check the HTML:
 
 _Note: Each image can use multiple presets in the `data-responsiver` attribute, each value separated by a space (like classes). Settings from each preset surcharges the previous one(s), in the order they're declared._
 
-_To be continued…_
+# Now… what?
+
+Let's see how we can improve daily work of content authors in **[step 6](../06-presets-properties/#readme)**.
