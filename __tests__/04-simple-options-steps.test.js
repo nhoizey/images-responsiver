@@ -7,7 +7,7 @@ function cleanHtml(html) {
   return prettier.format(html, { parser: 'html' });
 }
 
-describe('image with simple options', () => {
+describe('image with simple step options', () => {
   test('simple image', () => {
     const content = `<!DOCTYPE html><html><body><img src="test.png"></body></html>`;
     const transformed = imagesResponsiver(content, {
@@ -47,28 +47,6 @@ describe('image with simple options', () => {
       default: {
         minWidth: 640,
         maxWidth: 320,
-      },
-    });
-    expect(cleanHtml(transformed)).toMatchSnapshot();
-  });
-
-  test('width attribute superior to the fallback', () => {
-    const content = `<!DOCTYPE html><body>
-      <img src="test.png" width="789"></body>`;
-    const transformed = imagesResponsiver(content, {
-      default: {
-        fallbackWidth: 480,
-      },
-    });
-    expect(cleanHtml(transformed)).toMatchSnapshot();
-  });
-
-  test('width attribute inferior to the fallback', () => {
-    const content = `<!DOCTYPE html><body>
-      <img src="test.png" width="420"></body>`;
-    const transformed = imagesResponsiver(content, {
-      default: {
-        fallbackWidth: 480,
       },
     });
     expect(cleanHtml(transformed)).toMatchSnapshot();

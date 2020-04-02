@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`image with simple fallback option width attribute inferior to the fallback 1`] = `
+"<!DOCTYPE html>
+<html>
+  <body>
+    <img
+      src=\\"test-420.png\\"
+      width=\\"420\\"
+      srcset=\\"test-320.png 320w, test-420.png 420w\\"
+      sizes=\\"100vw\\"
+      data-pristine=\\"test.png\\"
+    />
+  </body>
+</html>
+"
+`;
+
+exports[`image with simple fallback option width attribute superior to the fallback 1`] = `
+"<!DOCTYPE html>
+<html>
+  <body>
+    <img
+      src=\\"test-480.png\\"
+      width=\\"789\\"
+      srcset=\\"test-320.png 320w, test-560.png 560w, test-789.png 789w\\"
+      sizes=\\"100vw\\"
+      data-pristine=\\"test.png\\"
+    />
+  </body>
+</html>
+"
+`;
