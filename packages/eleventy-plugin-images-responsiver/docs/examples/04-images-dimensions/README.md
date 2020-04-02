@@ -51,6 +51,8 @@ If it was supposed to add a (or multiple) larger width(s), it doesn't, but it ad
 
 _Note: If you fear forgetting to add a `width` attribute to some images, you can run the build in debug mode (learn [more about debugging here](/eleventy-plugin-images-responsiver/debugging.html)), you'll get warnings about missing `width` attributes. Instead of `npm start`, run `DEBUG=images-responsiver:* npm start`._
 
+_Note: Specifying both `width` and `height` attributes on images helps browsers prepare the required space in the page even if the image has not yet been downloaded. It [enhances the page rendering performance](https://www.youtube.com/watch?v=4-d_SoCHeWE), good for the user experience._
+
 <!-- TODO
 # Other ways to add the width attribute to images
 
