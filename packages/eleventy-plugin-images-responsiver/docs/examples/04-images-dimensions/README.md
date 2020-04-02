@@ -39,6 +39,13 @@ If it was supposed to add a (or multiple) larger width(s), it doesn't, but it ad
 
 _Note: If you fear forgetting to add a `width` attribute to some images, you can run the build in debug mode (learn [more about debugging here](/elevevnty-plugin-images-responsiver/debugging.html)), you'll get warnings about missing `width` attributes. Instead of `npm start`, run `DEBUG=images-responsiver:* npm start`._
 
+<!-- TODO
+# Other ways to add the width attribute to images
+
+- use the [`markdown-it-imsize` plugin](https://github.com/tatsy/markdown-it-imsize) with the `autofill` option, so that image width and height are added automatically (not tested yet)
+- or use the `runBefore` hook in the plugin options to run a function that will add these width and height before any responsive transformation. That's [what I currently do for my site](https://nhoizey.github.io/images-responsiver/nicolashoizeycom.html).
+ -->
+
 # Now… what?
 
 Unfortunately, there is still an issue with this transformed HTML.

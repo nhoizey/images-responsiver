@@ -16,13 +16,23 @@ Knowing that [`<picture>` is only required for rare advanced usages](https://clo
 
 Eleventy uses Markdown-it to transform Markdown content into HTML, and then runs the transform added by `eleventy-plugin-images-responsiver`, which calls `images-responsiver` to actually transform the HTML.
 
-Neither `eleventy-plugin-images-responsiver` nor `images-responsiver` transform (resize) the image files, there are [multiple ways to do so](https://nhoizey.github.io/images-responsiver/tutorial-05-images-urls.html).
+Neither `eleventy-plugin-images-responsiver` nor `images-responsiver` transforms (resize) the image files, there are multiple ways to do so explained in the docs.
 
 **Be aware that [documentation for `images-responsiver`](https://nhoizey.github.io/images-responsiver/) contains a lot more information than this one, but is fully applicable to using `eleventy-plugin-images-responsiver` with Eleventy.**
 
-# Documentation
+# Installation
 
-Read full documentation on <https://nhoizey.github.io/eleventy-plugin-images-responsiver/>
+To install and use the plugin, install it as a dev dependency in your Eleventy project:
+
+```
+npm install eleventy-plugin-images-responsiver --save-dev
+```
+
+# Usage
+
+Instead of jumping directly into the list of features and configuration options, let us take your hand and guide you through a step by step tutorial with actual examples.
+
+Let's [start here](https://nhoizey.github.io/eleventy-plugin-images-responsiver/examples/01-without-plugin/)!
 
 # Authors
 
