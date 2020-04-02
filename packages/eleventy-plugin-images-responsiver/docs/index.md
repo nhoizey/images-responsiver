@@ -10,9 +10,7 @@ Responsive Images are difficult to implement, but they're **required to provide 
 
 Knowing that [`<picture>` is only required for rare advanced usages](https://cloudfour.com/thinks/dont-use-picture-most-of-the-time/), **`eleventy-plugin-images-responsiver` should be enough for most use cases**.
 
-# eleventy-plugin-images-responsiver is the glue between Eleventy and images-responsiver
-
-`eleventy-plugin-images-responsiver` is "just" a thin layer between Eleventy plugin and transformations system and [`images-responsiver`](https://github.com/nhoizey/images-responsiver), a generic HTML transformation Node.js module for simple responsive images.
+**`eleventy-plugin-images-responsiver` is the glue between Eleventy and `images-responsiver`**: `eleventy-plugin-images-responsiver` is "just" a thin layer between Eleventy plugin and transformations system and [`images-responsiver`](https://github.com/nhoizey/images-responsiver), a generic HTML transformation Node.js module for simple responsive images.
 
 Eleventy uses Markdown-it to transform Markdown content into HTML, and then runs the transform added by `eleventy-plugin-images-responsiver`, which calls `images-responsiver` to actually transform the HTML.
 
