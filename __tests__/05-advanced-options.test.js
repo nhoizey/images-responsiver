@@ -21,6 +21,19 @@ describe('images with advanced options', () => {
     expect(cleanHtml(transformed)).toMatchSnapshot();
   });
 
+  test("selector in wrong place don't break it", () => {
+    const content = `<!DOCTYPE html><body>
+      <img src="test1.png" data-responsiver="transform" class="yes" /><img src="test2.png" data-responsiver="transform" class="no" /></body>`;
+    const transformed = imagesResponsiver(content, {
+      transform: {
+        selector: '.yes',
+        classes: ['transformed'],
+      },
+    });
+
+    expect(cleanHtml(transformed)).toMatchSnapshot();
+  });
+
   test('resizedImageUrl', () => {
     const content = `<!DOCTYPE html><body>
       <img src="test.png" width="420"></body>`;
