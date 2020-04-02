@@ -48,4 +48,4 @@ Images are not visible because the transformed HTML (using default configuration
 
 # Now… what?
 
-Let's see how to provide these resized images to browsers in [step 3](../03-resized-images/#readme).
+Let's see how to provide these resized images to browsers in **[step 3](../03-resized-images/#readme)**.

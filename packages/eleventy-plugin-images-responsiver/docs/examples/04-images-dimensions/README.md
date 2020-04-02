@@ -70,4 +70,4 @@ It means **the browser still downloads images much larger than necessary**.
 
 _Note: That's why the logo was visible on mobile in [step 3](../03-resized-images/#readme), because the viewport was 320 pixels wide, like the only available image. So what looked right was in fact wrong… 😅_
 
-Let's see how to fix this in [step 5](../05-presets/#readme)
+Let's see how to fix this in **[step 5](../05-presets/#readme)**.

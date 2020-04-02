@@ -37,4 +37,4 @@ We can open this page in different browsers, on different devices, with differen
 
 # Now… what?
 
-Let's try to enhance it with the plugin in [step 2](../02-with-plugin-default/#readme).
+Let's try to enhance it with the plugin in **[step 2](../02-with-plugin-default/#readme)**.

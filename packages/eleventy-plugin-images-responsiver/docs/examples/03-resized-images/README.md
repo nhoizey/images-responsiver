@@ -41,4 +41,4 @@ So while the `my-logo-320.png` version is enough for the mobile view, the deskto
 
 So we have to find a way to tell the plugin the image's width, so that it doesn't add a larger one to the transformed HTML.
 
-Let's see how to do this in [step 4](../04-images-dimensions/#readme)
+Let's see how to do this in **[step 4](../04-images-dimensions/#readme)**.

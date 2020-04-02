@@ -1,3 +1,5 @@
+| **[<< back to home](../../)** |
+
 # Step 0: Get the resources to follow this tutorial
 
 Get the sources from the repository. You can either:
@@ -12,4 +14,4 @@ Then go into the first example folder with your terminal:
 cd my-local-folder/docs/examples/01-without-plugin
 ```
 
-Then, let's go for [step 1](https://nhoizey.github.io/eleventy-plugin-images-responsiver/examples/01-without-plugin/)!
+Then, let's go for **[step 1](https://nhoizey.github.io/eleventy-plugin-images-responsiver/examples/01-without-plugin/)**!
