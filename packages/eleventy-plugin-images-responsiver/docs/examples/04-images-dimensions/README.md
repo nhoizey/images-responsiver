@@ -1,4 +1,4 @@
-# Step 3: resized images
+# Step 4: Images dimensions
 
 ## Run it
 
