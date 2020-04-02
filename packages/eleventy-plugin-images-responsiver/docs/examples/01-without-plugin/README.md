@@ -23,6 +23,10 @@ And here on simulated mobile:
 
 ![screenshot on desktop](screenshot-mobile.png)
 
-We might open it in different browsers, on different devices, with different viewport widths and screen densities, **the very same (potentially heavy) image files are downloaded**. Not cool for people on small devices with low resolution, and potentially bad connexions.
+_Note: We used the [Markdown-it Attributes plugin](https://github.com/arve0/markdown-it-attrs) to add a `logo` class to the logo image for styling (width, float on the right, etc.). This plugin allows adding attributes to elements using this syntax for example: `![My logo](assets/my-logo.png){.logo}`. This plugin will be useful later._
+
+We can open this page in different browsers, on different devices, with different viewport widths and screen densities, **the very same (potentially heavy) image files will be downloaded**. Not cool for people on small devices with low resolution, and potentially bad connexions.
+
+# Now… what?
 
 Let's try to enhance it with the plugin in [step 2](../02-with-plugin-default/#readme).

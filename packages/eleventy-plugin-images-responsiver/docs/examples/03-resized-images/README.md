@@ -35,6 +35,8 @@ Unfortunately, the pristine (a.k.a. "untouched original") logo image is only 400
 
 So while the `my-logo-320.png` version is perfect for the mobile view, the desktop view tries to load a larger one (after all, our HTML tells him it is available) and fails.
 
+# Now… what?
+
 So we have to find a way to tell the plugin the image's width, so that it doesn't add a larger one to the transformed HTML.
 
 Let's see how to do this in [step 4](../04-images-dimensions/#readme)

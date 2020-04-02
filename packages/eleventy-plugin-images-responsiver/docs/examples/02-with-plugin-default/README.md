@@ -44,4 +44,6 @@ This is the simplest way to add the plugin without any specific configuration.
 
 Images are not visible because the transformed HTML (using default configuration) tells the browsers about images with names like `colorful-netherlands-320.jpg`, `colorful-netherlands-560.jpg` while we actualy only have one `colorful-netherlands.jpg`.
 
+# Now… what?
+
 Let's see how to provide these resized images to browsers in [step 3](../03-resized-images/#readme).
