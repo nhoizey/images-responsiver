@@ -9,7 +9,7 @@ Responsive Images are difficult to implement, but they're **required to provide 
 
 `images-responsiver` transforms simple `<img src="…">` HTML tags into better responsive images syntax with `srcset` and `sizes` attributes.
 
-Knowing that [`<picture>` is only required for rare advanced usages](https://cloudfour.com/thinks/dont-use-picture-most-of-the-time/), **`images-responsiver` should be enough for most use cases**.
+Knowing that [`<picture>` is only required for rare advanced usages](https://cloudfour.com/thinks/dont-use-picture-most-of-the-time/), **`images-responsiver` should be enough for most use cases**, known as Resolution Switching. Read [this article on Cloudfour's blog to know more of the theory](https://cloudfour.com/thinks/responsive-images-the-simple-way/).
 
 `images-responsiver` is also available as a plugin for [Eleventy](https://www.11ty.dev/), a great Static Site Generator: [eleventy-plugin-images-responsiver](https://github.com/nhoizey/eleventy-plugin-images-responsiver). It allows authors to use the simple and standard Markdown syntax for images (`![alt text](image.jpg)`) and yet get responsive images in the generated HTML, with `srcset` and `sizes` attributes.
 
