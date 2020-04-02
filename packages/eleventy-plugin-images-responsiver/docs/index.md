@@ -24,9 +24,9 @@ npm install eleventy-plugin-images-responsiver --save-dev
 
 # Usage
 
-Instead of jumping directly into the list of features and configuration options, let us take your hand and guide you through a step by step tutorial with actual examples.
+Instead of jumping directly into the list of features and configuration options, let us take your hand and **guide you through a step by step tutorial** with actual examples.
 
-Let's [start here](https://nhoizey.github.io/eleventy-plugin-images-responsiver/step-0.html)!
+Let's **[start here](https://nhoizey.github.io/eleventy-plugin-images-responsiver/step-0.html)**!
 
 ## Authors
 
