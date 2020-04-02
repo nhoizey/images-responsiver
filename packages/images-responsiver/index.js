@@ -83,38 +83,103 @@ const imagesResponsiver = (html, options = {}) => {
       const imageSrc = image.getAttribute('src');
       info(`Transforming ${imageSrc}`);
 
-      // Make sure there are at least 2 steps for minWidth and maxWidth
-      if (imageSettings.steps < 2) {
-        warning(
-          `Steps should be >= 2: ${imageSettings.steps} step for ${imageSrc}`
-        );
-        imageSettings.steps = 2;
-      }
-
-      // Make sure maxWidth > minWidth
-      // (even if there would be no issue in `srcset` order)
-      if (imageSettings.minWidth > imageSettings.maxWidth) {
-        warning(`Combined options have minWidth > maxWidth for ${imageSrc}`);
-        let tempMin = imageSettings.minWidth;
-        imageSettings.minWidth = imageSettings.maxWidth;
-        imageSettings.maxWidth = tempMin;
-      }
-
-      let imageWidth = image.getAttribute('width');
+      const imageWidth = image.getAttribute('width');
       if (imageWidth === null) {
         warning(`The image should have a width attribute: ${imageSrc}`);
-      } else {
-        if (imageWidth < imageSettings.minWidth) {
-          warning(
-            `The image is smaller than minWidth: ${imageWidth} < ${imageSettings.minWidth}`
+      }
+
+      let srcsetList = [];
+      if (
+        imageSettings.widthsList !== undefined &&
+        imageSettings.widthsList.length > 0
+      ) {
+        // Priority to the list of image widths for srcset
+        // Make sure there are no duplicates, and sort in ascending order
+        imageSettings.widthsList = [...new Set(imageSettings.widthsList)].sort(
+          (a, b) => a - b
+        );
+        const widthsListLength = imageSettings.widthsList.length;
+        if (imageWidth !== null) {
+          // Filter out widths superiors to the image's width
+          imageSettings.widthsList = imageSettings.widthsList.filter(
+            (width) => width <= imageWidth
           );
-          imageSettings.minWidth = imageWidth;
+          if (
+            imageSettings.widthsList.length < widthsListLength &&
+            (imageSettings.widthsList.length === 0 ||
+              imageSettings.widthsList[imageSettings.widthsList.length - 1] !==
+                imageWidth)
+          ) {
+            // At least one value was removed because superior to the image's width
+            // Let's replace it/them with the image's width
+            imageSettings.widthsList.push(imageWidth);
+          }
         }
-        if (imageWidth < imageSettings.fallbackWidth) {
+        // generate the srcset attribute
+        srcsetList = imageSettings.widthsList.map(
+          (width) =>
+            `${imageSettings.resizedImageUrl(imageSrc, width)} ${width}w`
+        );
+      } else {
+        // We don't have a list of widths for srcset, we have to compute them
+
+        // Make sure there are at least 2 steps for minWidth and maxWidth
+        if (imageSettings.steps < 2) {
           warning(
-            `The image is smaller than fallbackWidth: ${imageWidth} < ${imageSettings.fallbackWidth}`
+            `Steps should be >= 2: ${imageSettings.steps} step for ${imageSrc}`
           );
-          imageSettings.fallbackWidth = imageWidth;
+          imageSettings.steps = 2;
+        }
+
+        // Make sure maxWidth > minWidth
+        // (even if there would be no issue in `srcset` order)
+        if (imageSettings.minWidth > imageSettings.maxWidth) {
+          warning(`Combined options have minWidth > maxWidth for ${imageSrc}`);
+          let tempMin = imageSettings.minWidth;
+          imageSettings.minWidth = imageSettings.maxWidth;
+          imageSettings.maxWidth = tempMin;
+        }
+
+        if (imageWidth !== null) {
+          if (imageWidth < imageSettings.minWidth) {
+            warning(
+              `The image is smaller than minWidth: ${imageWidth} < ${imageSettings.minWidth}`
+            );
+            imageSettings.minWidth = imageWidth;
+          }
+          if (imageWidth < imageSettings.fallbackWidth) {
+            warning(
+              `The image is smaller than fallbackWidth: ${imageWidth} < ${imageSettings.fallbackWidth}`
+            );
+            imageSettings.fallbackWidth = imageWidth;
+          }
+        }
+        // generate the srcset attribute
+        for (let i = 0; i < imageSettings.steps; i++) {
+          let stepWidth = Math.ceil(
+            imageSettings.minWidth +
+              ((imageSettings.maxWidth - imageSettings.minWidth) /
+                (imageSettings.steps - 1)) *
+                i
+          );
+          if (imageWidth !== null && stepWidth >= imageWidth) {
+            warning(
+              `The image is smaller than maxWidth: ${imageWidth} < ${imageSettings.maxWidth}`
+            );
+            srcsetList.push(
+              `${imageSettings.resizedImageUrl(
+                imageSrc,
+                imageWidth
+              )} ${imageWidth}w`
+            );
+            break;
+          }
+          srcsetList.push(
+            `${imageSettings.resizedImageUrl(
+              imageSrc,
+              stepWidth
+            )} ${stepWidth}w`
+          );
         }
       }
 
@@ -128,32 +193,7 @@ const imagesResponsiver = (html, options = {}) => {
         imageSettings.resizedImageUrl(imageSrc, imageSettings.fallbackWidth)
       );
 
-      // generate the srcset attribute
-      let srcset = [];
-      for (let i = 0; i < imageSettings.steps; i++) {
-        let stepWidth = Math.ceil(
-          imageSettings.minWidth +
-            ((imageSettings.maxWidth - imageSettings.minWidth) /
-              (imageSettings.steps - 1)) *
-              i
-        );
-        if (imageWidth !== null && stepWidth >= imageWidth) {
-          warning(
-            `The image is smaller than maxWidth: ${imageWidth} < ${imageSettings.maxWidth}`
-          );
-          srcset.push(
-            `${imageSettings.resizedImageUrl(
-              imageSrc,
-              imageWidth
-            )} ${imageWidth}w`
-          );
-          break;
-        }
-        srcset.push(
-          `${imageSettings.resizedImageUrl(imageSrc, stepWidth)} ${stepWidth}w`
-        );
-      }
-      image.setAttribute('srcset', srcset.join(', '));
+      image.setAttribute('srcset', srcsetList.join(', '));
 
       // add sizes attribute
       image.setAttribute('sizes', imageSettings.sizes);
