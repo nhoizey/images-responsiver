@@ -84,7 +84,7 @@ Check the result of the transformation to see how the images now have different 
 
 You can also check the HTML:
 
-<script src="https://gist-it.appspot.com/github/nhoizey/eleventy-plugin-images-responsiver/raw/master/docs/tutorial/05-preesets/dist/index.html?footer=minimal"></script>
+<script src="https://gist-it.appspot.com/github/nhoizey/eleventy-plugin-images-responsiver/raw/master/docs/tutorial/05-presets/dist/index.html?footer=minimal"></script>
 
 _Note: Each image can use multiple presets in the `data-responsiver` attribute, each value separated by a space (like classes). Settings from each preset surcharges the previous one(s), in the order they're declared._
 
