@@ -19,11 +19,11 @@ If you open `http://localhost:8080/` in a browser, images should be back. 🥳
 
 Here is a screenshot on desktop:
 
-![screenshot on desktop](screenshot-desktop.png)
+![screenshot on desktop](screenshot-desktop.jpg)
 
 And here on simulated mobile:
 
-![screenshot on desktop](screenshot-mobile.png)
+![screenshot on desktop](screenshot-mobile.jpg)
 
 Oh… well, the photo is there in both screenshots, but the logo is there only on mobile… 🤔
 

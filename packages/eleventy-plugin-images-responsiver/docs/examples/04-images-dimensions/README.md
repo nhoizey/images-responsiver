@@ -19,11 +19,11 @@ If you open `http://localhost:8080/` in a browser, all images should be back, on
 
 Here is a screenshot on desktop:
 
-![screenshot on desktop](screenshot-desktop.png)
+![screenshot on desktop](screenshot-desktop.jpg)
 
 And here on simulated mobile:
 
-![screenshot on desktop](screenshot-mobile.png)
+![screenshot on desktop](screenshot-mobile.jpg)
 
 ## How does it work?
 
