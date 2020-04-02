@@ -8,7 +8,7 @@ It allows authors to use the simple and standard Markdown syntax for images (`![
 
 Responsive Images are difficult to implement, but they're **required to provide a good performance to Web users**.
 
-Knowing that [`<picture>` is only required for rare advanced usages](https://cloudfour.com/thinks/dont-use-picture-most-of-the-time/), **`eleventy-plugin-images-responsiver` should be enough for most use cases**.
+Knowing that [`<picture>` is only required for rare advanced usages](https://cloudfour.com/thinks/dont-use-picture-most-of-the-time/), **`eleventy-plugin-images-responsiver` should be enough for most use cases**, known as Resolution Switching. Read [this article on Cloudfour's blog to know more of the theory](https://cloudfour.com/thinks/responsive-images-the-simple-way/).
 
 **`eleventy-plugin-images-responsiver` is the glue between Eleventy and `images-responsiver`**: `eleventy-plugin-images-responsiver` is "just" a thin layer between Eleventy plugin and transformations system and [`images-responsiver`](https://github.com/nhoizey/images-responsiver), a generic HTML transformation Node.js module for simple responsive images.
 
