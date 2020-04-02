@@ -15,15 +15,7 @@ Sources are in `src/` and build result is in `dist/`.
 
 ## Check the result
 
-If you open `http://localhost:8080/` in a browser, all images are still there, and should be lighter! 💪
-
-Here is a screenshot on desktop:
-
-![screenshot on desktop](screenshot-desktop.png)
-
-And here on simulated mobile:
-
-![screenshot on desktop](screenshot-mobile.png)
+If you open `http://localhost:8080/` in a browser, all images are still there, and should weight much less! 💪
 
 Nothing changed visualy.
 
