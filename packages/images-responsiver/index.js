@@ -69,6 +69,12 @@ const imagesResponsiver = (html, options = {}) => {
         // TODO: Merging preset settings to previous settings should be easier
         image.dataset.responsiver.split(' ').forEach((preset) => {
           if (options[preset] !== undefined) {
+            if ('selector' in options[preset]) {
+              error(
+                `The 'selector' property can't be used in the '${preset}' preset. It can be used only in the 'default' preset`
+              );
+              delete options[preset].selector;
+            }
             let presetClasses = options[preset].classes || [];
             let existingClasses = imageSettings.classes;
             imageSettings = deepmerge(imageSettings, options[preset], {
