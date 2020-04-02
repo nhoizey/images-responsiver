@@ -31,7 +31,7 @@ We used this CSS file:
 
 We want the content to take 90% of the available space, but never more than `40em` (better for readability of multi-lines texts), and the logo to use 20% of this content width, floated on the right.
 
-_Note: We used the [Markdown-it Attributes plugin](https://github.com/arve0/markdown-it-attrs) to add a `logo` class to the logo image for styling (width, float on the right, etc.). This plugin allows adding attributes to elements using this syntax for example: `![My logo](assets/my-logo.png){.logo}`. This plugin will be useful later._
+_Note: We used the [Markdown-it Attributes plugin](https://github.com/arve0/markdown-it-attrs) to add a `logo` class to the logo image for styling (width, float on the right, etc.). This plugin allows adding attributes to elements using this syntax for example: `![My logo](assets/my-logo.png){.logo}`. This plugin will be even more useful later._
 
 We can open this page in different browsers, on different devices, with different viewport widths and screen densities, **the very same (potentially heavy) image files will be downloaded**. Not cool for people on small devices with low resolution, and potentially bad connexions.
 
