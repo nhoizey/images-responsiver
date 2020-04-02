@@ -86,7 +86,11 @@ To:
 
 This syntax is becoming really verbose, but **don't abandon now**, it's really worth it, and we'll see a little later how to make it easier for the content authors!
 
-Check the HTML resulting of the transformation to see how the images now have different `sizes` attribute values:
+Check the result of the transformation to see how the images now have different `sizes` attribute values:
+
+![Screenshot of the browser console with both images' `sizes` attribute values](screenshot-console.jpg)
+
+You can also check the HTML:
 
 <script src="https://gist-it.appspot.com/github/nhoizey/eleventy-plugin-images-responsiver/raw/master/docs/tutorial/05-preesets/dist/index.html?footer=minimal"></script>
 
