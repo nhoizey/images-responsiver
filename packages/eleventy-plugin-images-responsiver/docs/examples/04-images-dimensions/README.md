@@ -1,3 +1,5 @@
+| **[<< back to documentation home](../../)** | **[< back to step 3](../03-resized-images/#readme)** |
+
 # Step 4: Images dimensions
 
 ## Run it
