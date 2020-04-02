@@ -1,3 +1,5 @@
+| **[<< back to home](../../)** | **[< back to step 1](../01-without-plugin/#readme)** |
+
 # Step 2: Default behaviour with the plugin
 
 ## Run it

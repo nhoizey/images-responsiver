@@ -1,3 +1,5 @@
+| **[<< back to home](../../)** | **[< back to step 2](../02-with-plugin-default/#readme)** |
+
 # Step 3: Resized images
 
 ## Run it

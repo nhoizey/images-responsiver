@@ -1,3 +1,5 @@
+| **[<< back to home](../../)** | **[< back to step 0](../../step-0.html)** |
+
 # Step 1: Default behaviour without the plugin
 
 ## Run it
