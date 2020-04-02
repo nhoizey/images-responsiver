@@ -1,4 +1,4 @@
-# Step 1: default behaviour without the plugin
+# Step 1: Default behaviour without the plugin
 
 ## Run it
 
@@ -9,7 +9,7 @@ npm ci
 npm start
 ```
 
-Sources are in `src/` and build is in `dist/`.
+Sources are in `src/` and build result is in `dist/`.
 
 ## Check the result
 
