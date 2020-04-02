@@ -29,7 +29,7 @@ We used this CSS file:
 
 <script src="https://gist-it.appspot.com/github/nhoizey/eleventy-plugin-images-responsiver/raw/master/docs/examples/01-without-plugin/src/assets/styles.css?footer=minimal"></script>
 
-We want the content to take 90% of the available space, but never more than `40em` (better for readability of multi-lines texts), and the logo to use 20% of this content width, floated on the right.
+We want the content to take 90 % of the available space, but never more than `40em` (better for readability of multi-lines texts), and the logo to use 20 % of this content width, floated on the right.
 
 _Note: We used the [Markdown-it Attributes plugin](https://github.com/arve0/markdown-it-attrs) to add a `logo` class to the logo image for styling (width, float on the right, etc.). This plugin allows adding attributes to elements using this syntax for example: `![My logo](assets/my-logo.png){.logo}`. This plugin will be even more useful later._
 
