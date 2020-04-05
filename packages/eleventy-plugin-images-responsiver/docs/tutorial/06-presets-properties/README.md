@@ -42,7 +42,7 @@ const presets = {
 
 We can use presets to add classes to images.
 
-For example, we can ad a `logo` class to every image using the `logo` preset with this syntax:
+For example, we can add a `logo` class to every image using the `logo` preset with this syntax:
 
 ```javascript
 const presets = {
