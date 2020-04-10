@@ -26,18 +26,22 @@ exports[`image without options simple image 1`] = `
 "<!DOCTYPE html>
 <html>
   <body>
-    <img
-      src=\\"test-640.png\\"
-      srcset=\\"
-        test-320.png   320w,
-        test-560.png   560w,
-        test-800.png   800w,
-        test-1040.png 1040w,
-        test-1280.png 1280w
-      \\"
-      sizes=\\"100vw\\"
-      data-pristine=\\"test.png\\"
-    />
+    <p>
+      content before
+      <img
+        src=\\"test-640.png\\"
+        srcset=\\"
+          test-320.png   320w,
+          test-560.png   560w,
+          test-800.png   800w,
+          test-1040.png 1040w,
+          test-1280.png 1280w
+        \\"
+        sizes=\\"100vw\\"
+        data-pristine=\\"test.png\\"
+      />
+      content after
+    </p>
   </body>
 </html>
 "

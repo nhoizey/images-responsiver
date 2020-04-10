@@ -9,7 +9,7 @@ function cleanHtml(html) {
 
 describe('image without options', () => {
   test('simple image', () => {
-    const content = `<!DOCTYPE html><html><body><img src="test.png"></body></html>`;
+    const content = `<!DOCTYPE html><html><body><p>content before <img src="test.png"> content after</p></body></html>`;
     const transformed = imagesResponsiver(content);
     expect(cleanHtml(transformed)).toMatchSnapshot();
   });
