@@ -41,11 +41,11 @@
     "eslint": "6.8.0",
     "eslint-config-prettier": "6.10.1",
     "eslint-plugin-prettier": "3.1.2",
-    "prettier": "2.0.2",
+    "prettier": "2.0.4",
     "np": "6.2.0"
   },
   "dependencies": {
-    "images-responsiver": "^1.6.1"
+    "images-responsiver": "^1.6.3"
   },
   "bugs": {
     "url": "https://github.com/nhoizey/eleventy-plugin-images-responsiver/issues"
