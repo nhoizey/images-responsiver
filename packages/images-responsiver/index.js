@@ -48,6 +48,13 @@ const imagesResponsiver = (html, options = {}) => {
     },
   });
 
+  // TODO: remove this when BasicHTML bug is fixed
+  // https://github.com/nhoizey/images-responsiver/issues/27
+  html = html.replace(
+    /<((area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)([a-z]*|(="[^"]*")*| *)*)>/g,
+    '<$1 />'
+  );
+
   document.documentElement.innerHTML = html;
 
   [...document.querySelectorAll(globalSettings.selector)]
