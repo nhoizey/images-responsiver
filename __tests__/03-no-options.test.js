@@ -14,6 +14,18 @@ describe('image without options', () => {
     expect(cleanHtml(transformed)).toMatchSnapshot();
   });
 
+  test('simple image in subfolder', () => {
+    const content = `<!DOCTYPE html><html><body><p>content before <img src="folder/test.png"> content after</p></body></html>`;
+    const transformed = imagesResponsiver(content);
+    expect(cleanHtml(transformed)).toMatchSnapshot();
+  });
+
+  test('simple image with absolute URL', () => {
+    const content = `<!DOCTYPE html><html><body><p>content before <img src="https://example.com/folder/test.png"> content after</p></body></html>`;
+    const transformed = imagesResponsiver(content);
+    expect(cleanHtml(transformed)).toMatchSnapshot();
+  });
+
   test('width attribute superior to the fallback', () => {
     const content = `<!DOCTYPE html><body>
       <img src="test.png" width="789"></body>`;
