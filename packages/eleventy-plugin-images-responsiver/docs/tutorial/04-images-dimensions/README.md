@@ -27,7 +27,7 @@ And here on simulated mobile:
 
 ## How does it work?
 
-We wanted to tell the plugin about pristine images' actual widths, so that transformed HTML wouldn't include impossible withs.
+We wanted to tell the plugin about pristine images' actual widths, so that transformed HTML wouldn't include impossible widths.
 
 Why invent a new parameter for the plugin? We already have the `width` attribute in HTML, so we used it, so that the plugin can read it.
 
