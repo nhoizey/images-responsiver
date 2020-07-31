@@ -28,15 +28,15 @@
   "author": "Nicolas Hoizey",
   "license": "MIT",
   "devDependencies": {
-    "eslint": "6.8.0",
-    "eslint-config-prettier": "6.10.1",
-    "eslint-plugin-prettier": "3.1.2",
-    "jest": "25.3.0",
-    "np": "6.2.0",
-    "prettier": "2.0.4"
+    "eslint": "7.5.0",
+    "eslint-config-prettier": "6.11.0",
+    "eslint-plugin-prettier": "3.1.4",
+    "jest": "26.2.2",
+    "np": "6.3.2",
+    "prettier": "2.0.5"
   },
   "dependencies": {
-    "basichtml": "^2.2.4",
+    "basichtml": "^2.3.0",
     "debug": "^4.1.1",
     "deepmerge": "4.2.2",
     "lodash.clonedeep": "^4.5.0",
