@@ -35,14 +35,14 @@
   "author": "Nicolas Hoizey",
   "license": "MIT",
   "peerDependencies": {
-    "@11ty/eleventy": ">=0.10.0"
+    "@11ty/eleventy": ">=0.11.0"
   },
   "devDependencies": {
-    "eslint": "6.8.0",
-    "eslint-config-prettier": "6.10.1",
-    "eslint-plugin-prettier": "3.1.2",
-    "prettier": "2.0.4",
-    "np": "6.2.0"
+    "eslint": "7.5.0",
+    "eslint-config-prettier": "6.11.0",
+    "eslint-plugin-prettier": "3.1.4",
+    "prettier": "2.0.5",
+    "np": "6.3.2"
   },
   "dependencies": {
     "images-responsiver": "^1.6.4"
