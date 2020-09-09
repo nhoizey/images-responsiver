@@ -37,13 +37,6 @@
   "peerDependencies": {
     "@11ty/eleventy": ">=0.11.0"
   },
-  "devDependencies": {
-    "eslint": "7.7.0",
-    "eslint-config-prettier": "6.11.0",
-    "eslint-plugin-prettier": "3.1.4",
-    "prettier": "2.1.1",
-    "np": "6.4.0"
-  },
   "dependencies": {
     "images-responsiver": "^1.6.4"
   },
