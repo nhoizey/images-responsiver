@@ -181,6 +181,7 @@ const imagesResponsiver = (html, options = {}) => {
           }
         }
         // generate the srcset attribute
+        let previousStepWidth = 0;
         for (let i = 0; i < imageSettings.steps; i++) {
           let stepWidth = Math.ceil(
             imageSettings.minWidth +
@@ -200,6 +201,11 @@ const imagesResponsiver = (html, options = {}) => {
             );
             break;
           }
+          if (stepWidth === previousStepWidth) {
+            // Don't set twice the same image width
+            continue;
+          }
+          previousStepWidth = stepWidth;
           srcsetList.push(
             `${imageSettings.resizedImageUrl(
               imageSrc,
