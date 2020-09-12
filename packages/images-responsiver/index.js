@@ -1,6 +1,35 @@
 'use strict';
 
-const basicHTML = require('basichtml');
+/* ****************************
+ * Initialize basicHTML
+ * ****************************/
+
+global.window = global;
+
+require('basichtml/src/utils').querySelectorAll = function (
+  css,
+  element = this
+) {
+  const $ = require('sizzle');
+  return $(css, element);
+};
+
+const { Document } = require('basichtml');
+
+function createDocumentFromHTML(html, customElements) {
+  const document = new Document(customElements);
+  const tmp = document.createElement('div');
+  tmp.innerHTML = html;
+  const { attributes, children } = tmp.firstElementChild;
+  document.documentElement.attributes = attributes;
+  document.documentElement.append(...children);
+  return (window.document = document);
+}
+
+/* ****************************
+ * Other dependencies
+ * ****************************/
+
 const deepmerge = require('deepmerge');
 const clonedeep = require('lodash.clonedeep');
 const overwriteMerge = (destinationArray, sourceArray, options) => sourceArray;
@@ -36,19 +65,10 @@ const imagesResponsiver = (html, options = {}) => {
     });
   }
 
-  const { document } = basicHTML.init({
-    selector: {
-      // use the module sizzle, it will be required
-      // automatically
-      name: 'sizzle',
-      // how to retrieve results => querySelectorAll
-      $(Sizzle, element, css) {
-        return Sizzle(css, element);
-      },
-    },
-  });
-
-  document.documentElement.innerHTML = html;
+  if (!html.match(/<html.*<\/html>/)) {
+    html = `<!DOCTYPE html><html>${html}</html>`;
+  }
+  let document = createDocumentFromHTML(html);
 
   [...document.querySelectorAll(globalSettings.selector)]
     .filter((image) => {
