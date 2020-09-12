@@ -2,13 +2,7 @@
 
 This is a monorepo for `images-responsiver`.
 
-It recently moved to a mono-repo structure managed by [Lerna](https://lerna.js.org/) from having separate repositories for each library, such as `eleventy-plugin-images-responsiver`.
-
-Previous repositories were:
-- <https://github.com/nhoizey/images-responsiver>
-- <https://github.com/nhoizey/eleventy-plugin-images-responsiver>
-
-
+It recently moved to a mono-repo structure managed by [Lerna](https://lerna.js.org/) from having separate repositories for each library, such as [`eleventy-plugin-images-responsiver`](https://github.com/nhoizey/eleventy-plugin-images-responsiver).
 
 ## License
 
