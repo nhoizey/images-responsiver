@@ -40,7 +40,7 @@ const warning = debug('images-responsiver:warning');
 const info = debug('images-responsiver:info');
 
 const defaultSettings = {
-  selector: ':not(picture) img[src]:not([srcset]):not([src$=".svg"])',
+  selector: ':not(picture) > img[src]:not([srcset]):not([src$=".svg"])',
   resizedImageUrl: (src, width) =>
     src.replace(/^(.*)(\.[^\.]+)$/, '$1-' + width + '$2'),
   runBefore: (image) => image,
