@@ -5,14 +5,13 @@
   "main": ".eleventy.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nhoizey/eleventy-plugin-images-responsiver.git"
+    "url": "git+https://github.com/nhoizey/images-responsiver.git"
   },
   "files": [
     "./"
   ],
   "scripts": {
-    "lint": "eslint . --ext js --quiet --fix",
-    "release": "np"
+    "lint": "eslint . --ext js --quiet --fix"
   },
   "keywords": [
     "static-site-generator",
@@ -41,7 +40,7 @@
     "images-responsiver": "^1.8.0"
   },
   "bugs": {
-    "url": "https://github.com/nhoizey/eleventy-plugin-images-responsiver/issues"
+    "url": "https://github.com/nhoizey/images-responsiver/issues"
   },
-  "homepage": "https://github.com/nhoizey/eleventy-plugin-images-responsiver"
+  "homepage": "https://github.com/nhoizey/images-responsiver"
 }
