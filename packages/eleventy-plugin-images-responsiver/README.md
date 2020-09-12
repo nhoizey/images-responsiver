@@ -1,6 +1,6 @@
 # eleventy-plugin-images-responsiver
 
-[![GitHub stars](https://img.shields.io/github/stars/nhoizey/eleventy-plugin-images-responsiver.svg?style=social)](https://github.com/nhoizey/eleventy-plugin-images-responsiver/stargazers)
+[![GitHub stars](https://img.shields.io/github/stars/nhoizey/images-responsiver.svg?style=social)](https://github.com/nhoizey/images-responsiver/stargazers)
 
 `eleventy-plugin-images-responsiver` is **a simple solution for most responsive images needs with [Eleventy](https://www.11ty.dev/)**. Responsive Images are difficult to implement, but they're **required to provide a good performance to Web users**.
 
@@ -26,23 +26,23 @@ npm install eleventy-plugin-images-responsiver --save-dev
 
 Instead of jumping directly into the list of features and configuration options, let us take your hand and **guide you through a step by step tutorial** with actual examples.
 
-Let's **[start here](https://nhoizey.github.io/eleventy-plugin-images-responsiver/tutorial/00-preparation/#readme)**!
+Let's **[start here](https://nhoizey.github.io/images-responsiver/tutorial/00-preparation/#readme)**!
 
 If you already know how to use the plugin and want to **go directly to a section of the tutorial**, here are direct links:
 
-- [Step 0: Get the resources to follow this tutorial](https://nhoizey.github.io/eleventy-plugin-images-responsiver/tutorial/00-preparation/#readme)
-- [Step 1: Default behaviour without the plugin](https://nhoizey.github.io/eleventy-plugin-images-responsiver/tutorial/01-without-plugin/#readme)
-- [Step 2: Default behaviour with the plugin](https://nhoizey.github.io/eleventy-plugin-images-responsiver/tutorial/02-with-plugin-default/#readme)
-- [Step 3: Resized images](https://nhoizey.github.io/eleventy-plugin-images-responsiver/tutorial/03-resized-images/#readme)
-- [Step 4: Images dimensions](https://nhoizey.github.io/eleventy-plugin-images-responsiver/tutorial/04-images-dimensions/#readme)
-- [Step 5: Presets](https://nhoizey.github.io/eleventy-plugin-images-responsiver/tutorial/05-presets/#readme)
-- [Step 6: Presets properties](https://nhoizey.github.io/eleventy-plugin-images-responsiver/tutorial/06-presets-properties/#readme)
+- [Step 0: Get the resources to follow this tutorial](https://nhoizey.github.io/images-responsiver/tutorial/00-preparation/#readme)
+- [Step 1: Default behaviour without the plugin](https://nhoizey.github.io/images-responsiver/tutorial/01-without-plugin/#readme)
+- [Step 2: Default behaviour with the plugin](https://nhoizey.github.io/images-responsiver/tutorial/02-with-plugin-default/#readme)
+- [Step 3: Resized images](https://nhoizey.github.io/images-responsiver/tutorial/03-resized-images/#readme)
+- [Step 4: Images dimensions](https://nhoizey.github.io/images-responsiver/tutorial/04-images-dimensions/#readme)
+- [Step 5: Presets](https://nhoizey.github.io/images-responsiver/tutorial/05-presets/#readme)
+- [Step 6: Presets properties](https://nhoizey.github.io/images-responsiver/tutorial/06-presets-properties/#readme)
 
 # Authors
 
 - [Nicolas Hoizey](https://github.com/nhoizey): Idea and initial work, maintainer
 
-See also the list of [contributors](https://github.com/nhoizey/eleventy-plugin-images-responsiver/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/nhoizey/images-responsiver/contributors) who participated in this project.
 
 # Alternatives
 

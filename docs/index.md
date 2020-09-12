@@ -1,6 +1,6 @@
 # eleventy-plugin-images-responsiver
 
-[![GitHub stars](https://img.shields.io/github/stars/nhoizey/eleventy-plugin-images-responsiver.svg?style=social)](https://github.com/nhoizey/eleventy-plugin-images-responsiver/stargazers)
+[![GitHub stars](https://img.shields.io/github/stars/nhoizey/images-responsiver.svg?style=social)](https://github.com/nhoizey/images-responsiver/stargazers)
 
 `eleventy-plugin-images-responsiver` is **a simple solution for most responsive images needs with [Eleventy](https://www.11ty.dev/)**. Responsive Images are difficult to implement, but they're **required to provide a good performance to Web users**.
 
@@ -42,7 +42,7 @@ If you already know how to use the plugin and want to **go directly to a section
 
 - [Nicolas Hoizey](https://github.com/nhoizey): Idea and initial work, maintainer
 
-See also the list of [contributors](https://github.com/nhoizey/eleventy-plugin-images-responsiver/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/nhoizey/images-responsiver/contributors) who participated in this project.
 
 ## License
 
