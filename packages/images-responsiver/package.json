@@ -10,8 +10,7 @@
   "scripts": {
     "lint": "eslint . --ext js --quiet --fix",
     "test": "jest",
-    "test-update": "jest --updateSnapshot",
-    "release": "np"
+    "test-update": "jest --updateSnapshot"
   },
   "keywords": [
     "website",
