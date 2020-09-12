@@ -1,4 +1,4 @@
-# Images Responsiver monorepo (⚠️ WIP)
+# Images Responsiver
 
 This is a monorepo managed by [Lerna](https://lerna.js.org/) for `images-responsiver` and other libraries using it.
 
