@@ -7,7 +7,7 @@
 
 Responsive images are difficult to implement, but they're **required to provide a good performance to Web users**.
 
-## A Node.js library to ease responvive images
+## A Node.js library to ease responsive images
 
 Images Responsiver transforms plain, simple `<img src="…">` HTML tags into better responsive images syntax with `srcset` and `sizes` attributes.
 
