@@ -30,6 +30,7 @@
     "basichtml": "2.3.0",
     "debug": "4.1.1",
     "deepmerge": "4.2.2",
+    "jest": "^26.4.2",
     "lodash.clonedeep": "4.5.0",
     "sizzle": "2.3.5",
     "supports-color": "7.2.0"
@@ -37,5 +38,9 @@
   "bugs": {
     "url": "https://github.com/nhoizey/images-responsiver/issues"
   },
-  "homepage": "https://nhoizey.github.io/images-responsiver/"
+  "homepage": "https://nhoizey.github.io/images-responsiver/",
+  "devDependencies": {
+    "jest": "^26.4.2",
+    "prettier": "^2.1.1"
+  }
 }
