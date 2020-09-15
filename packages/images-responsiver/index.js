@@ -65,9 +65,12 @@ const imagesResponsiver = (html, options = {}) => {
     });
   }
 
-  if (!html.match(/<html.*<\/html>/)) {
+  // Add `<html>…</html>` tags arround the content if they're missing,
+  // to prevent issues with basicHTML
+  if (!html.match(/<html(.|\n)*<\/html>/gim)) {
     html = `<!DOCTYPE html><html>${html}</html>`;
   }
+
   let document = createDocumentFromHTML(html);
 
   [...document.querySelectorAll(globalSettings.selector)]
