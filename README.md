@@ -1,11 +1,17 @@
 # Images Responsiver
 
-This is a monorepo managed by [Lerna](https://lerna.js.org/) for `images-responsiver` and other libraries using it.
+This project contains multiple projects inside a shared monorepo.
 
 Here are the available packages:
 
-- [`images-responsiver`](./packages/images-responsiver/), the core package
-- [`eleventy-plugin-images-responsiver`](./packages/eleventy-plugin-images-responsiver/), a plugin for [Eleventy](https://11ty.dev), a Static Site Generator
+| **Package** | **Description** |
+| - | - |
+| [`images-responsiver`](./packages/images-responsiver/) | The core package |
+| [`eleventy-plugin-images-responsiver`](./packages/eleventy-plugin-images-responsiver/) | A plugin for [Eleventy](https://11ty.dev), a Static Site Generator |
+
+## Contributing
+
+This monorepo is managed by [Lerna](https://lerna.js.org/).
 
 ## License
 
