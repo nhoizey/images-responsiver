@@ -23,10 +23,10 @@ Read [this article on Cloudfour's blog to know more of the theory](https://cloud
 
 Multiple projects are managed inside this shared monorepo.
 
-| **Package**                                                                            | **Description**                                                    |
-| -------------------------------------------------------------------------------------- | ------------------------------------------------------------------ |
-| [`images-responsiver`](./packages/images-responsiver/)                                 | The core package                                                   |
-| [`eleventy-plugin-images-responsiver`](./packages/eleventy-plugin-images-responsiver/) | A plugin for [Eleventy](https://11ty.dev), a Static Site Generator |
+| **Package**                                                                                                                                  | **Description**                                                    | **Docs**                                                                                 |
+| -------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ | ---------------------------------------------------------------------------------------- |
+| [`images-responsiver`](https://github.com/nhoizey/images-responsiver/tree/main/packages/images-responsiver)                                  | The core package                                                   | [docs](https://nhoizey.github.io/images-responsiver/images-responsiver/)                 |
+| [`eleventy-plugin-images-responsiver`](https://github.com/nhoizey/images-responsiver/tree/main/packages/eleventy-plugin-images-responsiver/) | A plugin for [Eleventy](https://11ty.dev), a Static Site Generator | [docs](https://nhoizey.github.io/images-responsiver/eleventy-plugin-images-responsiver/) |
 
 ## Documentation
 
