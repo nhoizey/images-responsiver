@@ -1,35 +1,6 @@
 'use strict';
 
-/* ****************************
- * Initialize basicHTML
- * ****************************/
-
-global.window = global;
-
-require('basichtml/src/utils').querySelectorAll = function (
-  css,
-  element = this
-) {
-  const $ = require('sizzle');
-  return $(css, element);
-};
-
-const { Document } = require('basichtml');
-
-function createDocumentFromHTML(html, customElements) {
-  const document = new Document(customElements);
-  const tmp = document.createElement('div');
-  tmp.innerHTML = html;
-  const { attributes, children } = tmp.firstElementChild;
-  document.documentElement.attributes = attributes;
-  document.documentElement.append(...children);
-  return (window.document = document);
-}
-
-/* ****************************
- * Other dependencies
- * ****************************/
-
+const createDocumentFromHTML = require('./basicHTML-init');
 const deepmerge = require('deepmerge');
 const clonedeep = require('lodash.clonedeep');
 const overwriteMerge = (destinationArray, sourceArray, options) => sourceArray;
@@ -63,12 +34,6 @@ const imagesResponsiver = (html, options = {}) => {
     globalSettings = deepmerge(globalSettings, options.default, {
       arrayMerge: overwriteMerge,
     });
-  }
-
-  // Add `<html>…</html>` tags arround the content if they're missing,
-  // to prevent issues with basicHTML
-  if (!html.match(/<html(.|\n)*<\/html>/gim)) {
-    html = `<!DOCTYPE html><html>${html}</html>`;
   }
 
   let document = createDocumentFromHTML(html);
