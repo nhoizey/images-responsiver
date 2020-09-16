@@ -19,9 +19,9 @@ If you open `http://localhost:8080/` in a browser, nothing changed visualy and t
 
 However, if you check the source Markdown, it is simpler:
 
-<script src="https://gist-it.appspot.com/github/nhoizey/eleventy-plugin-images-responsiver/raw/master/docs/tutorial/06-presets-properties/src/index.md?footer=minimal"></script>
+<script src="https://gist-it.appspot.com/github/nhoizey/images-responsiver/raw/main/docs/eleventy-plugin-images-responsiver/tutorial/06-presets-properties/src/index.md?footer=minimal"></script>
 
-See how the logo lost its class and dimensions? There is no `{.logo}{width=400}{height=400}` anymore.
+See how the logo "lost" its class and dimensions? There is no `{.logo}{width=400}{height=400}` anymore.
 
 ## How does it work?
 
@@ -93,6 +93,8 @@ const presets = {
 };
 ```
 
+_Note: The `logo` preset will inherit the `default` preset and override its common properties._
+
 If logo pristine images always have the same dimensions, we could even add them to the `logo` preset attributes:
 
 ```javascript
@@ -116,7 +118,7 @@ const presets = {
 
 With this configuration, we can really reduce the authors work complexity, as we can see once again:
 
-<script src="https://gist-it.appspot.com/github/nhoizey/eleventy-plugin-images-responsiver/raw/master/docs/tutorial/06-presets-properties/src/index.md?footer=minimal"></script>
+<script src="https://gist-it.appspot.com/github/nhoizey/images-responsiver/raw/main/docs/eleventy-plugin-images-responsiver/tutorial/06-presets-properties/src/index.md?footer=minimal"></script>
 
 _Note: If you use a [DAM](https://en.wikipedia.org/wiki/Digital_asset_management) to manage high definition source images, you could make sure the site's pristine images have always the same dimensions, `1600x1000` for example, and add them to the preset._
 

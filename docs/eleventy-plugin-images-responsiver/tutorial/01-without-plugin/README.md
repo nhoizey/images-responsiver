@@ -27,7 +27,7 @@ And here on simulated mobile:
 
 We used this CSS file:
 
-<script src="https://gist-it.appspot.com/github/nhoizey/eleventy-plugin-images-responsiver/raw/master/docs/tutorial/01-without-plugin/src/assets/styles.css?footer=minimal"></script>
+<script src="https://gist-it.appspot.com/github/nhoizey/images-responsiver/raw/main/docs/eleventy-plugin-images-responsiver/tutorial/01-without-plugin/src/assets/styles.css?footer=minimal"></script>
 
 We want the content to take 90 % of the available space, but never more than `40em` (better for readability of multi-lines texts), and the logo to use 20 % of this content width, floated on the right.
 

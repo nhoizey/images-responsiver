@@ -43,7 +43,7 @@ We set the default `sizes` attribute value, considering we will never have any i
 
 `(max-width: 45em) 90vw, 40em` now overrides the plugin's default value of `100vw`.
 
-We now need to add a specific overriding preset for the logo, which needs a different `sizes` value, because it takes only 20 % of the content area:
+We now need to add a specific overriding preset for the logo, which needs a different `sizes` value, because it takes only 20 % of the content area (20 % of `90vw` = `18vw`):
 
 ```javascript
 const presets = {
@@ -55,8 +55,6 @@ const presets = {
   },
 };
 ```
-
-The `logo` preset will inherit the `default` preset and override its common properties.
 
 We then use these `presets` as options for the plugin:
 
@@ -78,7 +76,7 @@ To:
 ![My logo](assets/my-logo.png){.logo}{width=400}{height=400}{data-responsiver=logo}
 ```
 
-This syntax is becoming really verbose, but **don't abandon now**, it's really worth it, and we'll see a little later how to make it easier for the content authors!
+This syntax is becoming really verbose 😱, but **don't abandon now**, it's really worth it, and we'll see a little later how to make it easier for the content authors!
 
 Check the result of the transformation to see how the images now have different `sizes` attribute values:
 
@@ -86,7 +84,7 @@ Check the result of the transformation to see how the images now have different 
 
 You can also check the HTML:
 
-<script src="https://gist-it.appspot.com/github/nhoizey/eleventy-plugin-images-responsiver/raw/master/docs/tutorial/05-presets/dist/index.html?footer=minimal"></script>
+<script src="https://gist-it.appspot.com/github/nhoizey/images-responsiver/raw/main/docs/eleventy-plugin-images-responsiver/tutorial/05-presets/dist/index.html?footer=minimal"></script>
 
 _Note: Each image can use multiple presets in the `data-responsiver` attribute, each value separated by a space (like classes). Attributes from each preset surcharges the previous one(s), in the order they're declared._
 
