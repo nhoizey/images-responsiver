@@ -5,7 +5,7 @@
 
 **Images Responsiver is a simple solution for most responsive images needs**.
 
-Responsive images are difficult to implement, but they're **required to provide a good performance to Web users**.
+Responsive images are **difficult to implement**, but **required to provide a good performance to Web users**.
 
 ## A Node.js library to ease responsive images
 
