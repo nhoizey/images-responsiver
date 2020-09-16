@@ -13,3 +13,12 @@ body {
 code {
   background-color: #fff4d1;
 }
+
+// Ugly fixes
+header li {
+  height: auto;
+}
+
+a.button {
+  display: inline-block;
+}
