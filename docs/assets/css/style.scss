@@ -5,9 +5,11 @@
 
 body {
   font-size: 1rem;
+  line-height: 1.5;
+  background-color: white;
 }
 
-pre,
+.highlight,
 code {
   background-color: #fff4d1;
 }
