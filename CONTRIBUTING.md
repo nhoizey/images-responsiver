@@ -2,7 +2,7 @@
 
 ## Introduction
 
-First, thank you for considering contributing to `mages-responsiver`! It's people like you that make the open source community such a great community! 😊
+First, thank you for considering contributing to `images-responsiver`! It's people like you that make the open source community such a great community! 😊
 
 We welcome any type of contribution, not only code. You can help with
 
