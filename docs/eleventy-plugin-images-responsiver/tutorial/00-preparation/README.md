@@ -4,15 +4,15 @@
 
 Get the sources from the repository. You can either:
 
-1. Download [a zip of the whole directory](https://github.com/nhoizey/eleventy-plugin-images-responsiver/archive/master.zip) and unzip it
+- Download [a zip of the whole directory](https://github.com/nhoizey/eleventy-plugin-images-responsiver/archive/master.zip) and unzip it
 
 or
 
-2. clone it with Git into your local folder (change `my-local-folder` to what you want):
+- clone it with Git into your local folder (change `my-local-folder` to what you want):
 
-   ```bash
-   git clone git@github.com:nhoizey/eleventy-plugin-images-responsiver.git my-local-folder
-   ```
+  ```bash
+  git clone git@github.com:nhoizey/eleventy-plugin-images-responsiver.git my-local-folder
+  ```
 
 Then go into the first example folder with your terminal:
 
