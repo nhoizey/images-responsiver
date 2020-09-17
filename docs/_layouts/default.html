@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    {% seo %}
+    <link
+      rel="stylesheet"
+      href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}"
+    />
+    <script src="{{ '/assets/js/scale.fix.js' | relative_url }}"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header">
+          {{ site.title | default: site.github.repository_name }}
+        </h1>
+        <p class="header">
+          {{ site.description | default: site.github.project_tagline }}
+        </p>
+        <ul>
+          <li>
+            <a class="buttons github" href="{{ site.github.repository_url }}"
+              >View On GitHub</a
+            >
+          </li>
+        </ul>
+        <p class="header">
+          This project is maintained by
+          <a class="header name" href="{{ site.github.owner_url }}"
+            >{{ site.github.owner_name }}</a
+          >
+        </p>
+      </header>
+
+      <section>
+        {{ content }}
+      </section>
+
+      <footer>
+        <p>
+          <small
+            >Hosted on <a href="https://pages.github.com">GitHub Pages</a> using
+            the Dinky theme</small
+          >
+        </p>
+      </footer>
+    </div>
+    {% if site.google_analytics %}
+    <!-- Google Analytics -->
+    <script>
+      window.ga =
+        window.ga ||
+        function() {
+          (ga.q = ga.q || []).push(arguments);
+        };
+      ga.l = +new Date();
+      ga('create', '{{ site.google_analytics }}', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <script async src="https://www.google-analytics.com/analytics.js"></script>
+    <!-- End Google Analytics -->
+    {% endif %}
+  </body>
+</html>
