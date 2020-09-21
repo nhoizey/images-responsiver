@@ -28,7 +28,7 @@
   "license": "MIT",
   "dependencies": {
     "basichtml": "2.3.0",
-    "debug": "4.1.1",
+    "debug": "4.2.0",
     "deepmerge": "4.2.2",
     "jest": "^26.4.2",
     "lodash.clonedeep": "4.5.0",
