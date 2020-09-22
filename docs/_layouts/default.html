@@ -32,19 +32,57 @@
         {{ content }}
       </section>
     </div>
+    <script>
+      (function(window) {
+        // get device pixel ratio in dppx
+        // https://github.com/ryanve/res/blob/master/src/index.js
+        window.screen_density =
+          typeof window == 'undefined'
+            ? 0
+            : +window.devicePixelRatio ||
+              Math.sqrt(screen.deviceXDPI * screen.deviceYDPI) / 96 ||
+              0;
+        // keep only 3 decimals: https://jsfiddle.net/AsRqx/
+        window.screen_density = +(
+          Math.round(window.screen_density + 'e+3') + 'e-3'
+        );
+
+        // get viewport width
+        // https://stackoverflow.com/a/8876069/717195
+        window.viewport_width = Math.max(
+          document.documentElement.clientWidth,
+          window.innerWidth || 0
+        );
+
+        window.root_font_size = parseFloat(
+          window.getComputedStyle(document.documentElement).fontSize,
+          10
+        );
+      })(window);
+    </script>
     {% if site.google_analytics %}
     <!-- Google Analytics -->
     <script>
-      window.ga =
-        window.ga ||
-        function() {
-          (ga.q = ga.q || []).push(arguments);
-        };
+      window.ga = function() {
+        ga.q.push(arguments);
+      };
+      ga.q = [];
       ga.l = +new Date();
       ga('create', '{{ site.google_analytics }}', 'auto');
+      ga('set', 'transport', 'beacon');
+      ga('set', 'anonymizeIp', true);
+      ga('set', {
+        dimension1: window.screen_density,
+        dimension2: window.viewport_width > 0 ? window.viewport_width : 0,
+        dimension3: window.root_font_size,
+      });
       ga('send', 'pageview');
     </script>
-    <script async src="https://www.google-analytics.com/analytics.js"></script>
+    <script
+      src="https://www.google-analytics.com/analytics.js"
+      async
+      defer
+    ></script>
     <!-- End Google Analytics -->
     {% endif %}
   </body>
