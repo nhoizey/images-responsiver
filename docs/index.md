@@ -3,18 +3,18 @@
 [![Build Status](https://travis-ci.org/nhoizey/images-responsiver.svg?branch=master)](https://travis-ci.org/nhoizey/images-responsiver)
 [![GitHub stars](https://img.shields.io/github/stars/nhoizey/images-responsiver.svg?style=social)](https://github.com/nhoizey/images-responsiver/stargazers)
 
-**Images Responsiver is a simple solution for most responsive images needs**.
+Images Responsiver is **a simple solution for most responsive images needs**.
 
-Responsive images are **difficult to implement**, but **required to provide a good performance to Web users**.
+Responsive images are difficult to implement, but required to **provide a good performance to Web users**.
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 
-- [A Node.js library to ease responsive images](#a-nodejs-library-to-ease-responsive-images)
-- [A plugin for Eleventy](#a-plugin-for-eleventy)
-- [Documentation](#documentation)
 - [One repository, multiple projects](#one-repository-multiple-projects)
+  - [A Node.js package to ease responsive images](#a-nodejs-package-to-ease-responsive-images)
+  - [A plugin for Eleventy](#a-plugin-for-eleventy)
+- [Sources and documentations](#sources-and-documentations)
 - [Authors](#authors)
 - [Contributing](#contributing)
 - [Tools and automations](#tools-and-automations)
@@ -22,7 +22,11 @@ Responsive images are **difficult to implement**, but **required to provide a go
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-## A Node.js library to ease responsive images
+## One repository, multiple projects
+
+Multiple projects are managed inside this shared monorepo.
+
+### A Node.js package to ease responsive images
 
 Images Responsiver transforms plain, simple `<img src="…">` HTML tags into better responsive images syntax with `srcset` and `sizes` attributes.
 
@@ -30,22 +34,18 @@ Knowing that [`<picture>` is only required for rare advanced usages](https://clo
 
 Read [this article on Cloudfour's blog to know more of the theory](https://cloudfour.com/thinks/responsive-images-the-simple-way/).
 
-## A plugin for Eleventy
+### A plugin for Eleventy
 
-**Images Responsiver** is also available as a plugin for [Eleventy](https://www.11ty.dev/), a great Static Site Generator. It allows authors to use the simple and standard Markdown syntax for images — `![alt text](image.jpg)` — and yet get responsive images in the generated HTML, with `srcset` and `sizes` attributes.
+Images Responsiver is also available as a plugin for [Eleventy](https://www.11ty.dev/), a Static Site Generator.
 
-## Documentation
+It allows authors to use the simple and **standard Markdown syntax for images** — `![alt text](image.jpg)` — and yet get responsive images in the generated HTML.
 
-Read the full documentation here: https://nhoizey.github.io/images-responsiver/
+## Sources and documentations
 
-## One repository, multiple projects
-
-Multiple projects are managed inside this shared monorepo.
-
-| **Package**                                                                                                                                  | **Description**                                                    | **Docs**                                                                                 |
-| -------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ | ---------------------------------------------------------------------------------------- |
-| [`images-responsiver`](https://github.com/nhoizey/images-responsiver/tree/main/packages/images-responsiver)                                  | The core package                                                   | [docs](https://nhoizey.github.io/images-responsiver/images-responsiver/)                 |
-| [`eleventy-plugin-images-responsiver`](https://github.com/nhoizey/images-responsiver/tree/main/packages/eleventy-plugin-images-responsiver/) | A plugin for [Eleventy](https://11ty.dev), a Static Site Generator | [docs](https://nhoizey.github.io/images-responsiver/eleventy-plugin-images-responsiver/) |
+| **Package**                          | **Description**         | **Source**                                                                                                     | **Docs**                                                                                 |
+| ------------------------------------ | ----------------------- | -------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `images-responsiver`                 | The core package        | [source](https://github.com/nhoizey/images-responsiver/tree/main/packages/images-responsiver)                  | [docs](https://nhoizey.github.io/images-responsiver/images-responsiver/)                 |
+| `eleventy-plugin-images-responsiver` | The plugin for Eleventy | [source](https://github.com/nhoizey/images-responsiver/tree/main/packages/eleventy-plugin-images-responsiver/) | [docs](https://nhoizey.github.io/images-responsiver/eleventy-plugin-images-responsiver/) |
 
 ## Authors
 
