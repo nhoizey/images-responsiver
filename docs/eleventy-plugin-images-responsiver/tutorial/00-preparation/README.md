@@ -2,17 +2,13 @@
 
 # Step 0: Get the resources to follow this tutorial
 
-Get the sources from the repository. You can either:
+Get the sources from the repository.
 
-- Download [a zip of the whole directory](https://github.com/nhoizey/eleventy-plugin-images-responsiver/archive/master.zip) and unzip it
+Clone it with Git into your local folder (change `my-local-folder` to what you want):
 
-or
-
-- clone it with Git into your local folder (change `my-local-folder` to what you want):
-
-  ```bash
-  git clone git@github.com:nhoizey/eleventy-plugin-images-responsiver.git my-local-folder
-  ```
+```bash
+git clone git@github.com:nhoizey/images-responsiver.git my-local-folder
+```
 
 Then go into the first example folder with your terminal:
 

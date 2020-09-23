@@ -10,6 +10,7 @@ Responsive images are difficult to implement, but required to **provide a good p
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
+
 - [One repository, multiple projects](#one-repository-multiple-projects)
   - [A Node.js package to ease responsive images: `images-responsiver`](#a-nodejs-package-to-ease-responsive-images-images-responsiver)
   - [A plugin for Eleventy: `eleventy-plugin-images-responsiver`](#a-plugin-for-eleventy-eleventy-plugin-images-responsiver)

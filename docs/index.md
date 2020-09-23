@@ -37,7 +37,7 @@ Read [this article on Cloudfour's blog to know more of the theory](https://cloud
 
 ### A plugin for Eleventy: `eleventy-plugin-images-responsiver`
 
-Images Responsiver is also available as a plugin for [Eleventy](https://www.11ty.dev/), a Static Site Generator.
+Images Responsiver is also available as a plugin for [Eleventy](https://www.11ty.dev/), an awesome Static Site Generator.
 
 It allows authors to use the simple and **standard Markdown syntax for images** — `![alt text](image.jpg)` — and yet get responsive images in the generated HTML.
 
