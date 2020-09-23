@@ -16,27 +16,27 @@
         <h1 class="header">
           {{ site.title | default: site.github.repository_name }}
         </h1>
-        <ul>
-          <li><a href="/images-responsiver/">Home</a></li>
-          <li>
-            <a href="/images-responsiver/images-responsiver/">Core package</a>
-          </li>
-          <li>
-            <a href="/images-responsiver/eleventy-plugin-images-responsiver/"
-              >Eleventy plugin</a
-            >
-          </li>
-        </ul>
         <p class="header">
           {{ site.description | default: site.github.project_tagline }}
         </p>
-        <ul>
-          <li>
-            <a class="buttons github" href="{{ site.github.repository_url }}"
-              >View On GitHub</a
-            >
-          </li>
-        </ul>
+        <nav>
+          <ul>
+            <li><a href="/images-responsiver/">Home</a></li>
+            <li>
+              <a href="/images-responsiver/images-responsiver/">Core package</a>
+            </li>
+            <li>
+              <a href="/images-responsiver/eleventy-plugin-images-responsiver/"
+                >Eleventy plugin</a
+              >
+            </li>
+            <li>
+              <a class="buttons github" href="{{ site.github.repository_url }}"
+                >View On GitHub</a
+              >
+            </li>
+          </ul>
+        </nav>
       </header>
 
       <section>
