@@ -42,10 +42,10 @@ It allows authors to use the simple and **standard Markdown syntax for images** 
 
 ## Sources and documentations
 
-| **Package**                          | **Description**         | **Source**                                                                                                     | **Docs**                                                                                 |
-| ------------------------------------ | ----------------------- | -------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| `images-responsiver`                 | The core package        | [source](https://github.com/nhoizey/images-responsiver/tree/main/packages/images-responsiver)                  | [docs](https://nhoizey.github.io/images-responsiver/images-responsiver/)                 |
-| `eleventy-plugin-images-responsiver` | The plugin for Eleventy | [source](https://github.com/nhoizey/images-responsiver/tree/main/packages/eleventy-plugin-images-responsiver/) | [docs](https://nhoizey.github.io/images-responsiver/eleventy-plugin-images-responsiver/) |
+| **Package**                          | **Description**         | **Source**                                                                                                     | **npm**                                                                 | **Docs**                                                                                 |
+| ------------------------------------ | ----------------------- | -------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `images-responsiver`                 | The core package        | [source](https://github.com/nhoizey/images-responsiver/tree/main/packages/images-responsiver)                  | [npm](https://www.npmjs.com/package/images-responsiver)                 | [docs](https://nhoizey.github.io/images-responsiver/images-responsiver/)                 |
+| `eleventy-plugin-images-responsiver` | The plugin for Eleventy | [source](https://github.com/nhoizey/images-responsiver/tree/main/packages/eleventy-plugin-images-responsiver/) | [npm](https://www.npmjs.com/package/eleventy-plugin-images-responsiver) | [docs](https://nhoizey.github.io/images-responsiver/eleventy-plugin-images-responsiver/) |
 
 ## Authors
 
