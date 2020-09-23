@@ -12,13 +12,14 @@ Responsive images are difficult to implement, but required to **provide a good p
 
 
 - [One repository, multiple projects](#one-repository-multiple-projects)
-  - [A Node.js package to ease responsive images](#a-nodejs-package-to-ease-responsive-images)
-  - [A plugin for Eleventy](#a-plugin-for-eleventy)
+  - [A Node.js package to ease responsive images: `images-responsiver`](#a-nodejs-package-to-ease-responsive-images-images-responsiver)
+  - [A plugin for Eleventy: `eleventy-plugin-images-responsiver`](#a-plugin-for-eleventy-eleventy-plugin-images-responsiver)
 - [Sources and documentations](#sources-and-documentations)
-- [Authors](#authors)
 - [Contributing](#contributing)
-- [Tools and automations](#tools-and-automations)
+  - [Contribution guidelines](#contribution-guidelines)
+  - [Tools and automations](#tools-and-automations)
 - [License](#license)
+- [Authors](#authors)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -26,7 +27,7 @@ Responsive images are difficult to implement, but required to **provide a good p
 
 Multiple projects are managed inside this shared monorepo.
 
-### A Node.js package to ease responsive images
+### A Node.js package to ease responsive images: `images-responsiver`
 
 Images Responsiver transforms plain, simple `<img src="…">` HTML tags into better responsive images syntax with `srcset` and `sizes` attributes.
 
@@ -34,7 +35,7 @@ Knowing that [`<picture>` is only required for rare advanced usages](https://clo
 
 Read [this article on Cloudfour's blog to know more of the theory](https://cloudfour.com/thinks/responsive-images-the-simple-way/).
 
-### A plugin for Eleventy
+### A plugin for Eleventy: `eleventy-plugin-images-responsiver`
 
 Images Responsiver is also available as a plugin for [Eleventy](https://www.11ty.dev/), a Static Site Generator.
 
@@ -42,24 +43,22 @@ It allows authors to use the simple and **standard Markdown syntax for images** 
 
 ## Sources and documentations
 
-| **Package**                          | **Description**         | **Source**                                                                                                     | **npm**                                                                 | **Docs**                                                                                 |
-| ------------------------------------ | ----------------------- | -------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| `images-responsiver`                 | The core package        | [source](https://github.com/nhoizey/images-responsiver/tree/main/packages/images-responsiver)                  | [npm](https://www.npmjs.com/package/images-responsiver)                 | [docs](https://nhoizey.github.io/images-responsiver/images-responsiver/)                 |
-| `eleventy-plugin-images-responsiver` | The plugin for Eleventy | [source](https://github.com/nhoizey/images-responsiver/tree/main/packages/eleventy-plugin-images-responsiver/) | [npm](https://www.npmjs.com/package/eleventy-plugin-images-responsiver) | [docs](https://nhoizey.github.io/images-responsiver/eleventy-plugin-images-responsiver/) |
-
-## Authors
-
-- [Nicolas Hoizey](https://github.com/nhoizey): Idea and initial work, maintainer
-
-See also the list of [contributors](https://github.com/nhoizey/images-responsiver/contributors) who participated in this project.
+| **package**                          | **source**                                                                                                     | **npm**                                                                 | **docs**                                                                                 |
+| ------------------------------------ | -------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `images-responsiver`                 | [source](https://github.com/nhoizey/images-responsiver/tree/main/packages/images-responsiver)                  | [npm](https://www.npmjs.com/package/images-responsiver)                 | [docs](https://nhoizey.github.io/images-responsiver/images-responsiver/)                 |
+| `eleventy-plugin-images-responsiver` | [source](https://github.com/nhoizey/images-responsiver/tree/main/packages/eleventy-plugin-images-responsiver/) | [npm](https://www.npmjs.com/package/eleventy-plugin-images-responsiver) | [docs](https://nhoizey.github.io/images-responsiver/eleventy-plugin-images-responsiver/) |
 
 ## Contributing
 
-Thanks for your interest in contributing!
+First, thank you for considering contributing to `images-responsiver`! It's people like you that make the open source community such a great community! 😊
 
-There are many ways to contribute to this project. [Get started here](https://github.com/nhoizey/images-responsiver/blob/master/CONTRIBUTING.md).
+### Contribution guidelines
 
-## Tools and automations
+There are many ways to contribute to this project.
+
+[Get started here](https://github.com/nhoizey/images-responsiver/blob/master/CONTRIBUTING.md).
+
+### Tools and automations
 
 - This monorepo is managed with [Lerna](https://lerna.js.org/).
 - Tests are run by [jest](https://jestjs.io/) and written in [the `__tests__` folder](https://github.com/nhoizey/images-responsiver/tree/main/packages/images-responsiver/__tests__) for each package.
@@ -71,3 +70,9 @@ There are many ways to contribute to this project. [Get started here](https://gi
 ## License
 
 This project is licensed under the [MIT License](LICENSE.md).
+
+## Authors
+
+- [Nicolas Hoizey](https://github.com/nhoizey): Idea and initial work, maintainer
+
+See also the list of [contributors](https://github.com/nhoizey/images-responsiver/contributors) who participated in this project.
