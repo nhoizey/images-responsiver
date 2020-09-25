@@ -3,14 +3,13 @@
 [![Build Status](https://travis-ci.org/nhoizey/images-responsiver.svg?branch=master)](https://travis-ci.org/nhoizey/images-responsiver)
 [![GitHub stars](https://img.shields.io/github/stars/nhoizey/images-responsiver.svg?style=social)](https://github.com/nhoizey/images-responsiver/stargazers)
 
-Images Responsiver is **a simple solution for most responsive images needs**.
-
-Responsive images are difficult to implement, but required to **provide a good performance to Web users**.
+Images Responsiver tries to **help developers make it easy for content authors to tackle responsive images needs**.
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 
+- [Why does this project exist?](#why-does-this-project-exist)
 - [One repository, multiple projects](#one-repository-multiple-projects)
   - [A Node.js package to ease responsive images: `images-responsiver`](#a-nodejs-package-to-ease-responsive-images-images-responsiver)
   - [A plugin for Eleventy: `eleventy-plugin-images-responsiver`](#a-plugin-for-eleventy-eleventy-plugin-images-responsiver)
@@ -22,6 +21,16 @@ Responsive images are difficult to implement, but required to **provide a good p
 - [Authors](#authors)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+## Why does this project exist?
+
+As Steve Jobs [once said](https://www.youtube.com/watch?v=oeqPrUmVz-o):
+
+> You've got to start with the customer experience and run backwards to the technology.
+
+**Responsive images are one of the most difficult topics nowadays** for front end developers and content authors, they involve multiple features and syntaxes, but they are **required to provide a good performance to Web users**.
+
+Most content authors should not have to learn the complex responsive images HTML syntax, how and it is used by browsers to load the right image for current viewing context.
 
 ## One repository, multiple projects
 
