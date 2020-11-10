@@ -73,7 +73,7 @@ There are many ways to contribute to this project.
 - Tests are run by [jest](https://jestjs.io/) and written in [the `__tests__` folder](https://github.com/nhoizey/images-responsiver/tree/main/packages/images-responsiver/__tests__) for each package.
 - Pull Requests are checked with tests run on [Travis CI](https://travis-ci.org/nhoizey/images-responsiver) (see [configuration](https://github.com/nhoizey/images-responsiver/blob/main/.travis.yml))
 - Dependencies updates are automated with [dependabot](https://github.blog/2020-06-01-keep-all-your-packages-up-to-date-with-dependabot/) (see [configuration](https://github.com/nhoizey/images-responsiver/blob/main/.github/dependabot.yml))
-- Pull Requests are rebased as necessary, and merged automaticaly by [Kodiak](https://kodiakhq.com/) if there is an `automerge 🤞` label (set by dependabot for example) and Travis CI check is OK (see [configuration](https://github.com/nhoizey/images-responsiver/blob/main/.kodiak.toml))
+- Pull Requests are rebased as necessary, and merged automatically by [Kodiak](https://kodiakhq.com/) if there is an `automerge 🤞` label (set by dependabot for example) and Travis CI check is OK (see [configuration](https://github.com/nhoizey/images-responsiver/blob/main/.kodiak.toml))
 - The documentation is written as Markdown files in [the `docs/` folder](https://github.com/nhoizey/images-responsiver/tree/main/docs), and transformed into HTML by [Jekyll](https://jekyllrb.com/) powered [GitHub Pages](https://pages.github.com/): <https://nhoizey.github.io/images-responsiver/>
 
 ## License
