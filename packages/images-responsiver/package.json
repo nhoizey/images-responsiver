@@ -33,7 +33,7 @@
     "jest": "^26.4.2",
     "lodash.clonedeep": "4.5.0",
     "sizzle": "2.3.5",
-    "supports-color": "7.2.0"
+    "supports-color": "8.1.0"
   },
   "bugs": {
     "url": "https://github.com/nhoizey/images-responsiver/issues"
