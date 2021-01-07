@@ -3,31 +3,29 @@ on: [push, pull_request]
 jobs:
   tests:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v2
-      - name: Test using Node.js
+
+      - name: Get npm cache directory
+        id: npm-cache
+        run: |
+          echo "::set-output name=dir::$(npm config get cache)"
+
+      - name: Use cache
+        uses: actions/cache@v2
+        with:
+          path: ${{ steps.npm-cache.outputs.dir }}
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: ${{ runner.os }}-node-
+
+      - name: Select Node.js version
         uses: actions/setup-node@v1
         with:
           node-version: '12'
-      - run: npm ci
-      - run: npm test
 
-      # - name: Tests ✅
-      #   if: ${{ success() }}
-      #   run: |
-      #     curl --request POST           --url https://api.github.com/repos/${{ github.repository }}/statuses/${{ github.sha }}           --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}'           --header 'content-type: application/json'           --data '{
-      #       "context": "tests",
-      #       "state": "success",
-      #       "description": "Tests passed",
-      #       "target_url": "https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
-      #     }'
+      - name: Install dependencies
+        run: npm ci
 
-      # - name: Tests 🚨
-      #   if: ${{ failure() }}
-      #   run: |
-      #     curl --request POST           --url https://api.github.com/repos/${{ github.repository }}/statuses/${{ github.sha }}           --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}'           --header 'content-type: application/json'           --data '{
-      #       "context": "tests",
-      #       "state": "failure",
-      #       "description": "Tests failed",
-      #       "target_url": "https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
-      #     }'
+      - name: Run tests
+        run: npm test
