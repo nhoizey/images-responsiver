@@ -1,13 +1,12 @@
 # Images Responsiver
 
-[![Build Status](https://travis-ci.org/nhoizey/images-responsiver.svg?branch=master)](https://travis-ci.org/nhoizey/images-responsiver)
+[![Build Status](https://github.com/nhoizey/images-responsiver/workflows/tests/badge.svg)](https://github.com/nhoizey/images-responsiver/actions)
 [![GitHub stars](https://img.shields.io/github/stars/nhoizey/images-responsiver.svg?style=social)](https://github.com/nhoizey/images-responsiver/stargazers)
 
 Images Responsiver tries to **help developers make it easy for content authors to tackle responsive images needs**.
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-
 
 - [Why does this project exist?](#why-does-this-project-exist)
 - [One repository, multiple projects](#one-repository-multiple-projects)
