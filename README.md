@@ -1,6 +1,6 @@
 # Images Responsiver
 
-[![Build Status](https://github.com/nhoizey/images-responsiver/workflows/tests/badge.svg)](https://github.com/nhoizey/images-responsiver/actions)
+[![Build Status](https://github.com/nhoizey/images-responsiver/workflows/Tests%20CI/badge.svg)](https://github.com/nhoizey/images-responsiver/actions)
 [![GitHub stars](https://img.shields.io/github/stars/nhoizey/images-responsiver.svg?style=social)](https://github.com/nhoizey/images-responsiver/stargazers)
 
 Images Responsiver tries to **help developers make it easy for content authors to tackle responsive images needs**.
