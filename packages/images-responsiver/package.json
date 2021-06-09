@@ -27,18 +27,18 @@
   "author": "Nicolas Hoizey",
   "license": "MIT",
   "dependencies": {
-    "basichtml": "2.3.2",
+    "basichtml": "2.4.6",
     "debug": "4.3.1",
     "deepmerge": "4.2.2",
     "lodash.clonedeep": "4.5.0",
-    "sizzle": "2.3.5"
+    "sizzle": "2.3.6"
   },
   "bugs": {
     "url": "https://github.com/nhoizey/images-responsiver/issues"
   },
   "homepage": "https://nhoizey.github.io/images-responsiver/",
   "devDependencies": {
-    "jest": "^26.4.2",
+    "jest": "^27.0.3",
     "prettier": "^2.1.1"
   }
 }
