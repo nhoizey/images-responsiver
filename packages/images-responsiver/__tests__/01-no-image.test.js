@@ -19,4 +19,10 @@ describe('no image', () => {
     const transformed = imagesResponsiver(content);
     expect(cleanHtml(transformed)).toMatchSnapshot();
   });
+
+  test('keeps intact HTML without image with inline style and custom property', () => {
+    const content = `<!DOCTYPE html><html><body><p style="--foo: bar">Hello</p></body></html>`;
+    const transformed = imagesResponsiver(content);
+    expect(cleanHtml(transformed)).toMatchSnapshot();
+  });
 });
