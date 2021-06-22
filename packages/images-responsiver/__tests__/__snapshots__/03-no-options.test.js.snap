@@ -5,17 +5,17 @@ exports[`image without options 2 images 1`] = `
 <html>
   <body>
     <img
+      data-pristine=\\"test1.png\\"
+      sizes=\\"100vw\\"
+      srcset=\\"test1-320.png 320w, test1-350.png 350w\\"
       src=\\"test1-350.png\\"
       width=\\"350\\"
-      srcset=\\"test1-320.png 320w, test1-350.png 350w\\"
-      sizes=\\"100vw\\"
-      data-pristine=\\"test1.png\\"
     /><img
+      data-pristine=\\"test2.png\\"
+      sizes=\\"100vw\\"
+      srcset=\\"test2-320.png 320w, test2-400.png 400w\\"
       src=\\"test2-400.png\\"
       width=\\"400\\"
-      srcset=\\"test2-320.png 320w, test2-400.png 400w\\"
-      sizes=\\"100vw\\"
-      data-pristine=\\"test2.png\\"
     />
   </body>
 </html>
@@ -29,7 +29,8 @@ exports[`image without options simple image 1`] = `
     <p>
       content before
       <img
-        src=\\"test-640.png\\"
+        data-pristine=\\"test.png\\"
+        sizes=\\"100vw\\"
         srcset=\\"
           test-320.png   320w,
           test-560.png   560w,
@@ -37,8 +38,7 @@ exports[`image without options simple image 1`] = `
           test-1040.png 1040w,
           test-1280.png 1280w
         \\"
-        sizes=\\"100vw\\"
-        data-pristine=\\"test.png\\"
+        src=\\"test-640.png\\"
       />
       content after
     </p>
@@ -54,7 +54,8 @@ exports[`image without options simple image in subfolder 1`] = `
     <p>
       content before
       <img
-        src=\\"folder/test-640.png\\"
+        data-pristine=\\"folder/test.png\\"
+        sizes=\\"100vw\\"
         srcset=\\"
           folder/test-320.png   320w,
           folder/test-560.png   560w,
@@ -62,8 +63,7 @@ exports[`image without options simple image in subfolder 1`] = `
           folder/test-1040.png 1040w,
           folder/test-1280.png 1280w
         \\"
-        sizes=\\"100vw\\"
-        data-pristine=\\"folder/test.png\\"
+        src=\\"folder/test-640.png\\"
       />
       content after
     </p>
@@ -79,7 +79,8 @@ exports[`image without options simple image with absolute URL 1`] = `
     <p>
       content before
       <img
-        src=\\"https://example.com/folder/test-640.png\\"
+        data-pristine=\\"https://example.com/folder/test.png\\"
+        sizes=\\"100vw\\"
         srcset=\\"
           https://example.com/folder/test-320.png   320w,
           https://example.com/folder/test-560.png   560w,
@@ -87,8 +88,7 @@ exports[`image without options simple image with absolute URL 1`] = `
           https://example.com/folder/test-1040.png 1040w,
           https://example.com/folder/test-1280.png 1280w
         \\"
-        sizes=\\"100vw\\"
-        data-pristine=\\"https://example.com/folder/test.png\\"
+        src=\\"https://example.com/folder/test-640.png\\"
       />
       content after
     </p>
@@ -102,11 +102,11 @@ exports[`image without options width attribute inferior to the fallback 1`] = `
 <html>
   <body>
     <img
+      data-pristine=\\"test.png\\"
+      sizes=\\"100vw\\"
+      srcset=\\"test-320.png 320w, test-543.png 543w\\"
       src=\\"test-543.png\\"
       width=\\"543\\"
-      srcset=\\"test-320.png 320w, test-543.png 543w\\"
-      sizes=\\"100vw\\"
-      data-pristine=\\"test.png\\"
     />
   </body>
 </html>
@@ -118,11 +118,11 @@ exports[`image without options width attribute inferior to the minWidth 1`] = `
 <html>
   <body>
     <img
+      data-pristine=\\"test.png\\"
+      sizes=\\"100vw\\"
+      srcset=\\"test-200.png 200w\\"
       src=\\"test-200.png\\"
       width=\\"200\\"
-      srcset=\\"test-200.png 200w\\"
-      sizes=\\"100vw\\"
-      data-pristine=\\"test.png\\"
     />
   </body>
 </html>
@@ -134,11 +134,11 @@ exports[`image without options width attribute superior to the fallback 1`] = `
 <html>
   <body>
     <img
+      data-pristine=\\"test.png\\"
+      sizes=\\"100vw\\"
+      srcset=\\"test-320.png 320w, test-560.png 560w, test-789.png 789w\\"
       src=\\"test-640.png\\"
       width=\\"789\\"
-      srcset=\\"test-320.png 320w, test-560.png 560w, test-789.png 789w\\"
-      sizes=\\"100vw\\"
-      data-pristine=\\"test.png\\"
     />
   </body>
 </html>

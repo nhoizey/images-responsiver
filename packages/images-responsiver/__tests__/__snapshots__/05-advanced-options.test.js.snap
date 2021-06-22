@@ -5,11 +5,11 @@ exports[`images with advanced options resizedImageUrl 1`] = `
 <html>
   <body>
     <img
+      data-pristine=\\"test.png\\"
+      sizes=\\"100vw\\"
+      srcset=\\"test.png?w=320 320w, test.png?w=420 420w\\"
       src=\\"test.png?w=420\\"
       width=\\"420\\"
-      srcset=\\"test.png?w=320 320w, test.png?w=420 420w\\"
-      sizes=\\"100vw\\"
-      data-pristine=\\"test.png\\"
     />
   </body>
 </html>
@@ -21,7 +21,9 @@ exports[`images with advanced options runAfter 1`] = `
 <html>
   <body>
     <img
-      src=\\"test-640.png\\"
+      data-after=\\"hello!\\"
+      data-pristine=\\"test.png\\"
+      sizes=\\"100vw\\"
       srcset=\\"
         test-320.png   320w,
         test-560.png   560w,
@@ -29,9 +31,7 @@ exports[`images with advanced options runAfter 1`] = `
         test-1040.png 1040w,
         test-1280.png 1280w
       \\"
-      sizes=\\"100vw\\"
-      data-pristine=\\"test.png\\"
-      data-after=\\"hello!\\"
+      src=\\"test-640.png\\"
     />
   </body>
 </html>
@@ -43,7 +43,8 @@ exports[`images with advanced options runBefore 1`] = `
 <html>
   <body>
     <img
-      src=\\"another-test-640.png\\"
+      data-pristine=\\"another-test.png\\"
+      sizes=\\"100vw\\"
       srcset=\\"
         another-test-320.png   320w,
         another-test-560.png   560w,
@@ -51,8 +52,7 @@ exports[`images with advanced options runBefore 1`] = `
         another-test-1040.png 1040w,
         another-test-1280.png 1280w
       \\"
-      sizes=\\"100vw\\"
-      data-pristine=\\"another-test.png\\"
+      src=\\"another-test-640.png\\"
     />
   </body>
 </html>
@@ -64,7 +64,8 @@ exports[`images with advanced options selector 1`] = `
 <html>
   <body>
     <img
-      src=\\"test1-480.png\\"
+      data-pristine=\\"test1.png\\"
+      sizes=\\"100vw\\"
       srcset=\\"
         test1-320.png   320w,
         test1-560.png   560w,
@@ -72,8 +73,7 @@ exports[`images with advanced options selector 1`] = `
         test1-1040.png 1040w,
         test1-1280.png 1280w
       \\"
-      sizes=\\"100vw\\"
-      data-pristine=\\"test1.png\\"
+      src=\\"test1-480.png\\"
     /><img src=\\"test2.png\\" class=\\"notransform\\" />
   </body>
 </html>
