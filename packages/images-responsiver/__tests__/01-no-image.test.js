@@ -25,4 +25,10 @@ describe('no image', () => {
     const transformed = imagesResponsiver(content);
     expect(cleanHtml(transformed)).toMatchSnapshot();
   });
+
+  test('keeps intact HTML without image with HTML entity', () => {
+    const content = `<!DOCTYPE html><html><body><p>Hello &copy;</p></body></html>`;
+    const transformed = imagesResponsiver(content);
+    expect(cleanHtml(transformed)).toMatchSnapshot();
+  });
 });

@@ -10,6 +10,16 @@ exports[`no image keeps intact HTML without image 1`] = `
 "
 `;
 
+exports[`no image keeps intact HTML without image with HTML entity 1`] = `
+"<!DOCTYPE html>
+<html>
+  <body>
+    <p>Hello ©</p>
+  </body>
+</html>
+"
+`;
+
 exports[`no image keeps intact HTML without image with inline style and custom property 1`] = `
 "<!DOCTYPE html>
 <html>
