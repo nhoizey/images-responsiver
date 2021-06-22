@@ -31,9 +31,6 @@ exports[`no image keeps intact HTML without image with inline style and custom p
 `;
 
 exports[`no image malformed HTML without image 1`] = `
-"<!DOCTYPE html>
-<html>
-  <p>Hello<br /><br />mister<br /></p>
-</html>
+"<p>Hello<br /><br />mister<br /></p>
 "
 `;

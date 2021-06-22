@@ -5,10 +5,10 @@ exports[`image with simple srcset options simple image 1`] = `
 <html>
   <body>
     <img
-      src=\\"test-640.png\\"
-      srcset=\\"test-120.png 120w, test-180.png 180w, test-320.png 320w\\"
-      sizes=\\"100vw\\"
       data-pristine=\\"test.png\\"
+      sizes=\\"100vw\\"
+      srcset=\\"test-120.png 120w, test-180.png 180w, test-320.png 320w\\"
+      src=\\"test-640.png\\"
     />
   </body>
 </html>

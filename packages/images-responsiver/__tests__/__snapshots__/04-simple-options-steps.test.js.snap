@@ -5,10 +5,10 @@ exports[`image with simple step options simple image 1`] = `
 <html>
   <body>
     <img
-      src=\\"test-640.png\\"
-      srcset=\\"test-120.png 120w, test-220.png 220w, test-320.png 320w\\"
-      sizes=\\"100vw\\"
       data-pristine=\\"test.png\\"
+      sizes=\\"100vw\\"
+      srcset=\\"test-120.png 120w, test-220.png 220w, test-320.png 320w\\"
+      src=\\"test-640.png\\"
     />
   </body>
 </html>
@@ -20,10 +20,10 @@ exports[`image with simple step options simple image with bad number of steps 1`
 <html>
   <body>
     <img
-      src=\\"test-640.png\\"
-      srcset=\\"test-320.png 320w, test-1280.png 1280w\\"
-      sizes=\\"100vw\\"
       data-pristine=\\"test.png\\"
+      sizes=\\"100vw\\"
+      srcset=\\"test-320.png 320w, test-1280.png 1280w\\"
+      src=\\"test-640.png\\"
     />
   </body>
 </html>
@@ -35,10 +35,10 @@ exports[`image with simple step options simple image with minWidth = maxWidth 1`
 <html>
   <body>
     <img
-      src=\\"test-640.png\\"
-      srcset=\\"test-320.png 320w\\"
-      sizes=\\"100vw\\"
       data-pristine=\\"test.png\\"
+      sizes=\\"100vw\\"
+      srcset=\\"test-320.png 320w\\"
+      src=\\"test-640.png\\"
     />
   </body>
 </html>
@@ -50,7 +50,8 @@ exports[`image with simple step options simple image with minWidth > maxWidth 1`
 <html>
   <body>
     <img
-      src=\\"test-640.png\\"
+      data-pristine=\\"test.png\\"
+      sizes=\\"100vw\\"
       srcset=\\"
         test-320.png 320w,
         test-400.png 400w,
@@ -58,8 +59,7 @@ exports[`image with simple step options simple image with minWidth > maxWidth 1`
         test-560.png 560w,
         test-640.png 640w
       \\"
-      sizes=\\"100vw\\"
-      data-pristine=\\"test.png\\"
+      src=\\"test-640.png\\"
     />
   </body>
 </html>

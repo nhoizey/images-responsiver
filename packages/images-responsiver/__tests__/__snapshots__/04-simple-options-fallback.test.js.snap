@@ -21,11 +21,11 @@ exports[`image with simple fallback option width attribute superior to the fallb
 <html>
   <body>
     <img
+      data-pristine=\\"test.png\\"
+      sizes=\\"100vw\\"
+      srcset=\\"test-320.png 320w, test-560.png 560w, test-789.png 789w\\"
       src=\\"test-480.png\\"
       width=\\"789\\"
-      srcset=\\"test-320.png 320w, test-560.png 560w, test-789.png 789w\\"
-      sizes=\\"100vw\\"
-      data-pristine=\\"test.png\\"
     />
   </body>
 </html>
