@@ -1,6 +1,7 @@
 'use strict';
 
-const createDocumentFromHTML = require('./basicHTML-init');
+const { parseHTML } = require('linkedom');
+
 const deepmerge = require('deepmerge');
 const clonedeep = require('lodash.clonedeep');
 const overwriteMerge = (destinationArray, sourceArray, options) => sourceArray;
@@ -36,7 +37,7 @@ const imagesResponsiver = (html, options = {}) => {
     });
   }
 
-  let document = createDocumentFromHTML(html);
+  const { document } = parseHTML(html);
 
   [...document.querySelectorAll(globalSettings.selector)]
     .filter((image) => {
@@ -53,7 +54,12 @@ const imagesResponsiver = (html, options = {}) => {
       imageSettings.runBefore(image, document);
 
       // Overhide settings with presets named in the image classes
-      if ('responsiver' in image.dataset) {
+      if (image.dataset && 'responsiver' in image.dataset) {
+        console.log(`
+  ##########
+  heeeeeere!
+  ${image.dataset}
+  `);
         // TODO: Merging preset settings to previous settings should be easier
         image.dataset.responsiver.split(' ').forEach((preset) => {
           if (options[preset] !== undefined) {
