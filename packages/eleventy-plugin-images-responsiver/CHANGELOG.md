@@ -1,3 +1,16 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## [1.8.5-alpha.0](https://github.com/nhoizey/images-responsiver/compare/v1.8.4...v1.8.5-alpha.0) (2021-06-25)
+
+**Note:** Version bump only for package eleventy-plugin-images-responsiver
+
+
+
+
+
 ## [1.8.2](https://github.com/nhoizey/images-responsiver/compare/v1.8.1...v1.8.2) (2020-09-15)
 
 
@@ -16,6 +29,3 @@
 
 
 # 1.7.0 (2020-09-12)
-
-
-
