@@ -35,7 +35,7 @@
   "author": "Nicolas Hoizey",
   "license": "MIT",
   "peerDependencies": {
-    "@11ty/eleventy": ">=0.11.0"
+    "@11ty/eleventy": "0.12.1"
   },
   "dependencies": {
     "images-responsiver": "^1.9.0"
