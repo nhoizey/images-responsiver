@@ -1,6 +1,6 @@
 {
   "name": "eleventy-plugin-images-responsiver",
-  "version": "1.8.5-alpha.0",
+  "version": "1.8.5-alpha.1",
   "description": "Global solution for responsive images in Eleventy, allowing authors to use Markdown syntax for image and yet get responsive images in generated HTML.",
   "main": ".eleventy.js",
   "repository": {
@@ -38,7 +38,7 @@
     "@11ty/eleventy": ">=0.11.0"
   },
   "dependencies": {
-    "images-responsiver": "^1.8.5-alpha.0"
+    "images-responsiver": "^1.8.5-alpha.1"
   },
   "bugs": {
     "url": "https://github.com/nhoizey/images-responsiver/issues"
