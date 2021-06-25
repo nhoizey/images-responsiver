@@ -8,9 +8,9 @@
     "publish-alpha": "env $(cat .env | xargs) HUSKY=0 lerna publish --conventional-commits --conventional-prerelease --force-publish --create-release github"
   },
   "devDependencies": {
-    "lerna": "^4.0.0",
     "eslint": "~7.27.0",
     "eslint-config-prettier": "~8.3.0",
-    "eslint-plugin-prettier": "~3.4.0"
+    "eslint-plugin-prettier": "~3.4.0",
+    "lerna": "^4.0.0"
   }
 }
