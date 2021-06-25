@@ -5,7 +5,7 @@
     "postinstall": "lerna bootstrap",
     "test": "lerna run test",
     "publish": "env $(cat .env | xargs) HUSKY=0 lerna publish --conventional-commits --create-release github",
-    "publish-alpha": "env $(cat .env | xargs) HUSKY=0 lerna publish --conventional-commits --conventional-prerelease --create-release github"
+    "publish-alpha": "env $(cat .env | xargs) HUSKY=0 lerna publish --conventional-commits --conventional-prerelease --force-publish --create-release github"
   },
   "devDependencies": {
     "lerna": "^4.0.0",
