@@ -9,14 +9,14 @@ exports[`tutorial 2 selector 1`] = `
     <title>images-responsiver</title>
     <link rel=\\"stylesheet\\" href=\\"assets/styles.css\\" />
   </head>
+
   <body>
     <div class=\\"container\\">
       <h1>images-responsiver</h1>
       <p>
         <img
-          src=\\"assets/my-logo-640.png\\"
-          alt=\\"My logo\\"
-          class=\\"logo\\"
+          data-pristine=\\"assets/my-logo.png\\"
+          sizes=\\"100vw\\"
           srcset=\\"
             assets/my-logo-320.png   320w,
             assets/my-logo-560.png   560w,
@@ -24,22 +24,23 @@ exports[`tutorial 2 selector 1`] = `
             assets/my-logo-1040.png 1040w,
             assets/my-logo-1280.png 1280w
           \\"
-          sizes=\\"100vw\\"
-          data-pristine=\\"assets/my-logo.png\\"
+          src=\\"assets/my-logo-640.png\\"
+          alt=\\"My logo\\"
+          class=\\"logo\\"
         />
       </p>
       <p>
         <code>images-responsiver</code> is
         <strong>a simple solution for most responsive images needs</strong>. It
-        transforms simple <code>&lt;img src=&quot;…&quot; /&gt;</code> HTML tags
-        into better responsive images syntax with <code>srcset</code> and
+        transforms simple <code>&lt;img src=\\"…\\" /&gt;</code> HTML tags into
+        better responsive images syntax with <code>srcset</code> and
         <code>sizes</code> attributes.
       </p>
       <p>Here is a simple image:</p>
       <p>
         <img
-          src=\\"assets/colorful-netherlands-640.jpg\\"
-          alt=\\"A photo of colorful houses in Groningen, The Netherlands\\"
+          data-pristine=\\"assets/colorful-netherlands.jpg\\"
+          sizes=\\"100vw\\"
           srcset=\\"
             assets/colorful-netherlands-320.jpg   320w,
             assets/colorful-netherlands-560.jpg   560w,
@@ -47,8 +48,8 @@ exports[`tutorial 2 selector 1`] = `
             assets/colorful-netherlands-1040.jpg 1040w,
             assets/colorful-netherlands-1280.jpg 1280w
           \\"
-          sizes=\\"100vw\\"
-          data-pristine=\\"assets/colorful-netherlands.jpg\\"
+          src=\\"assets/colorful-netherlands-640.jpg\\"
+          alt=\\"A photo of colorful houses in Groningen, The Netherlands\\"
         />
       </p>
       <p>

@@ -5,10 +5,10 @@ exports[`image with simple srcset options simple image 1`] = `
 <html>
   <body>
     <img
-      src=\\"test-640.png\\"
-      srcset=\\"test-120.png 120w, test-180.png 180w, test-320.png 320w\\"
-      sizes=\\"100vw\\"
       data-pristine=\\"test.png\\"
+      sizes=\\"100vw\\"
+      srcset=\\"test-120.png 120w, test-180.png 180w, test-320.png 320w\\"
+      src=\\"test-640.png\\"
     />
   </body>
 </html>
@@ -20,10 +20,10 @@ exports[`image with simple srcset options simple image with only one value 1`] =
 <html>
   <body>
     <img
-      src=\\"test-640.png\\"
-      srcset=\\"test-320.png 320w\\"
-      sizes=\\"100vw\\"
       data-pristine=\\"test.png\\"
+      sizes=\\"100vw\\"
+      srcset=\\"test-320.png 320w\\"
+      src=\\"test-640.png\\"
     />
   </body>
 </html>
@@ -35,10 +35,10 @@ exports[`image with simple srcset options simple image with values duplicates 1`
 <html>
   <body>
     <img
-      src=\\"test-640.png\\"
-      srcset=\\"test-320.png 320w\\"
-      sizes=\\"100vw\\"
       data-pristine=\\"test.png\\"
+      sizes=\\"100vw\\"
+      srcset=\\"test-320.png 320w\\"
+      src=\\"test-640.png\\"
     />
   </body>
 </html>
@@ -50,11 +50,11 @@ exports[`image with simple srcset options simple image with width inferior to al
 <html>
   <body>
     <img
+      data-pristine=\\"test.png\\"
+      sizes=\\"100vw\\"
+      srcset=\\"test-400.png 400w\\"
       src=\\"test-640.png\\"
       width=\\"400\\"
-      srcset=\\"test-400.png 400w\\"
-      sizes=\\"100vw\\"
-      data-pristine=\\"test.png\\"
     />
   </body>
 </html>
@@ -66,11 +66,11 @@ exports[`image with simple srcset options simple image with width inferior to on
 <html>
   <body>
     <img
+      data-pristine=\\"test.png\\"
+      sizes=\\"100vw\\"
+      srcset=\\"test-320.png 320w, test-800.png 800w, test-1024.png 1024w\\"
       src=\\"test-640.png\\"
       width=\\"1024\\"
-      srcset=\\"test-320.png 320w, test-800.png 800w, test-1024.png 1024w\\"
-      sizes=\\"100vw\\"
-      data-pristine=\\"test.png\\"
     />
   </body>
 </html>
@@ -82,11 +82,11 @@ exports[`image with simple srcset options simple image with width superior to al
 <html>
   <body>
     <img
+      data-pristine=\\"test.png\\"
+      sizes=\\"100vw\\"
+      srcset=\\"test-320.png 320w, test-640.png 640w, test-1024.png 1024w\\"
       src=\\"test-640.png\\"
       width=\\"1280\\"
-      srcset=\\"test-320.png 320w, test-640.png 640w, test-1024.png 1024w\\"
-      sizes=\\"100vw\\"
-      data-pristine=\\"test.png\\"
     />
   </body>
 </html>
