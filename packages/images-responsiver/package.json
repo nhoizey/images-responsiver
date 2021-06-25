@@ -30,8 +30,7 @@
     "debug": "4.3.1",
     "deepmerge": "4.2.2",
     "linkedom": "~0.9.6",
-    "lodash.clonedeep": "4.5.0",
-    "sizzle": "2.3.6"
+    "lodash.clonedeep": "4.5.0"
   },
   "bugs": {
     "url": "https://github.com/nhoizey/images-responsiver/issues"
