@@ -48,6 +48,7 @@ See also the list of [contributors](https://github.com/nhoizey/images-responsive
 
 To deal with responsive images in Eleventy, there are multiple other plugins:
 
+- [eleventy-img](https://www.11ty.dev/docs/plugins/image/) by Zach Leatherman ([@zachleat](https://twitter.com/zachleat)) is a low level utility to perform build-time image transformations for both vector and raster images, but it doesn't generateany markup
 - [eleventy-plugin-respimg](https://www.npmjs.com/package/eleventy-plugin-respimg) by Eric Portis ([@etportis](https://twitter.com/etportis/)) provides a shortcode for responsive images with Cloudinary
 - [eleventy-plugin-local-respimg](https://github.com/chromeos/static-site-scaffold-modules/tree/master/modules/eleventy-plugin-local-respimg) by Sam Richard ([@Snugug](https://twitter.com/Snugug/)) provides an Eleventy transform for resizing and optimizing local images
 
