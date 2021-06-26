@@ -9,13 +9,12 @@ Images Responsiver tries to **help developers** make it **easy for content autho
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 - [Why does this project exist?](#why-does-this-project-exist)
-- [One repository, multiple projects](#one-repository-multiple-projects)
+- [One repository, multiple packages](#one-repository-multiple-packages)
   - [A Node.js package to ease responsive images: `images-responsiver`](#a-nodejs-package-to-ease-responsive-images-images-responsiver)
   - [A plugin for Eleventy: `eleventy-plugin-images-responsiver`](#a-plugin-for-eleventy-eleventy-plugin-images-responsiver)
 - [Sources and documentations](#sources-and-documentations)
 - [Contributing](#contributing)
-  - [Contribution guidelines](#contribution-guidelines)
-  - [Tools and automations](#tools-and-automations)
+- [Tools and automations](#tools-and-automations)
 - [License](#license)
 - [Authors](#authors)
 
@@ -31,9 +30,9 @@ As Steve Jobs [once said](https://www.youtube.com/watch?v=oeqPrUmVz-o):
 
 Most content authors should not have to learn the complex responsive images HTML syntax, how and it is used by browsers to load the right image for current viewing context.
 
-## One repository, multiple projects
+## One repository, multiple packages
 
-Multiple projects are managed inside this shared monorepo.
+Multiple packages are managed inside this monorepo.
 
 ### A Node.js package to ease responsive images: `images-responsiver`
 
@@ -60,24 +59,20 @@ It allows authors to use the simple and **standard Markdown syntax for images** 
 
 First, thank you for considering contributing to `images-responsiver`! It's people like you that make the open source community such a great community! 😊
 
-### Contribution guidelines
+There are many ways to contribute to this project. [Get started here](https://github.com/nhoizey/images-responsiver/blob/main/CONTRIBUTING.md).
 
-There are many ways to contribute to this project.
-
-[Get started here](https://github.com/nhoizey/images-responsiver/blob/master/CONTRIBUTING.md).
-
-### Tools and automations
+## Tools and automations
 
 - This monorepo is managed with [Lerna](https://lerna.js.org/).
 - Tests are run by [jest](https://jestjs.io/) and written in [the `__tests__` folder](https://github.com/nhoizey/images-responsiver/tree/main/packages/images-responsiver/__tests__) for each package.
-- Pull Requests are checked with tests run on [Travis CI](https://travis-ci.org/nhoizey/images-responsiver) (see [configuration](https://github.com/nhoizey/images-responsiver/blob/main/.travis.yml))
+- Pull Requests are checked with tests run on GitHub workflows (see [configuration](https://github.com/nhoizey/images-responsiver/blob/main/.github/workflows/tests.yml))
 - Dependencies updates are automated with [dependabot](https://github.blog/2020-06-01-keep-all-your-packages-up-to-date-with-dependabot/) (see [configuration](https://github.com/nhoizey/images-responsiver/blob/main/.github/dependabot.yml))
-- Pull Requests are rebased as necessary, and merged automaticaly by [Kodiak](https://kodiakhq.com/) if there is an `automerge 🤞` label (set by dependabot for example) and Travis CI check is OK (see [configuration](https://github.com/nhoizey/images-responsiver/blob/main/.kodiak.toml))
+- Pull Requests are rebased as necessary, and merged automaticaly by [Kodiak](https://kodiakhq.com/) if there is an `automerge 🤞` label (set by dependabot for example) and GitHub workflow check is OK (see [configuration](https://github.com/nhoizey/images-responsiver/blob/main/.kodiak.toml))
 - The documentation is written as Markdown files in [the `docs/` folder](https://github.com/nhoizey/images-responsiver/tree/main/docs), and transformed into HTML by [Jekyll](https://jekyllrb.com/) powered [GitHub Pages](https://pages.github.com/): <https://nhoizey.github.io/images-responsiver/>
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE.md).
+This project is licensed under the [MIT License](https://github.com/nhoizey/images-responsiver/blob/main/LICENSE.md).
 
 ## Authors
 
