@@ -6,7 +6,7 @@ I use [Eleventy](https://www.11ty.dev/) to build my own site <https://nicolas-ho
 
 Each article has it’s own folder, with the Markdown file and image(s).
 
-For example, [here](https://github.com/nhoizey/nicolas-hoizey.com/tree/master/src/articles/2020/01/10/can-we-monitor-user-happiness-on-the-web-with-performance-tools):
+For example, [here](https://github.com/nhoizey/nicolas-hoizey.com/tree/main/src/articles/2020/01/10/can-we-monitor-user-happiness-on-the-web-with-performance-tools):
 
 ```
 src/

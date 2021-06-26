@@ -1,6 +1,6 @@
 # images-responsiver
 
-[![Build Status](https://travis-ci.org/nhoizey/images-responsiver.svg?branch=master)](https://travis-ci.org/nhoizey/images-responsiver)
+[![Build Status](https://travis-ci.org/nhoizey/images-responsiver.svg?branch=main)](https://travis-ci.org/nhoizey/images-responsiver)
 [![GitHub stars](https://img.shields.io/github/stars/nhoizey/images-responsiver.svg?style=social)](https://github.com/nhoizey/images-responsiver/stargazers)
 
 **`images-responsiver` is a simple solution for most responsive images needs**.

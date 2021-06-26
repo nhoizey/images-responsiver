@@ -23,7 +23,7 @@ Multiple npm packages are managed inside this monorepo:
 
 First, thank you for considering contributing to `images-responsiver`! It's people like you that make the open source community such a great community! 😊
 
-There are many ways to contribute to this project. [Get started here](https://github.com/nhoizey/images-responsiver/blob/master/CONTRIBUTING.md).
+There are many ways to contribute to this project. [Get started here](https://github.com/nhoizey/images-responsiver/blob/main/CONTRIBUTING.md).
 
 ## License
 
