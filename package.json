@@ -5,12 +5,16 @@
     "postinstall": "lerna bootstrap",
     "test": "lerna run test",
     "publish": "env $(cat .env | xargs) HUSKY=0 lerna publish --conventional-commits --create-release github",
-    "publish-alpha": "env $(cat .env | xargs) HUSKY=0 lerna publish --conventional-commits --conventional-prerelease --force-publish --create-release github"
+    "publish-alpha": "env $(cat .env | xargs) HUSKY=0 lerna publish --conventional-commits --conventional-prerelease --force-publish --create-release github",
+    "prepare": "husky install"
   },
   "devDependencies": {
+    "@commitlint/cli": "~12.1.4",
+    "@commitlint/config-conventional": "~12.1.4",
     "eslint": "~7.27.0",
     "eslint-config-prettier": "~8.3.0",
     "eslint-plugin-prettier": "~3.4.0",
+    "husky": "~6.0.0",
     "lerna": "~4.0.0"
   }
 }
