@@ -25,9 +25,7 @@ First, thank you for considering contributing to `images-responsiver`! It's peop
 
 ### Contribution guidelines
 
-There are many ways to contribute to this project.
-
-[Get started here](https://github.com/nhoizey/images-responsiver/blob/master/CONTRIBUTING.md).
+There are many ways to contribute to this project. [Get started here](https://github.com/nhoizey/images-responsiver/blob/master/CONTRIBUTING.md).
 
 ## License
 
