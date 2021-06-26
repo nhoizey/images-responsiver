@@ -1,7 +1,5 @@
 name: Generate changelog from releases
-on:
-  release:
-    types: [published]
+on: workflow_dispatch
 
 jobs:
   changelog:
