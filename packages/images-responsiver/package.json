@@ -1,6 +1,6 @@
 {
   "name": "images-responsiver",
-  "version": "1.9.1",
+  "version": "1.9.2",
   "description": "Global solution for responsive images, transforming simple image HTML syntax into better responsive images syntax.",
   "main": "index.js",
   "repository": {
