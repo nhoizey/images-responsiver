@@ -12,7 +12,8 @@ const warning = debug('images-responsiver:warning');
 const info = debug('images-responsiver:info');
 
 const defaultSettings = {
-  selector: ':not(picture) > img[src]:not([srcset]):not([src$=".svg"])',
+  selector:
+    ':not(picture) > img[src]:not([srcset]):not([src$=".svg"]), :not(picture) > img[data-src]:not([data-srcset]):not([data-src$=".svg"])',
   resizedImageUrl: (src, width) =>
     src.replace(/^(.*)(\.[^\.]+)$/, '$1-' + width + '$2'),
   runBefore: (image) => image,
@@ -41,11 +42,14 @@ const imagesResponsiver = (html, options = {}) => {
 
   [...document.querySelectorAll(globalSettings.selector)]
     .filter((image) => {
-      // filter out images without a src, or not SVG, or with already a srcset
+      // filter out images without a src (or data-src), or not SVG, or with already a srcset (or data-srcset)
       return (
-        image.getAttribute('src') !== null &&
-        !image.getAttribute('src').match(/\.svg$/) &&
-        image.getAttribute('srcset') === null
+        (image.getAttribute('src') !== null &&
+          !image.getAttribute('src').match(/\.svg$/) &&
+          image.getAttribute('srcset') === null) ||
+        (image.hasAttribute('data-src') &&
+          !image.getAttribute('data-src').match(/\.svg$/) &&
+          !image.hasAttribute('data-srcset'))
       );
     })
     .forEach((image) => {
@@ -75,7 +79,12 @@ const imagesResponsiver = (html, options = {}) => {
         delete image.dataset.responsiver;
       }
 
-      const imageSrc = image.getAttribute('src');
+      let isData = false;
+      if (!image.hasAttribute('src')) {
+        isData = true;
+      }
+
+      const imageSrc = isData ? image.dataset.src : image.getAttribute('src');
       info(`Transforming ${imageSrc}`);
 
       const imageWidth = image.getAttribute('width');
@@ -190,11 +199,14 @@ const imagesResponsiver = (html, options = {}) => {
 
       // Change the image source
       image.setAttribute(
-        'src',
+        isData ? 'data-src' : 'src',
         imageSettings.resizedImageUrl(imageSrc, imageSettings.fallbackWidth)
       );
 
-      image.setAttribute('srcset', srcsetList.join(', '));
+      image.setAttribute(
+        isData ? 'data-srcset' : 'srcset',
+        srcsetList.join(', ')
+      );
 
       // add sizes attribute
       image.setAttribute('sizes', imageSettings.sizes);

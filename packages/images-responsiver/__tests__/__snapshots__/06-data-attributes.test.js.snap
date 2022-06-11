@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`data attributes both data-src and data-srcset, no action 1`] = `
+"<!DOCTYPE html>
+<html>
+  <body>
+    <img
+      data-src=\\"test1.png\\"
+      data-srcset=\\"test1-300.png 300w, test1-600.png 600w\\"
+    />
+  </body>
+</html>
+"
+`;
+
+exports[`data attributes both src and data-src, only src used 1`] = `
+"<!DOCTYPE html>
+<html>
+  <body>
+    <img
+      data-pristine=\\"test1.png\\"
+      sizes=\\"100vw\\"
+      srcset=\\"
+        test1-320.png   320w,
+        test1-560.png   560w,
+        test1-800.png   800w,
+        test1-1040.png 1040w,
+        test1-1280.png 1280w
+      \\"
+      src=\\"test1-640.png\\"
+      data-src=\\"test3.png\\"
+    />
+  </body>
+</html>
+"
+`;
+
+exports[`data attributes data-src but no src nor data-srcset 1`] = `
+"<!DOCTYPE html>
+<html>
+  <body>
+    <img
+      data-pristine=\\"test.png\\"
+      sizes=\\"100vw\\"
+      data-srcset=\\"test-320.png 320w, test-420.png 420w\\"
+      data-src=\\"test-420.png\\"
+      width=\\"420\\"
+    />
+  </body>
+</html>
+"
+`;
