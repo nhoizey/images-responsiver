@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.10.0](https://github.com/nhoizey/images-responsiver/compare/v1.9.2...v1.10.0) (2022-06-11)
+
+
+### Features
+
+* add support for data-src for lazy loaded images ([c5e6f6e](https://github.com/nhoizey/images-responsiver/commit/c5e6f6e8efe84e05645b2fd8bf5d1388ce6fa739))
+
+
+
+
+
 ## [1.9.2](https://github.com/nhoizey/images-responsiver/compare/v1.9.1...v1.9.2) (2022-06-04)
 
 **Note:** Version bump only for package images-responsiver
