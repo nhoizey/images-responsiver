@@ -12,8 +12,7 @@ const warning = debug('images-responsiver:warning');
 const info = debug('images-responsiver:info');
 
 const defaultSettings = {
-  selector:
-    ':not(picture) > img[src]:not([srcset]):not([src$=".svg"]), :not(picture) > img[data-src]:not([data-srcset]):not([data-src$=".svg"])',
+  selector: ':not(picture) > img',
   resizedImageUrl: (src, width) =>
     src.replace(/^(.*)(\.[^\.]+)$/, '$1-' + width + '$2'),
   runBefore: (image) => image,
@@ -43,14 +42,52 @@ const imagesResponsiver = (html, options = {}) => {
   [...document.querySelectorAll(globalSettings.selector)]
     .filter((image) => {
       // filter out images without a src (or data-src), or not SVG, or with already a srcset (or data-srcset)
-      return (
-        (image.getAttribute('src') !== null &&
-          !image.getAttribute('src').match(/\.svg$/) &&
-          image.getAttribute('srcset') === null) ||
-        (image.hasAttribute('data-src') &&
-          !image.getAttribute('data-src').match(/\.svg$/) &&
-          !image.hasAttribute('data-srcset'))
-      );
+
+      // Filter out images with data-responsiver="false"
+      if (
+        'responsiver' in image.dataset &&
+        image.dataset.responsiver === 'false'
+      ) {
+        return false;
+      }
+
+      // Filter out images with no src nor data-src
+      if (!image.hasAttribute('src') && !('src' in image.dataset)) {
+        return false;
+      }
+
+      // Filter out images with already a srcset
+      if (image.hasAttribute('srcset')) {
+        return false;
+      }
+
+      // Filter out images with no src and already a data-srcset
+      if (!image.hasAttribute('src') && 'srcset' in image.dataset) {
+        return false;
+      }
+
+      // Filter out images with a SVG src
+      if (
+        image.hasAttribute('src') &&
+        image.getAttribute('src').endsWith('.svg')
+      ) {
+        return false;
+      }
+
+      // Filter out images with an Data URI src and no data-src or data-srcset
+      //
+      // For JS-based lazy loading, we need to use the data-src attribute,
+      // but use an inline image as a placeholder to avoid a "broken" image
+      if (
+        image.hasAttribute('src') &&
+        image.getAttribute('src').startsWith('data:image/') &&
+        !('src' in image.dataset) &&
+        !('srcset' in image.dataset)
+      ) {
+        return false;
+      }
+
+      return true;
     })
     .forEach((image) => {
       let imageSettings = clonedeep(globalSettings);

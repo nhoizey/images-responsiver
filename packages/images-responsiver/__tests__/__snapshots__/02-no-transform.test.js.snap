@@ -20,6 +20,16 @@ exports[`image that can't be transformed do nothing on image with already a srcs
 "
 `;
 
+exports[`image that can't be transformed do nothing on image with data-responsiver="false" 1`] = `
+"<!DOCTYPE html>
+<html>
+  <body>
+    <img src=\\"test.png\\" data-responsiver=\\"false\\" />
+  </body>
+</html>
+"
+`;
+
 exports[`image that can't be transformed do nothing on image without a src 1`] = `
 "<!DOCTYPE html>
 <html>
