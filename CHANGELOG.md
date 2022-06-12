@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.12.0](https://github.com/nhoizey/images-responsiver/compare/v1.11.0...v1.12.0) (2022-06-12)
+
+
+### Features
+
+* add a sizesOverride setting to allow setting sizes attribute in the source HTML ([add0043](https://github.com/nhoizey/images-responsiver/commit/add0043ed2fbaf9e13d5a2ebf324aeea2766ff9a)), closes [#191](https://github.com/nhoizey/images-responsiver/issues/191)
+
+
+
+
+
 # [1.11.0](https://github.com/nhoizey/images-responsiver/compare/v1.10.0...v1.11.0) (2022-06-12)
 
 
