@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.11.0](https://github.com/nhoizey/images-responsiver/compare/v1.10.0...v1.11.0) (2022-06-12)
+
+
+### Features
+
+* support a "false" value for the data-responsiver attribute ([745d613](https://github.com/nhoizey/images-responsiver/commit/745d61398c8019bdb9876eafb1f7b50fc816c992))
+
+
+
+
+
 # [1.10.0](https://github.com/nhoizey/images-responsiver/compare/v1.9.2...v1.10.0) (2022-06-11)
 
 
