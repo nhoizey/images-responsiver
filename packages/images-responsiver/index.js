@@ -42,8 +42,6 @@ const imagesResponsiver = (html, options = {}) => {
 
   [...document.querySelectorAll(globalSettings.selector)]
     .filter((image) => {
-      // filter out images without a src (or data-src), or not SVG, or with already a srcset (or data-srcset)
-
       // Filter out images with data-responsiver="false"
       if (
         'responsiver' in image.dataset &&
