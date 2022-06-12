@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`sizes attribute existing sizes attribute is overriden 1`] = `
+"<!DOCTYPE html>
+<html>
+  <body>
+    <img
+      data-pristine=\\"test1.png\\"
+      srcset=\\"
+        test1-320.png   320w,
+        test1-560.png   560w,
+        test1-800.png   800w,
+        test1-1040.png 1040w,
+        test1-1280.png 1280w
+      \\"
+      src=\\"test1-640.png\\"
+      sizes=\\"100vw\\"
+    />
+  </body>
+</html>
+"
+`;
+
+exports[`sizes attribute existing sizes attribute is untouched 1`] = `
+"<!DOCTYPE html>
+<html>
+  <body>
+    <img
+      data-pristine=\\"test1.png\\"
+      srcset=\\"
+        test1-320.png   320w,
+        test1-560.png   560w,
+        test1-800.png   800w,
+        test1-1040.png 1040w,
+        test1-1280.png 1280w
+      \\"
+      src=\\"test1-640.png\\"
+      sizes=\\"50vw\\"
+    />
+  </body>
+</html>
+"
+`;

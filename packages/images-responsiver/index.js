@@ -22,6 +22,7 @@ const defaultSettings = {
   maxWidth: 1280,
   steps: 5,
   sizes: '100vw',
+  sizesOverride: false,
   classes: [],
   attributes: {},
 };
@@ -246,7 +247,9 @@ const imagesResponsiver = (html, options = {}) => {
       );
 
       // add sizes attribute
-      image.setAttribute('sizes', imageSettings.sizes);
+      if (!image.hasAttribute('sizes') || imageSettings.sizesOverride) {
+        image.setAttribute('sizes', imageSettings.sizes);
+      }
 
       // add 'data-pristine' attribute with URL of the pristine image
       image.dataset.pristine = imageSrc;
