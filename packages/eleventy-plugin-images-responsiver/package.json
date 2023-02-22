@@ -43,5 +43,6 @@
   "bugs": {
     "url": "https://github.com/nhoizey/images-responsiver/issues"
   },
-  "homepage": "https://nhoizey.github.io/images-responsiver/eleventy-plugin-images-responsiver/"
+  "homepage": "https://nhoizey.github.io/images-responsiver/eleventy-plugin-images-responsiver/",
+  "gitHead": "e59f7fb0422676b8928998b5233c4824ed695c10"
 }
