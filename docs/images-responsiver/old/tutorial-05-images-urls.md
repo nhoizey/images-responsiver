@@ -2,7 +2,7 @@
 
 # Tutorial step 5: Dealing with images filenames and URLs
 
-----
+---
 
 - [Step 1: Default behavior without `images-responsiver`](https://nhoizey.github.io/images-responsiver/tutorial-01-without-images-responsiver.html)
 - [Step 2: Better behavior with `images-responsiver` and default configuration](https://nhoizey.github.io/images-responsiver/tutorial-02-images-responsiver-default.html)
@@ -11,7 +11,7 @@
 - **Step 5: Dealing with images filenames and URLs**
 - [Step 6: Even better responsive images](https://nhoizey.github.io/images-responsiver/tutorial-06-even-better-responsive-images.html)
 
-----
+---
 
 `images-responsiver` doesn't transform images files, it "only" transforms HTML. That's already a lot, as you should have noticed.
 
@@ -41,9 +41,9 @@ For example, if the width has to be a `w` query parameter:
 
 ```javascript
 const options = {
-  default: {
-    resizedImageUrl: (src, width) => `${src}?w=${width}`,
-  }
+	default: {
+		resizedImageUrl: (src, width) => `${src}?w=${width}`,
+	},
 };
 ```
 

@@ -29,12 +29,12 @@ We had these presets:
 
 ```javascript
 const presets = {
-  default: {
-    sizes: '(max-width: 45em) 90vw, 40em',
-  },
-  logo: {
-    sizes: '(max-width: 45em) 18vw, 8em',
-  },
+	default: {
+		sizes: '(max-width: 45em) 90vw, 40em',
+	},
+	logo: {
+		sizes: '(max-width: 45em) 18vw, 8em',
+	},
 };
 ```
 
@@ -46,13 +46,13 @@ For example, we can add a `logo` class to every image using the `logo` preset wi
 
 ```javascript
 const presets = {
-  default: {
-    sizes: '(max-width: 45em) 90vw, 40em',
-  },
-  logo: {
-    sizes: '(max-width: 45em) 18vw, 8em',
-    classes: ['logo'],
-  },
+	default: {
+		sizes: '(max-width: 45em) 90vw, 40em',
+	},
+	logo: {
+		sizes: '(max-width: 45em) 18vw, 8em',
+		classes: ['logo'],
+	},
 };
 ```
 
@@ -60,13 +60,13 @@ We could also add multiple classes, as in [Tailwind's floated image](https://tai
 
 ```javascript
 const presets = {
-  default: {
-    sizes: '(max-width: 45em) 90vw, 40em',
-  },
-  logo: {
-    sizes: '(max-width: 45em) 18vw, 8em',
-    classes: ['float-right', 'ml-4', 'my-2', 'h-32'],
-  },
+	default: {
+		sizes: '(max-width: 45em) 90vw, 40em',
+	},
+	logo: {
+		sizes: '(max-width: 45em) 18vw, 8em',
+		classes: ['float-right', 'ml-4', 'my-2', 'h-32'],
+	},
 };
 ```
 
@@ -80,16 +80,16 @@ For example, we can benefit from recent [native lazy-loading in modern browsers]
 
 ```javascript
 const presets = {
-  default: {
-    sizes: '(max-width: 45em) 90vw, 40em',
-    attributes: {
-      loading: 'lazy',
-    },
-  },
-  logo: {
-    sizes: '(max-width: 45em) 18vw, 8em',
-    classes: ['logo'],
-  },
+	default: {
+		sizes: '(max-width: 45em) 90vw, 40em',
+		attributes: {
+			loading: 'lazy',
+		},
+	},
+	logo: {
+		sizes: '(max-width: 45em) 18vw, 8em',
+		classes: ['logo'],
+	},
 };
 ```
 
@@ -99,20 +99,20 @@ If logo pristine images always have the same dimensions, we could even add them 
 
 ```javascript
 const presets = {
-  default: {
-    sizes: '(max-width: 45em) 90vw, 40em',
-    attributes: {
-      loading: 'lazy',
-    },
-  },
-  logo: {
-    sizes: '(max-width: 45em) 18vw, 8em',
-    classes: ['logo'],
-    attributes: {
-      width: '400',
-      height: '400',
-    },
-  },
+	default: {
+		sizes: '(max-width: 45em) 90vw, 40em',
+		attributes: {
+			loading: 'lazy',
+		},
+	},
+	logo: {
+		sizes: '(max-width: 45em) 18vw, 8em',
+		classes: ['logo'],
+		attributes: {
+			width: '400',
+			height: '400',
+		},
+	},
 };
 ```
 

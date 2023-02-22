@@ -33,9 +33,9 @@ First, we define a `default` preset that will be used for all images:
 
 ```javascript
 const presets = {
-  default: {
-    sizes: '(max-width: 45em) 90vw, 40em',
-  },
+	default: {
+		sizes: '(max-width: 45em) 90vw, 40em',
+	},
 };
 ```
 
@@ -47,12 +47,12 @@ We now need to add a specific overriding preset for the logo, which needs a diff
 
 ```javascript
 const presets = {
-  default: {
-    sizes: '(max-width: 45em) 90vw, 40em',
-  },
-  logo: {
-    sizes: '(max-width: 45em) 18vw, 8em',
-  },
+	default: {
+		sizes: '(max-width: 45em) 90vw, 40em',
+	},
+	logo: {
+		sizes: '(max-width: 45em) 18vw, 8em',
+	},
 };
 ```
 

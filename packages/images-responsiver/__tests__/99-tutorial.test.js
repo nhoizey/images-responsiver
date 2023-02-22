@@ -4,12 +4,12 @@ const prettier = require('prettier');
 const imagesResponsiver = require('../index');
 
 function cleanHtml(html) {
-  return prettier.format(html, { parser: 'html' });
+	return prettier.format(html, { parser: 'html' });
 }
 
 describe('tutorial 2', () => {
-  test('selector', () => {
-    const content = `<!DOCTYPE html>
+	test('selector', () => {
+		const content = `<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -30,8 +30,8 @@ describe('tutorial 2', () => {
   </body>
 </html>
 `;
-    const transformed = imagesResponsiver(content);
+		const transformed = imagesResponsiver(content);
 
-    expect(cleanHtml(transformed)).toMatchSnapshot();
-  });
+		expect(cleanHtml(transformed)).toMatchSnapshot();
+	});
 });

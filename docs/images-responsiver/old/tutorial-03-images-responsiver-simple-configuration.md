@@ -21,9 +21,9 @@ First, we define a `default` preset that will be used for all images where the a
 
 ```javascript
 const options = {
-  default: {
-    sizes: '(max-width: 45em) 90vw, 40em',
-  },
+	default: {
+		sizes: '(max-width: 45em) 90vw, 40em',
+	},
 };
 ```
 
@@ -33,16 +33,16 @@ We now need to add a specific preset for the logo, which has different needs:
 
 ```javascript
 const options = {
-  default: {
-    sizes: '(max-width: 45em) 90vw, 40em',
-  },
-  logo: {
-    minWidth: 58,
-    maxWidth: 512,
-    steps: 3,
-    fallbackWidth: 128,
-    sizes: '(max-width: 45em) 18vw, 8em',
-  },
+	default: {
+		sizes: '(max-width: 45em) 90vw, 40em',
+	},
+	logo: {
+		minWidth: 58,
+		maxWidth: 512,
+		steps: 3,
+		fallbackWidth: 128,
+		sizes: '(max-width: 45em) 18vw, 8em',
+	},
 };
 ```
 

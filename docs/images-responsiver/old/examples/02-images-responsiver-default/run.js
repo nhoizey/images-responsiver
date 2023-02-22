@@ -13,6 +13,6 @@ const dist = imagesResponsiver(src);
 
 // write the result into a new file
 fs.writeFileSync(
-  'page-enhanced.html',
-  prettier.format(dist, { parser: 'html' })
+	'page-enhanced.html',
+	prettier.format(dist, { parser: 'html' })
 );

@@ -47,38 +47,38 @@ The [`runBefore` hook](https://github.com/nhoizey/nicolas-hoizey.com/blob/a441e2
 
 ```javascript
 const runBeforeHook = (image, document) => {
-  let documentBody = document.querySelector('body');
-  let srcPath = documentBody.getAttribute('data-img-src');
-  // TODO: get "dist/" from config
-  let distPath = documentBody
-    .getAttribute('data-img-dist')
-    .replace(/^dist/, '');
+	let documentBody = document.querySelector('body');
+	let srcPath = documentBody.getAttribute('data-img-src');
+	// TODO: get "dist/" from config
+	let distPath = documentBody
+		.getAttribute('data-img-dist')
+		.replace(/^dist/, '');
 
-  let imageSrc = image.getAttribute('src');
+	let imageSrc = image.getAttribute('src');
 
-  let imageUrl = '';
+	let imageUrl = '';
 
-  if (imageSrc.match(/^(https?:)?\/\//)) {
-    // TODO: find a way to get a remote image's dimensions
-    // TODO: some images are local but have an absolute URL
-    imageUrl = imageSrc;
-  } else {
-    let imageDimensions;
-    if (imageSrc[0] === '/') {
-      // TODO: get "src/" from Eleventy config
-      imageDimensions = imageSize('./src' + imageSrc);
-      imageUrl = site.url + imageSrc;
-    } else {
-      // This is a relative URL
-      imageDimensions = imageSize(srcPath + imageSrc);
-      imageUrl = site.url + distPath + imageSrc;
-    }
-    image.setAttribute('width', imageDimensions.width);
-    image.setAttribute('height', imageDimensions.height);
-    image.setAttribute('src', imageUrl);
-  }
+	if (imageSrc.match(/^(https?:)?\/\//)) {
+		// TODO: find a way to get a remote image's dimensions
+		// TODO: some images are local but have an absolute URL
+		imageUrl = imageSrc;
+	} else {
+		let imageDimensions;
+		if (imageSrc[0] === '/') {
+			// TODO: get "src/" from Eleventy config
+			imageDimensions = imageSize('./src' + imageSrc);
+			imageUrl = site.url + imageSrc;
+		} else {
+			// This is a relative URL
+			imageDimensions = imageSize(srcPath + imageSrc);
+			imageUrl = site.url + distPath + imageSrc;
+		}
+		image.setAttribute('width', imageDimensions.width);
+		image.setAttribute('height', imageDimensions.height);
+		image.setAttribute('src', imageUrl);
+	}
 
-  image.dataset.responsiver = image.className;
+	image.dataset.responsiver = image.className;
 };
 ```
 

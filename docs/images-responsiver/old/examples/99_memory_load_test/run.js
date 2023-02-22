@@ -14,9 +14,9 @@ let mbUsed;
 
 // make loops to track memory usage
 for (let i = 0; i < 10000; i++) {
-  dist = imagesResponsiver(src, {});
-  if (!(i % 10)) {
-    mbUsed = toMB(process.memoryUsage().heapUsed);
-    console.log(`Tracking memory: ${mbUsed} MB at iteration #${i}`);
-  }
+	dist = imagesResponsiver(src, {});
+	if (!(i % 10)) {
+		mbUsed = toMB(process.memoryUsage().heapUsed);
+		console.log(`Tracking memory: ${mbUsed} MB at iteration #${i}`);
+	}
 }
