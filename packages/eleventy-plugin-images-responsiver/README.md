@@ -6,6 +6,9 @@
 
 This Eleventy plugin allows authors to **use the standard Markdown syntax for images** (`![alt text](image.jpg "title text")`) and yet **get responsive images in the generated HTML**, with `srcset` and `sizes` attributes.
 
+> **Warning**
+> This plugin doesn't generate any image, it has to be used either with already existing images, a local image resizing solution (should work with the official [eleventy-img](https://www.11ty.dev/docs/plugins/image/) plugin), or a third party service ("image CDN") like Cloudinary.
+
 Learn more in [the detailed documentation](https://nhoizey.github.io/images-responsiver/eleventy-plugin-images-responsiver/).
 
 # Installation
