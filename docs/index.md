@@ -12,10 +12,8 @@ Images Responsiver tries to **help developers** make it **easy for content autho
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 - [Why does this project exist?](#why-does-this-project-exist)
-- [One repository, multiple packages](#one-repository-multiple-packages)
-  - [A Node.js package to ease responsive images: `images-responsiver`](#a-nodejs-package-to-ease-responsive-images-images-responsiver)
-  - [A plugin for Eleventy: `eleventy-plugin-images-responsiver`](#a-plugin-for-eleventy-eleventy-plugin-images-responsiver)
-- [Sources and documentations](#sources-and-documentations)
+  - [A Node.js package](#a-nodejs-package)
+  - [A plugin for Eleventy](#a-plugin-for-eleventy)
 - [Contributing](#contributing)
 - [Tools and automations](#tools-and-automations)
 - [License](#license)
@@ -33,11 +31,7 @@ As Steve Jobs [once said](https://www.youtube.com/watch?v=oeqPrUmVz-o):
 
 Most content authors should not have to learn the complex responsive images HTML syntax, how and it is used by browsers to load the right image for current viewing context.
 
-## One repository, multiple packages
-
-Multiple packages are managed inside this monorepo.
-
-### A Node.js package to ease responsive images: `images-responsiver`
+### A Node.js package
 
 Images Responsiver transforms plain, simple `<img src="…">` HTML tags into better responsive images syntax with `srcset` and `sizes` attributes.
 
@@ -45,18 +39,11 @@ Knowing that [`<picture>` is only required for rare advanced usages](https://clo
 
 Read [this article on Cloudfour's blog to know more of the theory](https://cloudfour.com/thinks/responsive-images-the-simple-way/).
 
-### A plugin for Eleventy: `eleventy-plugin-images-responsiver`
+### A plugin for Eleventy
 
-Images Responsiver is also available as a plugin for [Eleventy](https://www.11ty.dev/), an awesome Static Site Generator.
+Images Responsiver is [also available as a plugin](https://nhoizey.github.io/eleventy-plugin-images-responsiver/) for [Eleventy](https://www.11ty.dev/), an awesome Static Site Generator.
 
 It allows authors to use the simple and **standard Markdown syntax for images** — `![alt text](image.jpg)` — and yet get responsive images in the generated HTML.
-
-## Sources and documentations
-
-| **package**                          | **source**                                                                                                     | **npm**                                                                                                                                                                                                                                                                                                                   | **docs**                                                                                 |
-| ------------------------------------ | -------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| `images-responsiver`                 | [source](https://github.com/nhoizey/images-responsiver/tree/main/packages/images-responsiver)                  | [![npm version](https://badge.fury.io/js/images-responsiver.svg)](https://www.npmjs.com/package/images-responsiver) [![Package size](https://badgen.net/packagephobia/publish/images-responsiver)](https://packagephobia.com/result?p=images-responsiver)                                                                 | [docs](https://nhoizey.github.io/images-responsiver/images-responsiver/)                 |
-| `eleventy-plugin-images-responsiver` | [source](https://github.com/nhoizey/images-responsiver/tree/main/packages/eleventy-plugin-images-responsiver/) | [![npm version](https://badge.fury.io/js/eleventy-plugin-images-responsiver.svg)](https://www.npmjs.com/package/eleventy-plugin-images-responsiver) [![Package size](https://badgen.net/packagephobia/publish/eleventy-plugin-images-responsiver)](https://packagephobia.com/result?p=eleventy-plugin-images-responsiver) | [docs](https://nhoizey.github.io/images-responsiver/eleventy-plugin-images-responsiver/) |
 
 ## Contributing
 
@@ -66,7 +53,6 @@ There are many ways to contribute to this project. [Get started here](https://gi
 
 ## Tools and automations
 
-- This monorepo is managed with [Lerna](https://lerna.js.org/).
 - Tests are run by [jest](https://jestjs.io/) and written in [the `__tests__` folder](https://github.com/nhoizey/images-responsiver/tree/main/packages/images-responsiver/__tests__) for each package.
 - Pull Requests are checked with tests run on GitHub workflows (see [configuration](https://github.com/nhoizey/images-responsiver/blob/main/.github/workflows/tests.yml))
 - Dependencies updates are automated with [dependabot](https://github.blog/2020-06-01-keep-all-your-packages-up-to-date-with-dependabot/) (see [configuration](https://github.com/nhoizey/images-responsiver/blob/main/.github/dependabot.yml))
