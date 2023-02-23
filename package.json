@@ -1,20 +1,51 @@
 {
-	"name": "root",
-	"private": true,
+	"name": "images-responsiver",
+	"version": "1.12.1",
+	"description": "Global solution for responsive images, transforming simple image HTML syntax into better responsive images syntax.",
+	"main": "index.js",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/nhoizey/images-responsiver.git"
+	},
 	"scripts": {
-		"postinstall": "lerna bootstrap",
-		"test": "lerna run test",
-		"publish": "env $(cat .env | xargs) HUSKY=0 lerna publish --conventional-commits",
-		"publish-alpha": "env $(cat .env | xargs) HUSKY=0 lerna publish --conventional-commits --conventional-prerelease --force-publish",
+		"lint": "eslint . --ext js --quiet --fix",
+		"test": "jest",
+		"test-update": "jest --updateSnapshot",
 		"prepare": "husky install"
 	},
+	"keywords": [
+		"website",
+		"blog",
+		"html",
+		"image",
+		"images",
+		"responsive",
+		"RWD",
+		"srcset",
+		"sizes",
+		"Cloudinary"
+	],
+	"author": "Nicolas Hoizey",
+	"license": "MIT",
+	"dependencies": {
+		"debug": "^4.3.2",
+		"deepmerge": "^4.2.2",
+		"linkedom": "^0.11.1",
+		"lodash.clonedeep": "^4.5.0"
+	},
+	"bugs": {
+		"url": "https://github.com/nhoizey/images-responsiver/issues"
+	},
+	"homepage": "https://nhoizey.github.io/images-responsiver/",
 	"devDependencies": {
+		"jest": "^28.1.1",
+		"prettier": "^2.3.1",
 		"@commitlint/cli": "^12.1.4",
 		"@commitlint/config-conventional": "^13.1.0",
 		"eslint": "^7.29.0",
 		"eslint-config-prettier": "^8.3.0",
 		"eslint-plugin-prettier": "^4.0.0",
-		"husky": "^7.0.0",
-		"lerna": "^6.5.1"
-	}
+		"husky": "^7.0.0"
+	},
+	"gitHead": "e59f7fb0422676b8928998b5233c4824ed695c10"
 }
