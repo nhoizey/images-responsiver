@@ -2,11 +2,21 @@
 
 All notable changes to this project will be documented in this file.
 
-# 1.12.0
+# 1.12.1
+
+- Split the monorepo into two individual repos:
+  - [`images-responsiver`](https://github.com/nhoizey/images-responsiver/)
+  - [`eleventy-plugin-images-responsiver`](https://github.com/nhoizey/eleventy-plugin-images-responsiver/)
+
+# Before 1.12.1
+
+Before release 1.12.1, version numbers were synchronized for [`images-responsiver`](https://github.com/nhoizey/images-responsiver/) and [`eleventy-plugin-images-responsiver`](https://github.com/nhoizey/eleventy-plugin-images-responsiver/).
+
+## 1.12.0
 
 - add a sizesOverride setting to allow setting sizes attribute in the source HTML ([add0043](https://github.com/nhoizey/images-responsiver/commit/add0043ed2fbaf9e13d5a2ebf324aeea2766ff9a)), closes [#191](https://github.com/nhoizey/images-responsiver/issues/191)
 
-# 1.11.0
+## 1.11.0
 
 - support a "false" value for the data-responsiver attribute ([745d613](https://github.com/nhoizey/images-responsiver/commit/745d61398c8019bdb9876eafb1f7b50fc816c992))
 
