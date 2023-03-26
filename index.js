@@ -27,7 +27,7 @@ const defaultSettings = {
 	attributes: {},
 };
 
-const imagesResponsiver = (html, options = {}) => {
+const imagesResponsiver = (html, options = {}, url = '') => {
 	// Default settings
 	let globalSettings = defaultSettings;
 
@@ -91,7 +91,7 @@ const imagesResponsiver = (html, options = {}) => {
 		.forEach((image) => {
 			let imageSettings = clonedeep(globalSettings);
 
-			imageSettings.runBefore(image, document);
+			imageSettings.runBefore(image, document, url);
 
 			// Overhide settings with presets named in the image classes
 			if (image.dataset && 'responsiver' in image.dataset) {
@@ -261,7 +261,7 @@ const imagesResponsiver = (html, options = {}) => {
 				}
 			}
 
-			imageSettings.runAfter(image, document);
+			imageSettings.runAfter(image, document, url);
 		});
 
 	return document.toString();
