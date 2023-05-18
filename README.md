@@ -1,10 +1,7 @@
 # Images Responsiver
 
-[![Build Status](https://travis-ci.org/nhoizey/images-responsiver.svg?branch=main)](https://travis-ci.org/nhoizey/images-responsiver)
 [![GitHub stars](https://img.shields.io/github/stars/nhoizey/images-responsiver.svg?style=social)](https://github.com/nhoizey/images-responsiver/stargazers)
-[![license](https://img.shields.io/github/license/nhoizey/images-responsiver)](https://github.com/nhoizey/images-responsiver/blob/main/LICENSE.md)
-![Libraries.io dependency status for latest release, scoped npm package](https://img.shields.io/librariesio/release/npm/images-responsiver)
-[![Pull requests welcome](https://img.shields.io/badge/PRs-welcome-blueviolet)](https://github.com/nhoizey/images-responsiver/blob/main/CONTRIBUTING.md)
+[![Follow @nhoizey@mamot.fr](https://img.shields.io/mastodon/follow/000262395?domain=https%3A%2F%2Fmamot.fr&style=social)](https://mamot.fr/@nhoizey)
 
 Images Responsiver tries to **help developers** make it **easy for content authors** to tackle **responsive images needs**.
 
